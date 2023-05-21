@@ -64,7 +64,7 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown submenu">
-                            <a class="nav-link dropdown-toggle" href="/downloads/testnet-t2-node-client-download.html" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="/downloads/testnet-t3-node-client-download.html" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Downloads
                             </a>
                         </li>
@@ -219,8 +219,8 @@
                                     <a href="#" class="nav-link"><img src="https://static.dpdocs.org/img/other/testnet.png" alt="Doge Protocol Testnet" style="max-width:33px;">Testnet</a>
                                     <span class="icon"><i class="arrow_carrot-down"></i></span>
                                     <ul class="list-unstyled dropdown_nav">
-                                        <li><a href="/testnet-t2-about.html">About</a></li>
-                                        <!--<li><a href="/testnet-t2-about.html">Major Changes</a></li>-->
+                                        <li><a href="/testnet-t3-about.html">About</a></li>
+                                        <!--<li><a href="/testnet-t3-about.html">Major Changes</a></li>-->
                                         <li><a href="/testnet-requirements.html">Requirements</a></li>
                                         <li><a href="/testnet-setup.html">Setup</a></li>
                                         <li><a href="/testnet-connecting.html">Connecting</a></li>
@@ -234,7 +234,7 @@
                             </ul>
                             <ul class="list-unstyled nav-sidebar coding_nav">
                                 <li class="nav-item">
-                                    <a href="/downloads/testnet-t2-node-client-download.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/downloads.png" alt="Doge Protocol Downloads" style="max-width:33px;">Downloads</a>
+                                    <a href="/downloads/testnet-t3-node-client-download.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/downloads.png" alt="Doge Protocol Downloads" style="max-width:33px;">Downloads</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="https://github.com/DogeProtocol" class="nav-link"><img src="https://static.dpdocs.org/img/other/github.png" alt="Doge Protocol Github source code, documentation" style="max-width:33px;">Github</a>
@@ -290,8 +290,8 @@
                                         <a href="#" class="nav-link"><img src="https://static.dpdocs.org/img/other/testnet.png" alt="Doge Protocol Testnet" style="max-width:33px;">Testnet</a>
                                         <span class="icon"><i class="arrow_carrot-down"></i></span>
                                         <ul class="list-unstyled dropdown_nav">
-                                            <li><a href="/testnet-t2-about.html">About</a></li>
-                                            <li><a href="/testnet-t2-about.html">Major Changes</a></li>
+                                            <li><a href="/testnet-t3-about.html">About</a></li>
+                                            <li><a href="/testnet-t3-about.html">Major Changes</a></li>
                                             <li><a href="/testnet-requirements.html">Requirements</a></li>
                                             <li><a href="/testnet-setup.html">Setup</a></li>
                                             <li><a href="/testnet-connecting.html">Connecting</a></li>
@@ -305,7 +305,7 @@
                                 </ul>
                                 <ul class="list-unstyled nav-sidebar coding_nav">
                                     <li class="nav-item">
-                                        <a href="/downloads/testnet-t2-node-client-download.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/downloads.png" alt="Doge Protocol Downloads" style="max-width:33px;">Downloads</a>
+                                        <a href="/downloads/testnet-t3-node-client-download.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/downloads.png" alt="Doge Protocol Downloads" style="max-width:33px;">Downloads</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="https://github.com/DogeProtocol" class="nav-link"><img src="https://static.dpdocs.org/img/other/github.png" alt="Doge Protocol Github source code, documentation" style="max-width:33px;">Github</a>
@@ -371,7 +371,7 @@
                                         <li>
                                             Run the following two commands: this will set the staking contract to be used in a subsequent step.
                                             <pre class="language-html"><code class="language-html" data-lang="html">set GETH_RAW_URL=\\.\pipe\geth.ipc</code></pre>
-                                            <pre class="language-html"><code class="language-html" data-lang="html">set GETH_STAKING_CONTRACT_ADDRESS=0x6f187be251c58a3e092ab08fc03ec74f6a133e1c</code></pre>
+                                            <pre class="language-html"><code class="language-html" data-lang="html">set GETH_STAKING_CONTRACT_ADDRESS=0x248c9eeefcc6a45ff8556cbc046287220d4361d7</code></pre>
                                         </li>
                                         <li>
                                             Next, run the following two commands. Replace the address and password with the ones for your actual account that was created as described in <a href="https://dpdocs.org/testnet-setup-windows.html">Setting up blockchain node client</a>:
@@ -389,9 +389,9 @@
                                             <b>Stake some coins</b>; Run the following two commands, replacing 11 with the number of coins you would like to stake. Your account should have so many coins in it, in order to stake.
                                             <pre class="language-html"><code class="language-html" data-lang="html">set GETH_STAKING_DEPOSIT_AMOUNT=11</code></pre>
                                             <pre class="language-html"><code class="language-html" data-lang="html">deposit.exe</code></pre>
-                                            If the deposit is successful, you will get a transaction hash as a confirmation. In Testnet T2, you can stake only once from a given wallet. This limitation will be removed in subsequent testnets.
+                                            If the deposit is successful, you will get a transaction hash as a confirmation. In Testnet T3, you can stake only once from a given wallet. This limitation will be removed in subsequent testnets.
                                             From here on, your account will be eligible to get block rewards. These rewards will get deposited to your main wallet account. 
-                                            In Testnet T2, slashing has not been implemented yet, hence you will be able to get block rewards, even if you do not run the blockchain node.
+                                            In Testnet T3, slashing has not been implemented yet, hence you will be able to get block rewards, even if you do not run the blockchain node.
                                             Once slashing is implemented (in a subsequent testnet), this classical proof-of-stake problem called as <a href="https://en.wikipedia.org/wiki/Proof_of_stake#Nothing_at_stake">nothing-at-stake</a> will be fixed.
                                         </li>
                                         <li>
@@ -406,8 +406,7 @@
 
                                 <div class="link">
                                     <ul>
-                                        <li><a href="/testnet-t2-about.html">About Testnet T2</a></li>
-                                        <!--<li><a href="/testnet-t2-about.html">Major changes in Testnet T2</a></li>-->
+                                        <li><a href="/testnet-t3-about.html">About Testnet T3</a></li>
                                         <li><a href="/testnet-requirements.html">Requirements</a></li>
                                         <li><a href="/testnet-setup.html">Setting up blockchain node client</a></li>
                                         <li><a href="/testnet-connecting.html">Connecting to the blockchain</a></li>
@@ -528,7 +527,7 @@
                                                 <img src="https://static.dpdocs.org/img/other/testnet.png" alt="About Testnet">
                                             </div>
                                             <div class="media-body">
-                                                <a href="/testnet-t2-about.html">
+                                                <a href="/testnet-t3-about.html">
                                                     <h5>Testnet</h5>
                                                 </a>
                                                 <p>Testnet details, setup and usage.</p>
@@ -541,7 +540,7 @@
                                                 <img src="https://static.dpdocs.org/img/other/downloads.png" alt="Doge Protocol Downloads">
                                             </div>
                                             <div class="media-body">
-                                                <a href="/downloads/testnet-t2-node-client-download.html">
+                                                <a href="/downloads/testnet-t3-node-client-download.html">
                                                     <h5>Downloads</h5>
                                                 </a>
                                                 <p>Download blockchain node client software.</p>

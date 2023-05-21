@@ -64,7 +64,7 @@
                             </a>
                         </li>
                         <li class="nav-item dropdown submenu">
-                            <a class="nav-link dropdown-toggle" href="/downloads/testnet-t2-node-client-download.html" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="/downloads/testnet-t3-node-client-download.html" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Downloads
                             </a>
                         </li>
@@ -219,8 +219,8 @@
                                     <a href="#" class="nav-link"><img src="https://static.dpdocs.org/img/other/testnet.png" alt="Doge Protocol Testnet" style="max-width:33px;">Testnet</a>
                                     <span class="icon"><i class="arrow_carrot-down"></i></span>
                                     <ul class="list-unstyled dropdown_nav">
-                                        <li><a href="/testnet-t2-about.html">About</a></li>
-                                        <li><a href="/testnet-t2-about.html">Major Changes</a></li>
+                                        <li><a href="/testnet-t3-about.html">About</a></li>
+                                        <li><a href="/testnet-t3-about.html">Major Changes</a></li>
                                         <li><a href="/testnet-requirements.html">Requirements</a></li>
                                         <li><a href="/testnet-setup.html">Setup</a></li>
                                         <li><a href="/testnet-connecting.html">Connecting</a></li>
@@ -233,7 +233,7 @@
                             </ul>
                             <ul class="list-unstyled nav-sidebar coding_nav">
                                 <li class="nav-item">
-                                    <a href="/downloads/testnet-t2-node-client-download.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/downloads.png" alt="Doge Protocol Downloads" style="max-width:33px;">Downloads</a>
+                                    <a href="/downloads/testnet-t3-node-client-download.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/downloads.png" alt="Doge Protocol Downloads" style="max-width:33px;">Downloads</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="https://github.com/DogeProtocol" class="nav-link"><img src="https://static.dpdocs.org/img/other/github.png" alt="Doge Protocol Github source code, documentation" style="max-width:33px;">Github</a>
@@ -289,8 +289,8 @@
                                         <a href="#" class="nav-link"><img src="https://static.dpdocs.org/img/other/testnet.png" alt="Doge Protocol Testnet" style="max-width:33px;">Testnet</a>
                                         <span class="icon"><i class="arrow_carrot-down"></i></span>
                                         <ul class="list-unstyled dropdown_nav">
-                                            <li><a href="/testnet-t2-about.html">About</a></li>
-                                            <li><a href="/testnet-t2-about.html">Major Changes</a></li>
+                                            <li><a href="/testnet-t3-about.html">About</a></li>
+                                            <li><a href="/testnet-t3-about.html">Major Changes</a></li>
                                             <li><a href="/testnet-requirements.html">Requirements</a></li>
                                             <li><a href="/testnet-setup.html">Setup</a></li>
                                             <li><a href="/testnet-connecting.html">Connecting</a></li>
@@ -303,7 +303,7 @@
                                 </ul>
                                 <ul class="list-unstyled nav-sidebar coding_nav">
                                     <li class="nav-item">
-                                        <a href="/downloads/testnet-t2-node-client-download.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/downloads.png" alt="Doge Protocol Downloads" style="max-width:33px;">Downloads</a>
+                                        <a href="/downloads/testnet-t3-node-client-download.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/downloads.png" alt="Doge Protocol Downloads" style="max-width:33px;">Downloads</a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="https://github.com/DogeProtocol" class="nav-link"><img src="https://static.dpdocs.org/img/other/github.png" alt="Doge Protocol Github source code, documentation" style="max-width:33px;">Github</a>
@@ -342,10 +342,10 @@
                                     Doge Protocol will use these post quantum algorithms to secure accounts as well as inter-node communication. In addition, management, and reporting APIs of the blockchain will also use post-quantum TLS. 
                                 </p>
                                 <p>
-                                    Falcon 512, a third round candidate for NIST post quantum digital signatures is used to secure accounts in the first and second Testnet releases (T0, T1). 
-                                    Inter-node communication is secured using NTRU HRSS. Doge Protocol is the first if not one of the first to secure both accounts and inter-node communications using quantum resistant cryptography.
-                                    The inter-node communication uses a hybrid model, in which the final client and server encryption keys are derived similar to TLS as detailed in RFC 8446. NTRU HRSS is used for key exchange and the key material thus derived is used as input to HMAC HKDF functions (RFC 5869). 
-                                    However unlike TLS, instead of trusting the certificate, the key of the other node is instead trusted. The private key corresponds to the Falcon key-pair used to secure the account using digital signatures.
+                                    <a href="https://github.com/DogeProtocol/hybrid-pqc">Hybrid PQC</a> Falcon + ed25519 (EdDSA), is used to secure accounts in Testnet T3. Falcon is a NIST standardized post quantum cryptography algorithm while EdDSA (ed25519) is a part of NIST FIPS 186-5 standard.
+                                    Inter-node communication is secured using Kyber. Doge Protocol is the first if not one of the first to secure both accounts and inter-node communications using quantum resistant cryptography.
+                                    The inter-node communication uses a hybrid model, in which the final client and server encryption keys are derived similar to TLS as detailed in RFC 8446. Kyber is used for key exchange and the key material thus derived is used as input to HMAC HKDF functions (RFC 5869).
+                                    However unlike TLS, instead of trusting the certificate, the key of the other node is instead trusted. The private key corresponds to the Falcon+ed25519 Hybrid key-pair used to secure the account using digital signatures.
                                 </p>
                                 <div class="link">
                                     <p>Read more in the <a href="https://dogeprotocol.org/whitepapers/Doge-Protocol-Blockchain-Quantum-Resistance-Whitepaper.pdf">Quantum Resistance Whitepaper</a>.</p>
@@ -463,7 +463,7 @@
                                                 <img src="https://static.dpdocs.org/img/other/testnet.png" alt="About Testnet">
                                             </div>
                                             <div class="media-body">
-                                                <a href="/testnet-t2-about.html">
+                                                <a href="/testnet-t3-about.html">
                                                     <h5>Testnet</h5>
                                                 </a>
                                                 <p>Testnet details, setup and usage.</p>
@@ -476,7 +476,7 @@
                                                 <img src="https://static.dpdocs.org/img/other/downloads.png" alt="Doge Protocol Downloads">
                                             </div>
                                             <div class="media-body">
-                                                <a href="/downloads/testnet-t2-node-client-download.html">
+                                                <a href="/downloads/testnet-t3-node-client-download.html">
                                                     <h5>Downloads</h5>
                                                 </a>
                                                 <p>Download blockchain node client software.</p>
