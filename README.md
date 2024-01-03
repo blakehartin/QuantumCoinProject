@@ -8,7 +8,7 @@ Changes to this repository is not immediately reflected in the documentation web
 Thank you for considering to help out with the source code! 
 
 * Please reach out in [our Discord Server](https://discord.gg/bbbMPyzJTM) for any questions. 
-* Pull requests need to be based on and opened against the `main` branch.
+* Pull requests need to be based on and opened against the `main` branch .
 
 ## License
 
