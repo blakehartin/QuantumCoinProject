@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="https://static.dpdocs.org/img/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/bootstrap/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/font-size/css/rvfs.css">
+    <!-- icon css-->
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/elagent-icon/style.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/font-awesome/css/all.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/niceselectpicker/nice-select.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/animation/animate.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/prism/prism.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/prism/prism-coy.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/mcustomscrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/css/style.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/css/responsive.css">
+    <title>Mainnet - Validating in the Doge Protocol blockchain</title>
+    <link rel="stylesheet" href="https://static.dpdocs.org/scss/_header.scss">
+    <link rel="stylesheet" href="https://static.dpdocs.org/scss/_doclist.scss">
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example3" data-offset="86" class="full-width-doc sticky-nav-doc doc">
+
+    <div class="body_wrapper sticky_menu">
+        <nav class="navbar navbar-expand-lg menu_one display_none" id="stickyTwo">
+            <div class="container-fluid pl-60 pr-60">
+                <a class="navbar-brand" href="index.html">
+                    <img src="https://static.dpdocs.org/img/dpdocs-logo.png" srcset="https://static.dpdocs.org/img/dpdocs-logo-2x.png 2x" alt="dpdocs logo" style="display:inline-block;">
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="menu_toggle">
+                        <span class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <span class="hamburger-cross">
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav menu ml-auto">
+                        <li class="nav-item dropdown submenu active">
+                            <a href="/" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
+
+                        </li>
+                        <li class="nav-item dropdown submenu mega_menu tab-demo">
+                            <a href="https://dogeprotocol.org" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DogeProtocol.org</a>
+                            <i class="arrow_carrot-down_alt2 mobile_dropdown_icon" aria-hidden="true" data-toggle="dropdown"></i>
+
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="https://DpScan.app" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                DpScan
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="/downloads/testnet-t3-node-client-download.html" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Downloads
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="https://t.me/DogeProtocolCommunity" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://static.dpdocs.org/img/telegram.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="https://twitter.com/DogeProtocol1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://static.dpdocs.org/img/twitter-logo.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="https://www.reddit.com/r/DogeProtocol" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://static.dpdocs.org/img/reddit.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="https://discord.gg/bbbMPyzJTM" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://static.dpdocs.org/img/discord.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="mobile_main_menu" id="sticky">
+            <div class="container">
+                <div class="mobile_menu_left">
+                    <button type="button" class="navbar-toggler mobile_menu_btn">
+                        <span class="menu_toggle ">
+                            <span class="hamburger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="https://static.dpdocs.org/img/dpdocs-logo.png" srcset="https://static.dpdocs.org/img/dpdocs-logo-w2x.png 2x" alt="dpdocs logo" style="display:inline-block;">
+                    </a>
+                </div>
+                <!--<div class="mobile_menu_right">
+                    <form action="#" method="get" class="search_form">
+                        <input type="search" class="form-control" placeholder="Search for">
+                        <button type="submit"><i class="icon_search"></i></button>
+                    </form>
+                </div>-->
+            </div>
+        </div>
+        <div class="click_capture"></div>
+        <div class="side_menu">
+            <div class="mobile_menu_header">
+                <div class="close_nav">
+                    <i class="arrow_left"></i>
+                    <i class="icon_close"></i>
+                </div>
+                <div class="mobile_logo">
+                    <a href="#"><img src="https://static.dpdocs.org/img/dpdocs-logo.png" alt="dpdocs logo" style="display:inline-block;"></a>
+                </div>
+            </div>
+            <div class="mobile_nav_wrapper">
+                <nav class="mobile_nav_top">
+                    <ul class="navbar-nav menu ml-auto">
+                        <li class="nav-item dropdown submenu">
+                            <a href="/" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a href="https://dogeprotocol.org" class="nav-link">DogeProtocol.org</a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a href="https://dpscan.app" class="nav-link">DPscan</a>
+                        </li>
+                        <li class="nav-item dropdown submenu active">
+                            <a class="nav-link" href="#">
+                                Community
+                            </a>
+                            <i class="arrow_carrot-down_alt2 mobile_dropdown_icon"></i>
+                            <ul class="dropdown-menu dropdown_menu_two">
+                                <li class="nav-item">
+                                    <a href="https://t.me/DogeProtocolCommunity" class="nav-link">
+                                        <img src="https://static.dpdocs.org/img/telegram.png" alt="Telegram">
+                                        <div class="text">
+                                            <h5>Telegram</h5>
+                                            <p>@DogeProtocolCommunity</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://discord.gg/bbbMPyzJTM" class="nav-link">
+                                        <img src="https://static.dpdocs.org/img/discord.png" alt="Discord">
+                                        <div class="text">
+                                            <h5>Discord</h5>
+                                            <p>discord.gg/bbbMPyzJTM</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://twitter.com/DogeProtocol1" class="nav-link">
+                                        <img src="https://static.dpdocs.org/img/twitter-logo.png" alt="Twitter">
+                                        <div class="text">
+                                            <h5>Twitter</h5>
+                                            <p>@DogeProtocol1</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://www.reddit.com/r/DogeProtocol" class="nav-link">
+                                        <img src="https://static.dpdocs.org/img/reddit.png" alt="Reddit">
+                                        <div class="text">
+                                            <h5>Reddit</h5>
+                                            <p>/r/DogeProtocol1</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile_nav_bottom">
+                    <aside class="doc_left_sidebarlist">
+                        <h2>Doge Protocol Docs</h2>
+                        <div class="scroll">
+                            <ul class="list-unstyled nav-sidebar">
+                                <li class="nav-item">
+                                    <a href="/" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/home.png" alt="DPdocs home">Home</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="/vision.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/vision.png" alt="Doge Protocol Vision Paper" style="max-width:33px;">Vision</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/whitepapers.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/whitepaper.png" alt="Doge Protocol Whitepapers" style="max-width:33px;">Whitepapers</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a href="/quantum-resistance.html">Quantum Resistance</a></li>
+                                        <li><a href="/consensus.html">Consensus (PoS)</a></li>
+                                        <li><a href="/data-availability.html">Data Availability</a></li>
+                                        <li><a href="/multi-fork-blockchain.html">Allocation</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="#" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/chat1.png" alt="Doge Protocol Features">Features</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a href="/smart-contracts.html" class="active">Smart Contracts</a></li>
+                                        <li><a href="/tps.html">Dynamic TPS</a></li>
+                                        <li><a href="https://dpscan.app">Block Explorer</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"><img src="https://static.dpdocs.org/img/other/testnet.png" alt="Doge Protocol Testnet" style="max-width:33px;">Testnet</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a href="/testnet-t3-about.html">About</a></li>
+                                        <li><a href="/testnet-t3-about.html">Major Changes</a></li>
+                                        <li><a href="/testnet-requirements.html">Requirements</a></li>
+                                        <li><a href="/testnet-setup.html">Setup</a></li>
+                                        <li><a href="/testnet-connecting.html">Connecting</a></li>
+                                        <li><a href="/testnet-interacting.html">Interacting</a></li>
+                                        <li><a href="/testnet-staking.html">Staking</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/dogep-tokens.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/dogep.png" alt="Doge Protocol Tokens" style="max-width:33px;">DogeP Tokens</a>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled nav-sidebar coding_nav">
+                                <li class="nav-item">
+                                    <a href="/downloads/testnet-t3-node-client-download.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/downloads.png" alt="Doge Protocol Downloads" style="max-width:33px;">Downloads</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://github.com/DogeProtocol" class="nav-link"><img src="https://static.dpdocs.org/img/other/github.png" alt="Doge Protocol Github source code, documentation" style="max-width:33px;">Github</a>
+                                </li>
+                            </ul>
+                            <!--<ul class="list-unstyled nav-sidebar bottom_nav">
+                                <li class="nav-item">
+                                    <a href="https://DogeProtocol.org" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/united-states.png" alt="">DogeProtocol.org</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://dpscan.app" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/edit.png" alt="">DpScan</a>
+                                </li>
+                            </ul>-->
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+        <section class="doc_documentation_area doc_documentation_full_area body_fixed">
+            <div class="overlay_bg"></div>
+            <div class="container-fluid pl-60 pr-60">
+                <div class="row">
+                    <div class="col-lg-2 doc_mobile_menu">
+                        <aside class="doc_left_sidebarlist">
+                            <div class="scroll">
+                                <ul class="list-unstyled nav-sidebar">
+                                    <li class="nav-item">
+                                        <a href="/" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/home.png" alt="DPdocs home">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/vision.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/vision.png" alt="Doge Protocol Vision Paper" style="max-width:33px;">Vision</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a href="/whitepapers.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/whitepaper.png" alt="Doge Protocol Whitepapers" style="max-width:33px;">Whitepapers</a>
+                                        <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                        <ul class="list-unstyled dropdown_nav">
+                                            <li><a href="/quantum-resistance.html">Quantum Resistance</a></li>
+                                            <li><a href="/consensus.html">Consensus (PoS)</a></li>
+                                            <li><a href="/data-availability.html">Data Availability</a></li>
+                                            <li><a href="/multi-fork-blockchain.html">Allocation</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a href="#" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/chat1.png" alt="Doge Protocol Features">Features</a>
+                                        <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                        <ul class="list-unstyled dropdown_nav">
+                                            <li><a href="/smart-contracts.html">Smart Contracts</a></li>
+                                            <li><a href="/tps.html">Dynamic TPS</a></li>
+                                            <li><a href="https://dpscan.app">Block Explorer</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link"><img src="https://static.dpdocs.org/img/other/testnet.png" alt="Doge Protocol Testnet" style="max-width:33px;">Testnet</a>
+                                        <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                        <ul class="list-unstyled dropdown_nav">
+                                            <li><a href="/testnet-t3-about.html">About</a></li>
+                                            <li><a href="/testnet-requirements.html">Requirements</a></li>
+                                            <li><a href="/testnet-setup.html">Setup</a></li>
+                                            <li><a href="/testnet-connecting.html">Connecting</a></li>
+                                            <li><a href="/testnet-interacting.html">Interacting</a></li>
+                                            <li><a href="/testnet-staking.html">Staking</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/dogep-tokens.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/dogep.png" alt="DogeP Tokens" style="max-width:33px;">DogeP Tokens</a>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled nav-sidebar coding_nav">
+                                    <li class="nav-item">
+                                        <a href="/downloads/testnet-t3-node-client-download.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/downloads.png" alt="Doge Protocol Downloads" style="max-width:33px;">Downloads</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://github.com/DogeProtocol" class="nav-link"><img src="https://static.dpdocs.org/img/other/github.png" alt="Doge Protocol Github source code, documentation" style="max-width:33px;">Github</a>
+                                    </li>
+                                </ul>
+                                <!--<ul class="list-unstyled nav-sidebar bottom_nav">
+                                    <li class="nav-item">
+                                        <a href="https://DogeProtocol.org" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/united-states.png" alt="">DogeProtocol.org</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://dpscan.app" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/edit.png" alt="">DpScan</a>
+                                    </li>
+                                </ul>-->
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <div id="post" class="documentation_info">
+                            <article class="documentation_body" id="documentation">
+                                <div class="shortcode_title">
+                                    <h1>Connecting to the mainnet as a validator</h1>
+                                </div>
+
+                                <div class="alert media message_alert alert-warning fade show" role="alert">
+                                    <i class="icon_error-circle_alt"></i>
+                                    <div class="media-body">
+                                        <h5>Warning</h5>
+                                        <p>This is blockchain software. Do not use on a computer or device with sensitive or important personal data. Using this software will require opening firewall ports. Using this software may result in heavy internet data usage. Use at your own risk.</p>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="icon_close"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <h5>Windows</h5>
+                                <div class="steps-panel">
+                                    <ol class="ordered-list">
+                                        <li>Pre-requisite; you should have <a href="https://github.com/DogeProtocol/go-dp/blob/dogep/consensus/proofofstake/README.md">registered as a validator</a>, in the Doge Protocol mainnet.</li>
+                                        <li>Open PowerShell.</li>
+                                        <li>
+                                            Create a folder named dp.
+                                            <pre class="language-html"><code class="language-html" data-lang="html">mkdir c:\dp</code></pre>
+                                        </li>
+                                        <li>
+                                            Change to the folder dp.
+                                            <pre class="language-html"><code class="language-html" data-lang="html">cd c:\dp</code></pre>
+                                        </li>
+                                        <li>
+                                            Download the Windows node client.
+                                            <pre class="language-html"><code class="language-html" data-lang="html">curl https://github.com/DogeProtocol/go-dp/releases/download/v2.0.16/dp-release-windows.zip -o dp.zip</code></pre>
+                                        </li>
+                                        <li>
+                                            Extract the contents of the downloaded zip file to a folder.
+                                            <pre class="language-html"><code class="language-html" data-lang="html">Expand-Archive -Path dp.zip -DestinationPath c:\</code></pre>
+                                        </li>
+                                        <li>Open an elevated command prompt (right-click and run as administrator) and change to c:\dp</li>
+                                        <li>
+                                            Run the following command to open firewall port. Make sure that the commands succeed.
+                                            <pre class="language-html"><code class="language-html" data-lang="html">netsh advfirewall firewall add rule name="TCP Port 30303" dir=in action=allow protocol=TCP localport=30303</code></pre>
+                                        </li>
+                                        <li>
+                                            Run the following command to configure the software to connect to the Doge Protocol blockchain. Do not run it more than once.
+                                            <pre class="language-html"><code class="language-html" data-lang="html">dp --datadir data init genesis.json</code></pre>
+                                            You need to prefix the command with .\ if you are using PowerShell in admin mode.
+                                        </li>
+                                        <li>
+                                            Create a folder named c:\dp\data\keystore.
+                                            <pre class="language-html"><code class="language-html" data-lang="html">mkdir c:\dp\data\keystore</code></pre>
+                                        </li>
+                                        <li>
+                                            Copy the validator key that you used to stake coins, inside this folder. Ensure that you keep the corresponding depositor key safe. Do not keep the depositor key in the same computer. Keep it safe offline instead.
+                                        </li>
+                                        <li>
+                                            Set the environment variable to point to your validator key address. The address should start with 0x.
+                                            <pre class="language-html"><code class="language-html" data-lang="html">set DP_ACC_ADDRESS=YOUR_VALIDATOR_ADDRESS</code></pre>
+                                        </li>
+                                        <li>The software is now configured to connect to the Doge Protocol blockchain. You may additionally need to open the 30303 TCP port, to allow incoming blockchain traffic in your router or cloud provider.</li>
+                                        <li>
+                                            Run the following command to connect to the mainnet. You may additionally have to add exclusion in your anti-virus software, if the software shows a prompt. You will be prompted to enter the validator key password. If successful, you should see your node connecting to the blockchain and blocks getting created.
+                                            <pre class="language-html"><code class="language-html" data-lang="html">connectvalidator.cmd</code></pre>
+                                        </li>
+                                    </ol>
+                                </div>
+
+                            </article>
+                            <article class="documentation_body" id="docmenu">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/vision.png" alt="Doge Protocol Vision">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/vision.html">
+                                                    <h5>Vision</h5>
+                                                </a>
+                                                <p>The Vision of Doge Protocol.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/quantum-resistance.png" alt="Doge Protocol Quantum Resistance">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/quantum-resistance.html">
+                                                    <h5>Quantum Resistance</h5>
+                                                </a>
+                                                <p>Quantum Resistance in the Doge Protocol blockchain.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/home_one/icon/newspaper.png" alt="Doge Protocol Blockchain Smart Contracts">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/smart-contracts.html">
+                                                    <h5>Smart Contracts</h5>
+                                                </a>
+                                                <p>Smart Contract support in the Doge Protocol blockchain.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/handshake.png" alt="Doge Protocol Proof-of-Stake consensus">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/consensus.html">
+                                                    <h5>Consensus</h5>
+                                                </a>
+                                                <p>Proof of Stake consensus.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/data-availability.png" alt="Data Availability in Doge Protocol Blockchain">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/data-availability.html">
+                                                    <h5>Data Availability</h5>
+                                                </a>
+                                                <p>Data Availability, long term and short term.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/blockchain-allocation.png" alt="Doge Protocol Blockchain Allocation">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/multi-fork-blockchain.html">
+                                                    <h5>Blockchain Allocation</h5>
+                                                </a>
+                                                <p>Bitcoin + Ethereum + Dogecoin + DogeP multi-fork.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/dynamic-tps.png" alt="Dynamic Transactions Per Second model, Doge Protocol Blockchain">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/tps.html">
+                                                    <h5>Dynamic TPS</h5>
+                                                </a>
+                                                <p>Dynamic Transactions Per Second model.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/dp-scan.png" alt="DPscan Doge Protocol Block Explorer">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="https://dpscan.app">
+                                                    <h5>Block Explorer</h5>
+                                                </a>
+                                                <p>DPscan Blockchain Explorer.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/testnet.png" alt="About Testnet">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/testnet-t3-about.html">
+                                                    <h5>Testnet</h5>
+                                                </a>
+                                                <p>Testnet details, setup and usage.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/downloads.png" alt="Doge Protocol Downloads">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/downloads/testnet-t3-node-client-download.html">
+                                                    <h5>Downloads</h5>
+                                                </a>
+                                                <p>Download blockchain node client software.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/github.png" alt="Doge Protocol Github source code, documentation">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="https://github.com/DogeProtocol">
+                                                    <h5>Github</h5>
+                                                </a>
+                                                <p>Source code, documentation are maintained in Github.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/dogep.png" alt="DogeP ERC20 Token">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/dogep-tokens.html">
+                                                    <h5>DogeP Tokens</h5>
+                                                </a>
+                                                <p>About the DogeP ERC20 Token.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                                <div class="border_bottom"></div>
+                                <article class="help_text" id="help">
+                                    <div class="resource">
+                                        <h4 class="c_head">Help</h4>
+                                        <p>Doge Protocol is developed and maintained by an open community. Hop on to the <a href="https://discord.gg/bbbMPyzJTM">community discord server</a> for help with development.</p>
+                                        <ul class="list-unstyled tag_list">
+                                            <li><i class="icon_document_alt mr-2"></i><a href="https://dogeprotocol.org">DogeProtocol.org</a> - Website</li>
+                                            <li><i class="icon_document_alt mr-2"></i><a href="https://dpscan.app">DPscan</a> - Block Explorer</li>
+                                            <li><i class="icon_document_alt mr-2"></i><a href="https://github.com/DogeProtocol">Github</a> - source code and documentation</li>
+                                            <li><i class="icon_document_alt mr-2"></i><a href="https://github.com/DogeProtocol/Doge-Protocol-Whitepapers">Whitepapers</a> - technology</li>
+                                        </ul>
+                                    </div>
+                                    <div class="border_bottom"></div>
+                                    <div class="row feedback_link">
+                                        <div class="col-lg-6">
+                                            <h6><i></i>Still stuck? <a href="https://discord.gg/bbbMPyzJTM">Ask the dev community</a></h6>
+                                        </div>
+                                        <!--<div class="col-lg-6">
+                    <p>Was this page helpful? <a href="#" class="h_btn">Yes</a><a href="#" class="h_btn">No</a></p>
+                </div>-->
+                                    </div>
+                                </article>
+                                <div class="border_bottom"></div>
+
+                                <div class="border_bottom"></div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 doc_right_mobile_menu">
+                        <div class="open_icon" id="right">
+                            <i class="arrow_carrot-left"></i>
+                            <i class="arrow_carrot-right"></i>
+                        </div>
+                        <div class="doc_rightsidebar scroll">
+                            <div id="font-switcher" class="d-flex justify-content-between align-items-center">
+                                <div id="rvfs-controllers" class="fontsize-controllers group"></div>
+                                <a href="javascript:window.print()" class="print"><i class="icon_printer"></i></a>
+                            </div>
+                            <div class="doc_switch">
+                                <label for="something" class="tab-btn tab-btns"><i class="icon_lightbulb_alt"></i></label>
+                                <input type="checkbox" name="something" id="something" class="tab_switcher">
+                                <label for="something" class="tab-btn"><i class="far fa-moon"></i></label>
+                            </div>
+                            <h6>On this page:</h6>
+                            <nav class="list-unstyled doc_menu" id="navbar-example3">
+                                <a href="#documentation" class="nav-link active">Documentation</a>
+                                <a href="#getting" class="nav-link">Introduction</a>
+                                <a href="#help" class="nav-link">Help!</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="simple_footer">
+            <img class="leaf_right" src="img/home_one/leaf_footter.png" alt="">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <p><a href="https://DogeProtocol.org">DogeProtocol.org</a></p>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <ul class="list-unstyled f_social_icon">
+                            <li>
+                                <a href="https://t.me/DogeProtocolCommunity" style="border: 0px">
+                                    <img src="https://static.dpdocs.org/img/telegram.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/DogeProtocol1" style="border: 0px">
+                                    <img src="https://static.dpdocs.org/img/twitter-logo.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.reddit.com/r/DogeProtocol" style="border: 0px">
+                                    <img src="https://static.dpdocs.org/img/reddit.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://discord.gg/bbbMPyzJTM" style="border: 0px">
+                                    <img src="https://static.dpdocs.org/img/discord.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://static.dpdocs.org/js/jquery-3.2.1.min.js"></script>
+    <script src="https://static.dpdocs.org/js/pre-loader.js"> </script>
+    <script src="https://static.dpdocs.org/assets/bootstrap/js/popper.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/bootstrap/js/bootstrap-select.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/font-size/js/rv-jquery-fontsize-2.0.3.js"></script>
+    <script src="https://static.dpdocs.org/js/parallaxie.js"></script>
+    <script src="https://static.dpdocs.org/js/TweenMax.min.js"></script>
+    <script src="https://static.dpdocs.org/js/jquery.wavify.js"></script>
+    <script src="https://static.dpdocs.org/js/anchor.js"></script>
+    <script src="https://static.dpdocs.org/assets/wow/wow.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/prism/prism.js"></script>
+    <script src="https://static.dpdocs.org/assets/niceselectpicker/jquery.nice-select.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://static.dpdocs.org/js/main.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            var lightBox = document.getElementById('something');
+            if (lightBox.checked) {
+                lightBox.click();
+            } else {
+                
+            }
+        });
+    </script>
+</body>
+
+</html>
