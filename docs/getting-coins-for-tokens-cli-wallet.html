@@ -332,8 +332,8 @@
                                     <i class="icon_error-circle_alt"></i>
                                     <div class="media-body">
                                         <h5>Warning</h5>
-                                        <p>Once you follow the steps to get the coins, the action cannot be reversed. Ensure you follow the steps correctly and backup your wallet.</p>
-                                        <p>The CLI wallet is beta software currently. You at your own risk.</p>
+                                        <p>Once you follow the steps to get the coins, the action cannot be reversed. Ensure you follow the steps correctly and backup your wallet and never forget your password.</p>
+                                        <p>The CLI wallet is beta software currently. Use at your own risk.</p>
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <i class="icon_close"></i>
                                         </button>
@@ -341,40 +341,211 @@
                                 </div>
 
                                 <div style="margin-bottom:20px;">This document shows how to get corresponding mainnet quantum coins for your DogeP ERC20 tokens. If you had registered as a genesis validator, this document does not apply to you, since the coins were already assigned and staked as part of mainnet launch.</div>
-
-                                <h5>Windows</h5>
+                                <div>
+                                    <h4 class="s_title load-order-2" id="toggle">Requirements</h4>
+                                    <p>Windows: Windows 11 (might work in previous versions, have not been tested)</p>
+                                    <p>Mac: M1 or later</p>
+                                    <p>Linux: Ubuntu 22 or later</p>
+                                </div>
                                 <div class="steps-panel">
                                     <ol class="ordered-list">
                                         <li>
                                             <a href="https://dpdocs.org/device-preparation.html">Prepare your device</a> for managing quantum wallets.
                                         </li>
-                                        <li>Open PowerShell.</li>
                                         <li>
-                                            Create a folder named dp.
-                                            <pre class="language-html"><code class="language-html" data-lang="html">mkdir c:\dp</code></pre>
+                                            <div>
+                                                <p>Open the appropriate shell window.</p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win1" role="button" aria-expanded="false" aria-controls="win1">Windows</a>
+                                                <div class="multi-collapse collapse" id="win1">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        Open Powershell
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac1" role="button" aria-expanded="false" aria-controls="mac1">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac1">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        Open Terminal
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin1" role="button" aria-expanded="false" aria-controls="lin1">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin1">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        Open Terminal
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li>
-                                            Change to the folder dp.
-                                            <pre class="language-html"><code class="language-html" data-lang="html">cd c:\dp</code></pre>
+                                            <div>
+                                                <p>Create a folder named dp.</p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win2" role="button" aria-expanded="false" aria-controls="win2">Windows</a>
+                                                <div class="multi-collapse collapse" id="win2">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">mkdir c:\dp</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac2" role="button" aria-expanded="false" aria-controls="mac2">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac2">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">mkdir $HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin2" role="button" aria-expanded="false" aria-controls="lin2">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin2">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">mkdir $HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li>
-                                            Download the CLI (command line interface) wallet by running the following command:
-                                            <pre class="language-html"><code class="language-html" data-lang="html">curl https://github.com/DogeProtocol/go-dp/releases/download/v2.0.19/dp-release-windows.zip -o dp.zip</code></pre>
+                                            <div>
+                                                <p>
+                                                    Change to the folder dp.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win3" role="button" aria-expanded="false" aria-controls="win3">Windows</a>
+                                                <div class="multi-collapse collapse" id="win3" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">cd c:\dp</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac3" role="button" aria-expanded="false" aria-controls="mac3">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac3" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">cd $HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin3" role="button" aria-expanded="false" aria-controls="lin3">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin3" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">cd $HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li>
-                                            Extract the contents of the downloaded zip file to a folder.
-                                            <pre class="language-html"><code class="language-html" data-lang="html">Expand-Archive -Path dp.zip -DestinationPath c:\</code></pre>
+                                            <div>
+                                                <p>
+                                                    Download the CLI (command line interface) wallet by running the following command:
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win4" role="button" aria-expanded="false" aria-controls="win4">Windows</a>
+                                                <div class="multi-collapse collapse" id="win4" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl https://github.com/DogeProtocol/go-dp/releases/download/v2.0.20/dp-release-windows.zip -o dp.zip</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac4" role="button" aria-expanded="false" aria-controls="mac4">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac4" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo dp.gz https://github.com/DogeProtocol/go-dp/releases/download/v2.0.20/dp-release-mac.gz</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin4" role="button" aria-expanded="false" aria-controls="lin4">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin4" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo dp.gz https://github.com/DogeProtocol/go-dp/releases/download/v2.0.20/dp-release-ubuntu.gz</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li>
-                                            Close the PowerShell window.
+                                            <div>
+                                                <p>
+                                                    Extract the contents of the downloaded zip file to a folder.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win5" role="button" aria-expanded="false" aria-controls="win5">Windows</a>
+                                                <div class="multi-collapse collapse" id="win5" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">Expand-Archive -Path dp.zip -DestinationPath c:\</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac5" role="button" aria-expanded="false" aria-controls="mac5">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac5" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">tar -xzvf dp.gz</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin5" role="button" aria-expanded="false" aria-controls="lin5">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin5" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">tar -xzvf dp.gz</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li>
-                                            Open a command prompt instead and change to the following folder.
-                                            <pre class="language-html"><code class="language-html" data-lang="html">cd c:\dp</code></pre>
+                                            <div>
+                                                <p>
+                                                    This step is specific to Windows.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win6" role="button" aria-expanded="false" aria-controls="win6">Windows</a>
+                                                <div class="multi-collapse collapse" id="win6" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        Close the Powershell window. Open a command prompt instead and change to the following folder.
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">cd c:\dp</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li>
-                                            Create a quantum wallet. You will be prompted to enter a password. Ensure you use a strong password atleast 16 characters in length. You should never forget your password. If you don't remember it, the wallet will be useless and you cannot access any coins or tokens inside it.
-                                            <pre class="language-html"><code class="language-html" data-lang="html">dp --datadir data account new</code></pre>
+                                            <div>
+                                                <p>
+                                                    This step is specific to Mac and Linux. Set the environment variable to the required library path. Remember that if you open a new Terminal window anytime, you will need to run this command again, to set the environment variable. You might want to add this environment variable to your shell profile.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac7" role="button" aria-expanded="false" aria-controls="mac7">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac7" style="">
+                                                    <div class="card card-body toggle_body">                                                        
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DYLD_LIBRARY_PATH=$HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin7" role="button" aria-expanded="false" aria-controls="lin7">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin7" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">export LD_LIBRARY_PATH=$HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Create a quantum wallet. You will be prompted to enter a password. Ensure you use a strong password atleast 16 characters in length. You should never forget your password. If you don't remember it, the wallet will be useless and you cannot access any coins or tokens inside it.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win8" role="button" aria-expanded="false" aria-controls="win8">Windows</a>
+                                                <div class="multi-collapse collapse" id="win8" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dp --datadir data account new</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac8" role="button" aria-expanded="false" aria-controls="mac8">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac8" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dp --datadir data account new</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin8" role="button" aria-expanded="false" aria-controls="lin8">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin8" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dp --datadir data account new</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li>
                                             Once you execute the above command successfully, the quantum wallet will be created. Note down the address of this wallet from the output of the above command. This will be your quantum address.
@@ -393,22 +564,76 @@
                                             Likewise, even if you remember the password, if the wallet file is lost or corrupted, you cannot access any coins or tokens. If the wallet is stolen and the password is not strong, the attacker can get all the coins or tokens in your wallet. Hence you should keep your wallet well protected.
                                         </li>
                                         <li>
-                                            Run the following command to set the wallet address for the forthcoming steps. Replace YOUR_QUANTUM_WALLET_FILE_PATH in the below command with the path to your quantum wallet file.
-                                            <pre class="language-html"><code class="language-html" data-lang="html">set DP_KEY_FILE=YOUR_QUANTUM_WALLET_FILE_PATH</code></pre>
-                                            Example:
-                                            <pre class="language-html"><code class="language-html" data-lang="html">set DP_KEY_FILE=c:\dp\data\keystore\UTC--2024-01-13T21-09-56.375263700Z--a553b8935988e6260b6e3c3ff5b340ee478b504b7166b4881365a9153c80a78c</code></pre>
+                                            <div>
+                                                <p>
+                                                    Run the following command to set the wallet address for the forthcoming steps. Replace YOUR_QUANTUM_WALLET_FILE_PATH in the below command with the path to your quantum wallet file.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win9" role="button" aria-expanded="false" aria-controls="win9">Windows</a>
+                                                <div class="multi-collapse collapse" id="win9" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">set DP_KEY_FILE=YOUR_QUANTUM_WALLET_FILE_PATH</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">set DP_KEY_FILE=c:\dp\data\keystore\UTC--2024-01-13T21-09-56.375263700Z--a553b8935988e6260b6e3c3ff5b340ee478b504b7166b4881365a9153c80a78c</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac9" role="button" aria-expanded="false" aria-controls="mac9">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac9" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_KEY_FILE=YOUR_QUANTUM_WALLET_FILE_PATH</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_KEY_FILE=data/keystore/UTC--2024-01-13T21-09-56.375263700Z--a553b8935988e6260b6e3c3ff5b340ee478b504b7166b4881365a9153c80a78c</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin9" role="button" aria-expanded="false" aria-controls="lin9">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin9" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_KEY_FILE=YOUR_QUANTUM_WALLET_FILE_PATH</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_KEY_FILE=data/keystore/UTC--2024-01-13T21-09-56.375263700Z--a553b8935988e6260b6e3c3ff5b340ee478b504b7166b4881365a9153c80a78c</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li>
                                             Identify your Ethereum Address having the DogeP tokens from the <a href="https://snapshot.dpscan.app/">Snapshot Portal</a>. Copy the address as is from the column that reads Full Address.
                                         </li>
                                         <li>
-                                            Run the following command to generate a message for cross-signing. Cross-Signing is a cryptographic technology to associate your Ethereum wallet with your Quantum wallet, as a step towards getting the corresponding coins. Replace ETH_ADDRESS with the address you copied from the previous step. Enter the quantum wallet password when prompted.
-                                            <pre class="language-html"><code class="language-html" data-lang="html">dputil getconversionmessage ETH_ADDRESS</code></pre>
-                                            Example:
-                                            <pre class="language-html"><code class="language-html" data-lang="html">dputil getconversionmessage 0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f</code></pre>
+                                            <div>
+                                                <p>
+                                                    Run the following command to generate a message for cross-signing. Cross-Signing is a cryptographic technology to associate your Ethereum wallet with your Quantum wallet, as a step towards getting the corresponding coins. Replace ETH_ADDRESS with the address you copied from the previous step. Enter the quantum wallet password when prompted.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win10" role="button" aria-expanded="false" aria-controls="win10">Windows</a>
+                                                <div class="multi-collapse collapse" id="win10" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil getconversionmessage ETH_ADDRESS</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil getconversionmessage 0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac10" role="button" aria-expanded="false" aria-controls="mac10">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac10" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil getconversionmessage ETH_ADDRESS</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil getconversionmessage 0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin10" role="button" aria-expanded="false" aria-controls="lin10">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin10" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil getconversionmessage ETH_ADDRESS</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil getconversionmessage 0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li>
-                                            On successful execution of the above command, you will get a message for signing with your Ethereum wallet. An example is given below. Copy the message starting from the word MY and ending with the quantum wallet address followed by the full-stop. Copy including the full stop as well. Ensure you do not copy any extra characters or space.
+                                            On successful execution of the above command, you will get a message for signing with your Ethereum wallet. An example is given below. Verify that the quantum address matches the address of the wallet you created. Copy the message starting from the word MY and ending with the quantum wallet address followed by the full-stop. Copy including the full stop as well. Ensure you do not copy any extra characters or space.
                                             Example:
                                             <pre class="language-html"><code class="language-html" data-lang="html">MY ETH ADDRESS IS 0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f. I AGREE THAT MY CORRESPONDING QUANTUM ADDRESS FOR GETTING COINS FOR MY DOGEP TOKENS IS 0xa553b8935988e6260b6e3c3ff5b340ee478b504b7166b4881365a9153c80a78c.</code></pre>
                                         </li>
@@ -445,20 +670,74 @@
                                             Close the browser window after copying the above signature. You may disconnect or keep away your Ethereum wallet at this point. You might want to save the signature in a text file for easy access. You will need to connect back to the internet to perform the final step of cross-signing to get the coins.
                                         </li>
                                         <li>
-                                            Return back to the command prompt and run the following command. Replace the ETH_ADDRESS with the address copied from the snapshot portal and ETH_SIGNATURE with the signature from the previous step. Enter the password of your quantum wallet when prompted and answer the questions when prompted.
-                                            <pre class="language-html"><code class="language-html" data-lang="html">dputil getcoinsfortokens ETH_ADDRESS ETH_SIGNATURE</code></pre>
-                                            Example:
-                                            <pre class="language-html"><code class="language-html" data-lang="html">dputil getcoinsfortokens 0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f 0x4d75e819a3b2d5da2b058c425305c12aa2299aa886852954f5eb30b61d8759653e620859d13c89915f794d7b030b816f3fabf7da0438cd8b06ce36254d5efb641b</code></pre>
+                                            <div>
+                                                <p>
+                                                    Return back to the command prompt and run the following command. Replace the ETH_ADDRESS with the address copied from the snapshot portal and ETH_SIGNATURE with the signature from the previous step. Enter the password of your quantum wallet when prompted and answer the questions when prompted.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win11" role="button" aria-expanded="false" aria-controls="win11">Windows</a>
+                                                <div class="multi-collapse collapse" id="win11" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil getcoinsfortokens ETH_ADDRESS ETH_SIGNATURE</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil getcoinsfortokens 0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f 0x4d75e819a3b2d5da2b058c425305c12aa2299aa886852954f5eb30b61d8759653e620859d13c89915f794d7b030b816f3fabf7da0438cd8b06ce36254d5efb641b</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac11" role="button" aria-expanded="false" aria-controls="mac11">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac11" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil getcoinsfortokens ETH_ADDRESS ETH_SIGNATURE</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil getcoinsfortokens 0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f 0x4d75e819a3b2d5da2b058c425305c12aa2299aa886852954f5eb30b61d8759653e620859d13c89915f794d7b030b816f3fabf7da0438cd8b06ce36254d5efb641b</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin11" role="button" aria-expanded="false" aria-controls="lin11">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin11" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil getcoinsfortokens ETH_ADDRESS ETH_SIGNATURE</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil getcoinsfortokens 0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f 0x4d75e819a3b2d5da2b058c425305c12aa2299aa886852954f5eb30b61d8759653e620859d13c89915f794d7b030b816f3fabf7da0438cd8b06ce36254d5efb641b</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li>
                                             If the command is successful, you will get output similar to:
                                             <pre class="language-html"><code class="language-html" data-lang="html">Your request to get the quantum dp coins has been added to the queue for processing. Please check your account balance after 10 minutes.</code></pre>
                                         </li>
                                         <li>
-                                            After 10 minutes or so, you can check the coin balance in your quantum wallet using the following command. The coin balance should match the coin amount shown in the snapshot portal.
-                                            <pre class="language-html"><code class="language-html" data-lang="html">dputil balance YOUR_QUANTUM_WALLET_ADDRESS</code></pre>
-                                            Example:
-                                            <pre class="language-html"><code class="language-html" data-lang="html">dputil balance 0xa553b8935988e6260b6e3c3ff5b340ee478b504b7166b4881365a9153c80a78c</code></pre>
+                                            <div>
+                                                <p>
+                                                    After 10 minutes or so, you can check the coin balance in your quantum wallet using the following command. The coin balance should match the coin amount shown in the snapshot portal. In Mac and Linux, remember that if you open a new Terminal window, like for checking the balance, you will have to re-run Step 8.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win12" role="button" aria-expanded="false" aria-controls="win12">Windows</a>
+                                                <div class="multi-collapse collapse" id="win12" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil balance YOUR_QUANTUM_WALLET_ADDRESS</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil balance 0xa553b8935988e6260b6e3c3ff5b340ee478b504b7166b4881365a9153c80a78c</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac12" role="button" aria-expanded="false" aria-controls="mac12">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac12" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil balance YOUR_QUANTUM_WALLET_ADDRESS</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil balance 0xa553b8935988e6260b6e3c3ff5b340ee478b504b7166b4881365a9153c80a78c</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin12" role="button" aria-expanded="false" aria-controls="lin12">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin12" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil balance YOUR_QUANTUM_WALLET_ADDRESS</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil balance 0xa553b8935988e6260b6e3c3ff5b340ee478b504b7166b4881365a9153c80a78c</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                         <li>
                                             Congratulations! At this point, you should have successfuly received the quantum coins. Ensure that you have backed up your quantum wallet and remember the corresponding password always.
@@ -476,10 +755,10 @@
                                             </div>
                                             <div class="media-body">
                                                 <a href="/vision.html">
-                                                <a href="/vision.html">
-                                                    <h5>Vision</h5>
-                                                </a>
-                                                <p>The Vision of Doge Protocol.</p>
+                                                    <a href="/vision.html">
+                                                        <h5>Vision</h5>
+                                                    </a>
+                                                    <p>The Vision of Doge Protocol.</p>
                                             </div>
                                         </div>
                                     </div>
