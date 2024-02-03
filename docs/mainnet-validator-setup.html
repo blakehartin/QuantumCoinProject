@@ -347,9 +347,65 @@
                                             Run Steps 1 to 9 in the instructions at <a href="/connecting-to-mainnet.html">Connecting to mainnet</a>, to download and configure your computer for running the validator node. Do not run the 10th step (the last one) for connecting to mainnet.
                                         </li>
                                         <li>
-                                            Run the following command to connect to the mainnet. You may additionally have to add exclusion in your anti-virus software, if the software shows a prompt. You will be prompted to enter the validator key password. If successful, you should see your node connecting to the blockchain and blocks getting created.
-                                            <pre class="language-html"><code class="language-html" data-lang="html">connectvalidator.cmd</code></pre>
+                                            <div>
+                                                <p>
+                                                    Run the following command to set the validator address environment variable.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win9" role="button" aria-expanded="false" aria-controls="win9">Windows</a>
+                                                <div class="multi-collapse collapse" id="win9" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">set DP_ACC_ADDRESS=YOUR_VALIDATOR_ADDRESS</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">set DP_ACC_ADDRESS=0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac9" role="button" aria-expanded="false" aria-controls="mac9">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac9" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_ACC_ADDRESS=YOUR_VALIDATOR_ADDRESS</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_ACC_ADDRESS=0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin9" role="button" aria-expanded="false" aria-controls="lin9">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin9" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_ACC_ADDRESS=YOUR_VALIDATOR_ADDRESS</code></pre>
+                                                        Example:
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_ACC_ADDRESS=0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Run the following command to connect to the mainnet. You may additionally have to add exclusion in your anti-virus software, if the software shows a prompt. You will be prompted to enter the validator key password. If successful, you should see your node connecting to the blockchain and blocks getting created.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win10" role="button" aria-expanded="false" aria-controls="win10">Windows</a>
+                                                <div class="multi-collapse collapse" id="win10" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">connectvalidator.cmd</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac10" role="button" aria-expanded="false" aria-controls="mac10">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac10" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./connectvalidator.sh</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin10" role="button" aria-expanded="false" aria-controls="lin10">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin10" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./connectvalidator.sh</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>                                        
                                     </ol>
                                 </div>
 
