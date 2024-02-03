@@ -475,7 +475,7 @@
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win10" role="button" aria-expanded="false" aria-controls="win10">Windows</a>
                                                 <div class="multi-collapse collapse" id="win10" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">set DP_KEY_FILE_DIR=$HOME/dp/data/keystore</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">set DP_KEY_FILE_DIR=c:\dp\data\keystore</code></pre>
                                                         <pre class="language-html"><code class="language-html" data-lang="html">set DP_RAW_URL=//./pipe/geth.ipc</code></pre>
                                                     </div>
                                                 </div>
@@ -554,7 +554,7 @@
                                                     Run the following command to deposit coins.<br />
                                                     Replace DEPOSITOR_ADDRESS with the address of the wallet that has the coins to deposit. Ensure this wallet also has additional coins for gas fees for the transaction.<br />
                                                     Replace VALIDATOR_ADDRESS with the address of the wallet for validating as specified in step 2.<br />
-                                                    Replace DEPOSITOR_AMOUNT with the number of coins you want to deposit.
+                                                    Replace DEPOSITOR_AMOUNT with the number of coins you want to deposit. You should leave atleast 10000 coins in your account instead of depositing all coins; this is for gas fees for this deposit transaction and also future transactions when you want to withdraw the deposited coins. 
                                                 </p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
