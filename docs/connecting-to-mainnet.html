@@ -400,6 +400,9 @@
                                                     <div class="card card-body toggle_body">
                                                         Note that in case you are SSH'd into this computer, you might get logged out when you run these commands. In this case, you will need to SSH again and re-run the applicable steps before this step.
                                                         <pre class="language-html"><code class="language-html" data-lang="html">sudo ufw allow 30303/tcp</code></pre>
+                                                        The next command to open port 22 is required only if you are SSH'd into the computer. If you do not open this port but enable firewall in the next command, then you might get permanently get locked out of the machine. But if you are logged in locally, do not run this command.
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">sudo ufw allow 22/tcp</code></pre>
+                                                        Run the following command to enable firewall.
                                                         <pre class="language-html"><code class="language-html" data-lang="html">sudo ufw enable</code></pre>
                                                     </div>
                                                 </div>
