@@ -649,7 +649,7 @@
                                             <p>
                                                 Open the following 3rd party website, but do not connect your Ethereum wallet yet:<br /><br/>
                                                 <span style="color:blue">Option A) MyCrypto</span>: Metamask Browser Extension: <a href="https://app.mycrypto.com/sign-message">https://app.mycrypto.com/sign-message</a><br />
-                                                <span style="color:green">Option B) Coinbase Wallet App</span>: <a href="https://coinbase.github.io/coinbase-wallet-sdk/">https://coinbase.github.io/coinbase-wallet-sdk/</a><br />
+                                                <span style="color:green">Option B) Coinbase Wallet</span>: <a href="https://dpdocs.org/coinbase-wallet-sdk/">https://dpdocs.org/coinbase-wallet-sdk/</a><br />
                                                 Option C) Other Wallet Apps: Other wallet types are not supported yet. Please import your wallet into either MetaMask browser extension or into Coinbase Wallet and use either Option A or Option B.
                                             </p>
                                         </li>
@@ -658,17 +658,17 @@
                                         </li>
                                         <li>
                                             <span style="color:blue">Option A) MyCrypto</span>: Connect your wallet using one of the options provided in <a href="https://app.mycrypto.com/sign-message">https://app.mycrypto.com/sign-message</a><br />
-                                            <span style="color:green">Option B) Coinbase Wallet App</span>: Keep the following URL opened and skip to the next step. <a href="https://coinbase.github.io/coinbase-wallet-sdk/">https://coinbase.github.io/coinbase-wallet-sdk/</a><br />
+                                            <span style="color:green">Option B) Coinbase Wallet App</span>: Keep the following URL opened and skip to the next step. <a href="https://dpdocs.org/coinbase-wallet-sdk/">https://dpdocs.org/coinbase-wallet-sdk/</a><br />
                                         </li>
                                         <li>
                                             <span style="color:blue">Option A) MyCrypto</span>: Paste the message copied from Step 18, in the Message field. Ensure that there is no additional newline or space before or after the copied message in the textbox.<br />
-                                            <span style="color:green">Option B) Coinbase Wallet App</span>: In the box that is titled <span style="color:brown">personal_sign</span>, expand the <span style="color:brown">params</span> section. Do not choose any other box other than <span style="color:brown">personal_sign</span>. Paste the message copied from Step 18 and your Ethereum Address in their corresponding boxes.
+                                            <span style="color:green">Option B) Coinbase Wallet App</span>: In the box that is titled <span style="color:brown">message</span>, paste the message copied from Step 18 and your Ethereum Address in the <span style="color:brown">address</span> box.
                                             Ensure that there is no additional newline or space before or after the copied message in the textbox.
                                         </li>
                                         <li>
                                             <span style="color:blue">Option A) MyCrypto</span>: Next, click Sign Message and complete the steps to sign the message. You should see a Textbox for the Signature.<br />
                                             <span style="color:green">Option B) Coinbase Wallet App</span>: Click on <span style="color:brown">submit</span>. You will be shown a QR code. In your coinbase wallet app, open the scan icon to point at this QR Code. The app prompt you to connect the wallet and then sign the message. <br />
-                                            <span style="color:brown">Note</span>: You may have to repeat Step 23 and Step 24 after connecing your Coinbase wallet, in case the page gets refreshed and the content you pasted disappeared after connecting the wallet.
+                                            <span style="color:brown">Note</span>: In case you get any errors, click the <span style="color:navy">clear</span> button at the top and repeat again from Step 22.
                                         </li>
                                         <li>
                                             <span style="color:blue">Option A) MyCrypto</span>: In the Signature textbox, identify the field that says "Sig" and copy the value without quotes. This value is the Ethereum part of the cross-signing and starts with the value 0x. The example below shows the highlighted portion to copy.
@@ -680,7 +680,7 @@
                                             "version": "2"
                                             }
                                             </code></pre>
-                                            <span style="color:green">Option B) Coinbase Wallet App</span>: The signature will be shown once signing is complete, in a gray box below the button that says Example Message. Copy this signature excluding the quotes.
+                                            <span style="color:green">Option B) Coinbase Wallet App</span>: The signature will be shown once signing is complete, in a green box below the button that says Example Message. Copy this signature without the quotes.
                                         </li>
                                         <li>
                                             Close the browser window after copying the above signature. You may disconnect or keep away your Ethereum wallet at this point. You might want to save the signature in a text file for easy access. You will need to connect back to the internet to perform the final step of cross-signing to get the coins.
