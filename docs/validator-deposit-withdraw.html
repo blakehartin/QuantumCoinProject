@@ -464,36 +464,8 @@
                                                     <div class="card card-body toggle_body">
                                                         <pre class="language-html"><code class="language-html" data-lang="html">export DP_KEY_FILE_DIR=$HOME/dp/keystore</code></pre>
                                                         <pre class="language-html"><code class="language-html" data-lang="html">export DP_RAW_URL=~/.ethereum/geth.ipc</code></pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <p>
-                                                    Set the environment variables to point to the data folder and DP_RAW_URL.
-                                                </p>
-                                            </div>
-                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win10" role="button" aria-expanded="false" aria-controls="win10">Windows</a>
-                                                <div class="multi-collapse collapse" id="win10" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">set DP_KEY_FILE_DIR=c:\dp\data\keystore</code></pre>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">set DP_RAW_URL=//./pipe/geth.ipc</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac10" role="button" aria-expanded="false" aria-controls="mac10">Mac</a>
-                                                <div class="multi-collapse collapse" id="mac10" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_KEY_FILE_DIR=$HOME/dp/data/keystore</code></pre>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_RAW_URL=~/.ethereum/geth.ipc</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin11" role="button" aria-expanded="false" aria-controls="lin11">Linux</a>
-                                                <div class="multi-collapse collapse" id="lin11" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_KEY_FILE_DIR=$HOME/dp/keystore</code></pre>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_RAW_URL=~/.ethereum/geth.ipc</code></pre>
+                                                        <p>In case you get any error related to DP_RAW_URL, try the following instead:</p>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_RAW_URL=$HOME/dp/geth</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
@@ -557,7 +529,7 @@
                                                     Run the following command to deposit coins.<br />
                                                     Replace DEPOSITOR_ADDRESS with the address of the wallet that has the coins to deposit. Ensure this wallet also has additional coins for gas fees for the transaction.<br />
                                                     Replace VALIDATOR_ADDRESS with the address of the wallet for validating as specified in step 2.<br />
-                                                    Replace DEPOSITOR_AMOUNT with the number of coins you want to deposit. You should leave atleast 10000 coins in your account instead of depositing all coins; this is for gas fees for this deposit transaction and also future transactions when you want to withdraw the deposited coins. 
+                                                    Replace DEPOSITOR_AMOUNT with the number of coins you want to deposit. You should leave atleast 10000 coins in your account instead of depositing all coins; this is for gas fees for this deposit transaction and also future transactions when you want to withdraw the deposited coins.
                                                 </p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
@@ -597,7 +569,7 @@
                                 <h5>Checking Deposited Staking Balance</h5>
                                 <div class="steps-panel" id="divbalance">
                                     <ol class="ordered-list">
-                                        <li>Pre-requisite; you should already have staked coins.</li>
+                                        <li>Pre-requisite; you should already have staked coins and the validator node is running.</li>
                                         <li>
                                             <div>
                                                 <p>
@@ -628,6 +600,74 @@
                                     </ol>
                                 </div>
 
+                                <h5>Checking Block Mining Rewards</h5>
+                                <div class="steps-panel" id="divbalance">
+                                    <ol class="ordered-list">
+                                        <li>Pre-requisite; you should already have staked coins and the validator node is running.</li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    You can check the block mining rewards by running the following command:
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win16" role="button" aria-expanded="false" aria-controls="win16">Windows</a>
+                                                <div class="multi-collapse collapse" id="win16" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil blockrewards DEPOSITOR_ADDRESS</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac16" role="button" aria-expanded="false" aria-controls="mac16">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac16" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil blockrewards DEPOSITOR_ADDRESS</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin16" role="button" aria-expanded="false" aria-controls="lin16">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin16" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil blockrewards DEPOSITOR_ADDRESS</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+
+                                <h5>Checking Validator List</h5>
+                                <div class="steps-panel" id="divbalance">
+                                    <ol class="ordered-list">
+                                        <li>Pre-requisite; you should already have staked coins and the validator node is running.</li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    You can check the list of validators by running the following command.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win17" role="button" aria-expanded="false" aria-controls="win17">Windows</a>
+                                                <div class="multi-collapse collapse" id="win17" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil listvalidators</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac17" role="button" aria-expanded="false" aria-controls="mac17">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac17" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil listvalidators</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin17" role="button" aria-expanded="false" aria-controls="lin17">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin17" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil listvalidators</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+
                                 <h5>Withdrawing</h5>
                                 <div class="steps-panel" id="divbalance">
                                     <ol class="ordered-list">
@@ -636,7 +676,7 @@
                                         <li>
                                             <div>
                                                 <p>
-                                                    You can initiate the withdrawal of coins by running the following command. 
+                                                    You can initiate the withdrawal of coins by running the following command.
                                                 </p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
@@ -687,7 +727,6 @@
                                                 </div>
                                             </div>
                                         </li>
-
                                     </ol>
                                 </div>
                             </article>

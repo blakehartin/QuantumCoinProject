@@ -372,7 +372,7 @@
                                                     If you are connecting from a cloud computer (such as AWS), you will need to additionally open the 30303 port under security rules, to allow incoming connections from 0.0.0.0/0.<br />
                                                     If you are connecting from a home computer, you may need to additionally open the firewall port 30303 in your router.
                                                 </p>
-                                                
+
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win8" role="button" aria-expanded="false" aria-controls="win8">Windows</a>
@@ -463,26 +463,26 @@
                                         <li>
                                             <div>
                                                 <p>
-                                                    Download the CLI (command line interface) wallet by running the following command:
+                                                    Download the updated CLI (command line interface) wallet by running the following command:
                                                 </p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win4" role="button" aria-expanded="false" aria-controls="win4">Windows</a>
                                                 <div class="multi-collapse collapse" id="win4" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl https://github.com/DogeProtocol/go-dp/releases/download/v2.0.23/dp-release-windows.zip -o dp.zip</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl https://github.com/DogeProtocol/go-dp/releases/download/v2.0.27/dp-release-windows-v2.0.27.zip -o dp-release-windows-v2.0.27.zip</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac4" role="button" aria-expanded="false" aria-controls="mac4">Mac</a>
                                                 <div class="multi-collapse collapse" id="mac4" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo dp.gz https://github.com/DogeProtocol/go-dp/releases/download/v2.0.23/dp-release-mac.gz</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo dp-release-mac.gz https://github.com/DogeProtocol/go-dp/releases/download/v2.0.23/dp-release-mac.gz</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin4" role="button" aria-expanded="false" aria-controls="lin4">Linux</a>
                                                 <div class="multi-collapse collapse" id="lin4" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo dp.gz https://github.com/DogeProtocol/go-dp/releases/download/v2.0.23/dp-release-ubuntu.gz</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo dp-release-ubuntu-v2.0.27.tar.gz https://github.com/DogeProtocol/go-dp/releases/download/v2.0.27/dp-release-ubuntu-v2.0.27.tar.gz</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
@@ -497,19 +497,19 @@
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win5" role="button" aria-expanded="false" aria-controls="win5">Windows</a>
                                                 <div class="multi-collapse collapse" id="win5" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">Expand-Archive -Path dp.zip -DestinationPath c:\</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">Expand-Archive -Path dp-release-windows-v2.0.27.zip -DestinationPath c:\ -Force</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac5" role="button" aria-expanded="false" aria-controls="mac5">Mac</a>
                                                 <div class="multi-collapse collapse" id="mac5" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">tar -xzvf dp.gz</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">tar -xzvf --overwrite dp-release-mac.gz</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin5" role="button" aria-expanded="false" aria-controls="lin5">Linux</a>
                                                 <div class="multi-collapse collapse" id="lin5" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">tar -xzvf dp.gz</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">tar -xzvf --overwrite dp-release-ubuntu-v2.0.27.tar.gz</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
@@ -554,7 +554,7 @@
                                         <li>
                                             <div>
                                                 <p>
-                                                    This command is just required the first time and you do not have to run it each time. Run the following command to configure the software to connect to the Doge Protocol blockchain. Do not run it more than once. Ensure that the command succeeds and no errors or warnings are reported. 
+                                                    This command is just required the first time and you do not have to run it each time. Run the following command to configure the software to connect to the Doge Protocol blockchain. Do not run it more than once. Ensure that the command succeeds and no errors or warnings are reported.
                                                 </p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
@@ -611,7 +611,7 @@
                                                     To stop the blockchain node client, do not close the window or logout or shutdown directly. Instead press CTRL+C.
                                                 </p>
                                             </div>
-                                        </li>                                        
+                                        </li>
                                     </ol>
                                 </div>
 
