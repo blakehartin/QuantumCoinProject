@@ -561,39 +561,42 @@
                                             You should proceed to immediately run the validator node by following the steps in <a href="/mainnet-validator-setup.html"></a>. Otherwise you might loose coins due to inactivity slashing.
                                         </li>
                                         <li>
-                                            For security reasons, you should move the depositor quantum wallet to a different device and also keep multiple backups offline. You shouldn't keep the depositor quantum wallet in the same computer that is running the blockchain node. Only the validator wallet should be kept on this computer.
+                                            You should move the depositor quantum wallet to a different device and also keep multiple backups offline. You shouldn't keep the depositor quantum wallet in the same computer that is running the blockchain node. Only the validator wallet should be kept on this computer.
                                             If you loose your depositor quantum wallet or forgot the password or it gets stolen, even if you have the validator wallet, you will not be able to get your deposited coins back. Keep both your depositor and validator wallets safe!
                                         </li>
                                     </ol>
                                 </div>
 
-                                <h5>Checking Deposited Staking Balance</h5>
+                                <h5>Checking Staking Details, Mining Rewards etc.</h5>
                                 <div class="steps-panel" id="divbalance">
                                     <ol class="ordered-list">
                                         <li>Pre-requisite; you should already have staked coins and the validator node is running.</li>
                                         <li>
                                             <div>
                                                 <p>
-                                                    You can check the staked balance by running the following command:
+                                                    You can check the staked balance by running the following command, replacing VALIDATOR_ADDRESS with your validator wallet address.
+                                                </p>
+                                                <p>
+                                                    Alternatively, you can also search by your validator or depositor address in the <a href="https://dpscan.app/validator/page">Block Explorer</a>.
                                                 </p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win13" role="button" aria-expanded="false" aria-controls="win13">Windows</a>
                                                 <div class="multi-collapse collapse" id="win13" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil stakingbalance DEPOSITOR_ADDRESS</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil getstakingdetails VALIDATOR_ADDRESS</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac13" role="button" aria-expanded="false" aria-controls="mac13">Mac</a>
                                                 <div class="multi-collapse collapse" id="mac13" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil stakingbalance DEPOSITOR_ADDRESS</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil getstakingdetails VALIDATOR_ADDRESS</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin13" role="button" aria-expanded="false" aria-controls="lin13">Linux</a>
                                                 <div class="multi-collapse collapse" id="lin13" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil stakingbalance DEPOSITOR_ADDRESS</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil getstakingdetails VALIDATOR_ADDRESS</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
@@ -601,67 +604,36 @@
                                     </ol>
                                 </div>
 
-                                <h5>Checking Block Mining Rewards</h5>
+                                <h5>Increasing Deposit</h5>
                                 <div class="steps-panel" id="divbalance">
                                     <ol class="ordered-list">
                                         <li>Pre-requisite; you should already have staked coins and the validator node is running.</li>
                                         <li>
                                             <div>
                                                 <p>
-                                                    You can check the block mining rewards by running the following command:
+                                                    You can increase your staked coins by running the following command, replacing DEPOSITOR_ADDRESS with your depositor address and ADDITIONAL_DEPOSIT_AMOUNT with the additional number of coins you would like to deposit.
                                                 </p>
-                                            </div>
-                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win16" role="button" aria-expanded="false" aria-controls="win16">Windows</a>
-                                                <div class="multi-collapse collapse" id="win16" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil blockrewards DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac16" role="button" aria-expanded="false" aria-controls="mac16">Mac</a>
-                                                <div class="multi-collapse collapse" id="mac16" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil blockrewards DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin16" role="button" aria-expanded="false" aria-controls="lin16">Linux</a>
-                                                <div class="multi-collapse collapse" id="lin16" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil blockrewards DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ol>
-                                </div>
-
-                                <h5>Checking Validator List</h5>
-                                <div class="steps-panel" id="divbalance">
-                                    <ol class="ordered-list">
-                                        <li>Pre-requisite; you should already have staked coins and the validator node is running.</li>
-                                        <li>
-                                            <div>
                                                 <p>
-                                                    You can check the list of validators by running the following command.
+                                                    You should always leave about 100,000 coins in your depositor wallet for gas fees in the future when withdrawing coins or mined rewards coins.
                                                 </p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win17" role="button" aria-expanded="false" aria-controls="win17">Windows</a>
                                                 <div class="multi-collapse collapse" id="win17" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil listvalidators</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil increasedeposit DEPOSITOR_ADDRESS ADDITIONAL_DEPOSIT_AMOUNT</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac17" role="button" aria-expanded="false" aria-controls="mac17">Mac</a>
                                                 <div class="multi-collapse collapse" id="mac17" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil listvalidators</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil increasedeposit DEPOSITOR_ADDRESS ADDITIONAL_DEPOSIT_AMOUNT</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin17" role="button" aria-expanded="false" aria-controls="lin17">Linux</a>
                                                 <div class="multi-collapse collapse" id="lin17" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil listvalidators</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil increasedeposit DEPOSITOR_ADDRESS ADDITIONAL_DEPOSIT_AMOUNT</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
@@ -677,26 +649,44 @@
                                         <li>
                                             <div>
                                                 <p>
-                                                    You can initiate the withdrawal of coins by running the following command.
+                                                    You can initiate the withdrawal of mined coins (block rewards) by running the following command after block 421888 (before this block, the command was different).
+                                                </p>
+                                                <p>
+                                                    Alternatively, you can also withdraw partially including deposit amount, by running the second command. You have to be careful since giving a large amount (number of coins) can cause your balance to go below the 5 million threshold that is required to become a validator.
                                                 </p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win14" role="button" aria-expanded="false" aria-controls="win14">Windows</a>
                                                 <div class="multi-collapse collapse" id="win14" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil initiatestakingwithdrawal DEPOSITOR_ADDRESS</code></pre>
+                                                        <span>Withdraw Rewards</span>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil initiatewithdrawalrewards DEPOSITOR_ADDRESS</code></pre>
+                                                    </div>
+                                                    <div class="card card-body toggle_body">
+                                                        <span>Alternate: Withdraw Partial Coins</span>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil initiatepartialwithdrawal DEPOSITOR_ADDRESS AMOUNT</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac14" role="button" aria-expanded="false" aria-controls="mac14">Mac</a>
                                                 <div class="multi-collapse collapse" id="mac14" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil initiatestakingwithdrawal DEPOSITOR_ADDRESS</code></pre>
+                                                        <span>Withdraw Rewards</span>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil initiatewithdrawalrewards DEPOSITOR_ADDRESS</code></pre>
+                                                    </div>
+                                                    <div class="card card-body toggle_body">
+                                                        <span>Alternate: Withdraw Partial Coins</span>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil initiatepartialwithdrawal DEPOSITOR_ADDRESS AMOUNT</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin14" role="button" aria-expanded="false" aria-controls="lin14">Linux</a>
                                                 <div class="multi-collapse collapse" id="lin14" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil initiatestakingwithdrawal DEPOSITOR_ADDRESS</code></pre>
+                                                        <span>Withdraw Rewards</span>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil initiatewithdrawalrewards DEPOSITOR_ADDRESS</code></pre>
+                                                    </div>
+                                                    <div class="card card-body toggle_body">
+                                                        <span>Alternate: Withdraw Partial Coins</span>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil initiatepartialwithdrawal DEPOSITOR_ADDRESS AMOUNT</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
@@ -704,32 +694,120 @@
                                         <li>
                                             <div>
                                                 <p>
-                                                    If the above command is successful and the deposit completes, you can withdraw the staked coins after 256000 blocks have been created, by running the following command. This can be upto 60 days or more.
+                                                    If the above command is successful and the deposit completes, you can withdraw the staked coins after 32000 blocks have been mined, by running the following command. This can be upto 7 days or more as of current block times.
                                                 </p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win15" role="button" aria-expanded="false" aria-controls="win15">Windows</a>
                                                 <div class="multi-collapse collapse" id="win15" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil completestakingwithdrawal DEPOSITOR_ADDRESS</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil completepartialwithdrawal DEPOSITOR_ADDRESS</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac15" role="button" aria-expanded="false" aria-controls="mac15">Mac</a>
                                                 <div class="multi-collapse collapse" id="mac15" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil completestakingwithdrawal DEPOSITOR_ADDRESS</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil completepartialwithdrawal DEPOSITOR_ADDRESS</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin15" role="button" aria-expanded="false" aria-controls="lin15">Linux</a>
                                                 <div class="multi-collapse collapse" id="lin15" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil completestakingwithdrawal DEPOSITOR_ADDRESS</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil completepartialwithdrawal DEPOSITOR_ADDRESS</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
                                     </ol>
                                 </div>
+
+                                <h5>Pausing and Resuming Validation</h5>
+                                <div class="steps-panel" id="divPause">
+                                    <ol class="ordered-list">
+                                        <li>Pre-requisite; you should already have staked coins and the validator node is running.</li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    If you have to stop your validator node for maintenance, you can pause and resume validation. This not only helps the blockchain reduce unnecessary time spent waiting for your validator node, but also will prevent slashing (penalty) in the future.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win20" role="button" aria-expanded="false" aria-controls="win20">Windows</a>
+                                                <div class="multi-collapse collapse" id="win20" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <span>Pausing Validation</span>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil pausevalidation DEPOSITOR_ADDRESS</code></pre>
+                                                    </div>
+                                                    <div class="card card-body toggle_body">
+                                                        <span>Resuming Validation</span>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil resumevalidation  DEPOSITOR_ADDRESS</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac20" role="button" aria-expanded="false" aria-controls="mac20">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac20" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <span>Pausing Validation</span>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil pausevalidation DEPOSITOR_ADDRESS</code></pre>
+                                                    </div>
+                                                    <div class="card card-body toggle_body">
+                                                        <span>Resuming Validation</span>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil resumevalidation DEPOSITOR_ADDRESS</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin20" role="button" aria-expanded="false" aria-controls="lin20">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin20" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <span>Pausing Validation</span>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil pausevalidation DEPOSITOR_ADDRESS</code></pre>
+                                                    </div>
+                                                    <div class="card card-body toggle_body">
+                                                        <span>Resuming Validation</span>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil resumevalidation DEPOSITOR_ADDRESS</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+
+
+                                <h5>Changing Validator Wallet</h5>
+                                <div class="steps-panel" id="divPause">
+                                    <ol class="ordered-list">
+                                        <li>Pre-requisite; you should already have staked coins and the validator node is running.</li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Sometimes you might want to change the validator wallet, for example if it was compromised (stolen). You can run the following command to change the validator wallet. 
+                                                </p>
+                                                <p>
+                                                    Ensure that you restart the validator node with the new validator wallet (refer to steps earlier in this document). Move the old validator wallet to a different location before starting the node again. Future improvements will be made to this process to avoid the node restart when changing validator wallets.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win21" role="button" aria-expanded="false" aria-controls="win21">Windows</a>
+                                                <div class="multi-collapse collapse" id="win21" style="">
+                                                    <div class="card card-body toggle_body">pan>Pausing Validation</span>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil changevalidator DEPOSITOR_ADDRESS NEW_VALIDATOR_ADDRESS</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac21" role="button" aria-expanded="false" aria-controls="mac21">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac21" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil changevalidator DEPOSITOR_ADDRESS NEW_VALIDATOR_ADDRESS</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin21" role="button" aria-expanded="false" aria-controls="lin21">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin21" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil changevalidator DEPOSITOR_ADDRESS NEW_VALIDATOR_ADDRESS</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+
                             </article>
                             <article class="documentation_body" id="docmenu">
                                 <div class="row">
