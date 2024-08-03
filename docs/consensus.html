@@ -327,13 +327,10 @@
                                     <h1>Consensus</h1>
                                 </div>
                                 <p>
-                                    Doge Protocol will initially use Proof-of-Stake (PoS) consensus and later move on to a PoW + PoS hybrid consensus scheme. 
-                                    At a high level, the Doge Protocol blockchain is a BFT chain that will closely follow Casper CBC consensus model while adjusting the protocol to improvise the liveness property. 
-                                    The uber goal is to build a robust blockchain that’s resistant to byzantine failures while at the same time is decentralized and scalable.
-                                    The correctness of the consensus model will be verified using TLA+
+                                    Doge Protocol mainnet uses 3 phase pBFT consensus (proof of stake) that achieves immediate finality after a block has been created. Higher timeouts are used to increase liveness, within limits of the FLP theorem.
                                 </p>
                                 <p>
-                                    The first testnet release T0 uses Clique consensus while a subsequent testnet release will switch to PoS consensus.
+                                    Though the protocol can support more than 2 rounds of validator voting, the current implementation limits the maximum rounds to 2, to reduce livenes problems that are outlined in the FLP theorm.
                                 </p>
                                 <div class="link">
                                     <p>Read more in <a href="https://dogeprotocol.org/whitepapers/Doge-Protocol-Blockchain-Consensus-Whitepaper.pdf">Consensus Whitepaper</a>.</p>

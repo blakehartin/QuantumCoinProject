@@ -339,9 +339,8 @@
                                     <b>go-dp</b> is a Golang implementation of the Doge Protocol blockchain node client. The major changes from go-ethereum that have been added to this fork are:
                                 </p>
                                 <ul>
-                                    <li>Quantum Resistance: Falcon to secure wallets and accounts.</li>
-                                    <li>Quantum Resistance: NTRU HRSS to secure inter-node communication.</li>
-                                    <li>UDP Discovery Protocol updated to use session based forward error correction (KCP GO library).</li>
+                                    <li>Quantum Resistance: Dilithium, SPHINCS+, ed25519 (hybrid combiner) are used to secure wallets and accounts.</li>
+                                    <li>Quantum Resistance: Kyber to secure inter-node communication.</li>
                                     <li>RLPX Protocol has been completely rewritten and modularized, to use post-quantum cryptography model.</li>
                                     <li>A new consensus engine (Proof-of-Stake) has been added, along with Withdraw and Deposit tools.</li>
                                     <li>Testnet command line tools for periodically creating test transactions, smart contracts etc.</li>
@@ -355,7 +354,7 @@
                                 </div>
                                 <h4>Web Assembly</h4>
                                 <p>
-                                    This repository contains WASM (Web Assembly) for the Falcon Post Quantum Cryptography scheme. The web assembly is generated from Falcon Repository.
+                                    This repository contains WASM (Web Assembly) for the Post Quantum Cryptography scheme. The web assembly is generated from hybrid-pqc Repository.
                                 </p>
                                 <div class="link" style="margin-bottom:20px;">
                                     <p>Read more in <a href="https://github.com/DogeProtocol/WebAssembly">https://github.com/DogeProtocol/WebAssembly</a>.</p>
