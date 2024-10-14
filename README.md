@@ -1,5 +1,5 @@
 # Documentation
-This repository contains the documentation hosted at [DpDocs.org](https://dpdocs.org).
+This repository contains the documentation hosted at [QuantumCoin.org](https://QuantumCoin.org). This was previously hosted under DpDocs.org
 
 ## Contributing
 
