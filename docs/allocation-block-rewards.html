@@ -2,6 +2,14 @@
 <html lang="en">
 
 <head>
+    <script type="text/javascript">
+        if (window.location.hostname.toLowerCase() === "dpdocs.org") {
+            window.location.href = "http://quantumcoin.org" + window.location.pathname
+        }
+        else if (location.protocol === 'http:') {
+            location.replace(`https:${location.href.substring(location.protocol.length)}`);
+        }
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
