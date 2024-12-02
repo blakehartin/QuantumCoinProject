@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://static.dpdocs.org/assets/mcustomscrollbar/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="https://static.dpdocs.org/css/style.css">
     <link rel="stylesheet" href="https://static.dpdocs.org/css/responsive.css">
-    <title>Quantum Coin Desktop Wallet</title>
+    <title>Quantum Coin Frequently Asked Questions - FAQ</title>
     <link rel="stylesheet" href="https://static.dpdocs.org/scss/_header.scss">
     <link rel="stylesheet" href="https://static.dpdocs.org/scss/_doclist.scss">
 </head>
@@ -274,234 +274,106 @@
                             <article class="documentation_body" id="documentation" style="padding-top:100px;">
                                 <!-- Content Start -->
                                 <div class="shortcode_title">
-                                    <h1>Desktop Wallet</h1>
+                                    <h1>Frequently Asked Questions</h1>
                                 </div>
-
-                                <div>
-                                    <h4 class="s_title load-order-2" id="toggle">Requirements</h4>
-                                    <p>Windows: Windows 11 (might work in previous versions, have not been tested)</p>
-                                    <p>Mac: M1 or later</p>
-                                    <p>Linux: Haven't been tested</p>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq1" role="button" aria-expanded="false" aria-controls="faq1">What is the total supply and circulating supply?</a>
+                                <div class="multi-collapse collapse" id="faq1">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        Total supply is 100 trillion coins. Circulating supply is 15 trillion, based on supply allocated from DogeP tokens as part of mainnet launch. For details, see <a href="/multi-fork-blockchain.html">blockchain allocation whitepaper.</a>
+                                    </div>
                                 </div>
-                                <div style="margin-bottom:20px;">
-                                    <h4 class="s_title load-order-2" id="toggle">Notes</h4>
-                                    <p>Aternatively, you may also use the <a href="/getting-coins-for-tokens-cli-wallet.html">CLI wallet to get coins for tokens</a>.</p>
-                                    <p>Some versions of Avast anti-virus may incorrectly flag the wallet app file. In this case, you may have to add an exclusion or use the CLI wallet in this case.</p>
-                                    <p>By default, TESTNET is selected in the Wallet. Once you try out TESTNET, you can switch the network to MAINNET from the interface provided.</p>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq2" role="button" aria-expanded="false" aria-controls="faq2">What consensus algorithm does Quantum Coin use?</a>
+                                <div class="multi-collapse collapse" id="faq2">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        Quantum Coin mainnet uses proof of stake consensus using a 3 phase pBFT consensus algorithm. For details, see <a href="/consensus.html">consensus whitepaper.</a>
+                                    </div>
                                 </div>
-                                <h4 class="s_title load-order-2" id="setup">Setup</h4>
-                                <div class="steps-panel">
-                                    <ol class="ordered-list">
-                                        <li>
-                                            <a href="https://dpdocs.org/device-preparation.html">Prepare your device</a> for managing quantum wallets.
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <p>Open the appropriate shell window.</p>
-                                            </div>
-                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win1" role="button" aria-expanded="false" aria-controls="win1">Windows</a>
-                                                <div class="multi-collapse collapse" id="win1">
-                                                    <div class="card card-body toggle_body" style="padding:15px;">
-                                                        Open Powershell
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac1" role="button" aria-expanded="false" aria-controls="mac1">Mac</a>
-                                                <div class="multi-collapse collapse" id="mac1">
-                                                    <div class="card card-body toggle_body" style="padding:15px;">
-                                                        Open Terminal
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin1" role="button" aria-expanded="false" aria-controls="lin1">Linux</a>
-                                                <div class="multi-collapse collapse" id="lin1">
-                                                    <div class="card card-body toggle_body" style="padding:15px;">
-                                                        Open Terminal
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <p>
-                                                    Download the Desktop Wallet by running the following command:
-                                                </p>
-                                            </div>
-                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win4" role="button" aria-expanded="false" aria-controls="win4">Windows</a>
-                                                <div class="multi-collapse collapse" id="win4" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl https://github.com/DogeProtocol/desktop-wallet/releases/download/v3.0.25/quantumwallet-3.0.25.Setup.exe -o $HOME\downloads\quantumwallet-3.0.25.Setup.exe</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac4" role="button" aria-expanded="false" aria-controls="mac4">Mac</a>
-                                                <div class="multi-collapse collapse" id="mac4" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo ~/downloads/quantumwallet.dmg https://github.com/DogeProtocol/desktop-wallet/releases/download/v3.0.25/quantumwallet.dmg</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin4" role="button" aria-expanded="false" aria-controls="lin4">Linux</a>
-                                                <div class="multi-collapse collapse" id="lin4" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo quantumwallet_3.0.25_amd64.deb https://github.com/DogeProtocol/desktop-wallet/releases/download/v3.0.25/quantumwallet_3.0.25_amd64.deb</code></pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <p>
-                                                    Open the Wallet App.
-                                                </p>
-                                            </div>
-                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win5" role="button" aria-expanded="false" aria-controls="win5">Windows</a>
-                                                <div class="multi-collapse collapse" id="win5" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">start $HOME\downloads\quantumwallet-3.0.25.Setup.exe</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac5" role="button" aria-expanded="false" aria-controls="mac5">Mac</a>
-                                                <div class="multi-collapse collapse" id="mac5" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">open ~/downloads/quantumwallet.dmg</code></pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <p>
-                                                    Continue rest of the steps to create your quantum wallet. Backup the seed words to atleast three offline devices. If you loose the seed words, your coins and tokens will be lost. For additional safety, you should also backup the actual wallet files whem prompted.
-                                                </p>
-                                            </div>
-                                        </li>
-                                    </ol>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq3" role="button" aria-expanded="false" aria-controls="faq3">When was mainnet launched?</a>
+                                <div class="multi-collapse collapse" id="faq3">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        Mainnet was launched on 123123 (December 31st, 2023).
+                                    </div>
                                 </div>
-
-                                <h4 class="s_title load-order-2" id="getting-coins-for-tokens">Getting coins for Tokens</h4>
-
-                                <div style="margin-bottom:20px;">
-                                    <p>This section shows how to get corresponding mainnet quantum coins for your DogeP ERC20 tokens. If you had registered as a genesis validator, this document does not apply to you, since the coins were already assigned and staked as part of mainnet launch.</p>
-                                    <p>
-                                        Note that your DogeP token balance will not be affected by this procedure; DogeP tokens present in your wallet will remain in your wallet even after getting the coins. Even if you do not have the tokens in your wallet address currently, it does not matter,
-                                        as long as your address had the tokens as of snapshot date. You can verify the allocation of coins in the <a href="https://snapshot.dpscan.app">snapshot portal</a>.
-                                    </p>
-                                    <p>
-                                        It is recommended that you do not have any coins or tokens (including DogeP tokens) in your Ethereum wallet before proceeding.
-                                    </p>
-                                    <p>By default, TESTNET is selected in the Wallet. Once you try out the conversion on the TESTNET, you can switch the network to MAINNET from the interface provided and try the conversion again.</p>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq4" role="button" aria-expanded="false" aria-controls="faq4">How is gas fee calculated?</a>
+                                <div class="multi-collapse collapse" id="faq4">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        The base gas fee of a transaction is 21000 gas, same like Ethereum. The fee for this based transactions is fixed roughly at 1000 coins. Smart Contract transactions will have a proportional fee according to their gas usage.
+                                        There is no priority fee or surge pricing or miner tips or any similar concept in Quantum Coin, though there may be some references to them in the code.
+                                    </div>
                                 </div>
-
-                                <div class="steps-panel">
-                                    <ol class="ordered-list">
-                                        <li>
-                                            <div>
-                                                <p>
-                                                    Once your quantum wallet has been created and you have backed it up, click on the &quot;Get Coins For DogeP Tokens&quot; menu-item from the Settings screen.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            You may follow the rest of the steps if using seed words or private key or a soft wallet (a keystore json file) for your Ethereum wallet. Otherwise, you can use the manual option (details in next section), if using MetaMask Browser Extension or Coinbase Wallet app. Ledger option has also been found to work, but has not been tested thoroughly.
-                                        </li>
-                                        <li>
-                                            After a few minutes after completing the steps in the Wallet App, the coin balance in your wallet should get refreshed automatically.
-                                        </li>
-                                        <li>
-                                            Congratulations! At this point, you should have successfuly received the quantum coins. Ensure that you have backed up your quantum wallet and remember the corresponding password always.
-                                        </li>
-                                        <li>
-                                            Remember that if you tried TESTNET first, you will need to perform the same conversion steps again for MAINNET, to get the actual MAINNET coins.
-                                        </li>
-                                    </ol>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq5" role="button" aria-expanded="false" aria-controls="faq5">How are transactions ordered?</a>
+                                <div class="multi-collapse collapse" id="faq5">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        Transactions are ordered dynamically based on a hash value derived from the fromAddress and parent block hash. This gives a fair transaction placement independent of miner tips or priority fee, for transaction ordering.
+                                    </div>
                                 </div>
-
-
-                                <h4 class="s_title load-order-2" id="getting-coins-for-tokens-manually">Manual Method - Getting coins for Tokens</h4>
-
-                                <div style="margin-bottom:20px;">
-                                    <p>This section shows how to get corresponding mainnet quantum coins for your DogeP ERC20 tokens if one of the above options doesn't work for you.</p>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq6" role="button" aria-expanded="false" aria-controls="faq6">What are the major differences between Quantum Coin and Ethereum?</a>
+                                <div class="multi-collapse collapse" id="faq6">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        <p>While quantum coin is based on Ethereum's geth codebase, there are major differences in Quantum Coin compared to Ethereum.</p>
+                                        <ul>
+                                            <li>Quantum Coin uses NIST standardized post quantum cryptography algorithms (hybrid) compared to Etheruem which uses non-quantum resistant algorithms. See <a href="/quantum-resistance.html">Quantum Resistance whitepaper</a>.</li>
+                                            <li>Quantum Coin has 32 byte addresses (66 characters in hex including 0x) compared to 20 bytes for Ethereum. This gives Quantum Coin additional security against hash collisions.</li>
+                                            <li>Quantum Coin has no priority fee for transactions unlike Ethereum and makes transaction ordering fair.</li>
+                                            <li>Quantum Coin uses a customized variant of pBFT consensus while Ethereum uses Gasper. Both use proof-of-stake consensus.</li>
+                                            <li>Quantum Coin has block time, gas per block, TPS, block rewards compared to Ethereum. Please see other questions in this FAQ for details.</li>
+                                            <li>Validators are selected per block in Quantum Coin, instead of on a slot basis in Ethereum.</li>
+                                        </ul>
+                                    </div>
                                 </div>
-
-                                <div class="steps-panel">
-                                    <ol class="ordered-list">
-                                        <li>
-                                            <div>
-                                                <p>
-                                                    Once your quantum wallet has been created and you have backed it up, click on the &quot;Get Coins For DogeP Tokens&quot; menu-item from the Settings screen. Then select the &quot;Manually&quot; option.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            Copy your Ethereum address from the <a href="https://snapshot.dpscan.app">snapshot portal</a>.
-                                        </li>
-                                        <li>
-                                            Paste your Ethereum address in the Wallet App's manual conversion interface. You will be presented with a message to sign with your Ethereum wallet.
-                                            An example is given below. Verify that the quantum address matches the address of the wallet you created. Copy the message starting from the word MY and ending with the quantum wallet address followed by the full-stop. Copy including the full stop as well. Ensure you do not copy any extra characters or space.
-                                            Example:
-                                            <pre class="language-html"><code class="language-html" data-lang="html">MY ETH ADDRESS IS 0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f. I AGREE THAT MY CORRESPONDING QUANTUM ADDRESS FOR GETTING COINS FOR MY DOGEP TOKENS IS 0xa553b8935988e6260b6e3c3ff5b340ee478b504b7166b4881365a9153c80a78c.</code></pre>
-                                        </li>
-                                        <li>
-                                            Next, you will be navigating to a 3rd party website to sign the above message with your Ethereum wallet. Since you will have to connect your Ethereum wallet that had the DogeP tokens as of snapshot date, it is recommended that you do not have any coins or Ethereum or tokens in the wallet (you may move them to a different wallet, for safety).
-                                        </li>
-                                        <li>
-                                            Choose one of the following options. If you are using other wallet apps, please import your wallet into either Metamask Browser Extension or Coinbase Wallet app. Note that Coinbase Wallet App is different from Coinbase app.<br /><br />
-                                            <p>
-                                                Open the following 3rd party website, but do not connect your Ethereum wallet yet:<br /><br />
-                                                <span style="color:blue">Option A) MyCrypto</span>: Metamask Browser Extension: <a href="https://app.mycrypto.com/sign-message">https://app.mycrypto.com/sign-message</a><br />
-                                                <span style="color:green">Option B) Coinbase Wallet</span>: <a href="https://dpdocs.org/coinbase-wallet-sdk/">https://dpdocs.org/coinbase-wallet-sdk/</a><br />
-                                                Option C) Other Wallet Apps: Other wallet types are not supported yet. Ledger wallet integration may work, but hasn't been tested well. Please import your wallet into either MetaMask browser extension or into Coinbase Wallet and use either Option A or Option B.
-                                            </p>
-                                        </li>
-                                        <li>
-                                            In case your are using Option A), once the above page is loaded, it is recommended that you disconnect your device from the internet. If the 3rd party website is compromised, disconnecting from the internet will help in protecting the wallet. Quantum Coin Community or community developers are not responsible for any problems that you may face.
-                                        </li>
-                                        <li>
-                                            <span style="color:blue">Option A) MyCrypto</span>: Connect your wallet using one of the options provided in <a href="https://app.mycrypto.com/sign-message">https://app.mycrypto.com/sign-message</a><br />
-                                            <span style="color:green">Option B) Coinbase Wallet App</span>: Keep the following URL opened and skip to the next step. <a href="https://dpdocs.org/coinbase-wallet-sdk/">https://dpdocs.org/coinbase-wallet-sdk/</a><br />
-                                        </li>
-                                        <li>
-                                            <span style="color:blue">Option A) MyCrypto</span>: Paste the message copied from Step 18, in the Message field. Ensure that there is no additional newline or space before or after the copied message in the textbox.<br />
-                                            <span style="color:green">Option B) Coinbase Wallet App</span>: In the box that is titled <span style="color:brown">message</span>, paste the message copied from Step 18 and your Ethereum Address in the <span style="color:brown">address</span> box.
-                                            Ensure that there is no additional newline or space before or after the copied message in the textbox.
-                                        </li>
-                                        <li>
-                                            <span style="color:blue">Option A) MyCrypto</span>: Next, click Sign Message and complete the steps to sign the message. You should see a Textbox for the Signature.<br />
-                                            <span style="color:green">Option B) Coinbase Wallet App</span>: Click on <span style="color:brown">submit</span>. You will be shown a QR code. In your coinbase wallet app, open the scan icon to point at this QR Code. The app prompt you to connect the wallet and then sign the message. <br />
-                                            <span style="color:brown">Note</span>: In case you get any errors, click the <span style="color:navy">clear</span> button at the top and repeat again from Step 22.
-                                        </li>
-                                        <li>
-                                            <span style="color:blue">Option A) MyCrypto</span>: In the Signature textbox, identify the field that says "Sig" and copy the value without quotes. This value is the Ethereum part of the cross-signing and starts with the value 0x. The example below shows the highlighted portion to copy.
-                                            <pre class="language-html"><code class="language-html" data-lang="html">
-                                            {
-                                            "address": "0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f",
-                                            "msg": "MY ETH ADDRESS IS 0xAa044ccF6BAD46F0de9fb4dF6b7d9fF02D2e195f. I AGREE THAT MY CORRESPONDING QUANTUM ADDRESS FOR GETTING COINS FOR MY DOGEP TOKENS IS 0xa553b8935988e6260b6e3c3ff5b340ee478b504b7166b4881365a9153c80a78c.",
-                                            "sig": "<span style="background-color:yellow">0x4d75e819a3b2d5da2b058c425305c12aa2299aa886852954f5eb30b61d8759653e620859d13c89915f794d7b030b816f3fabf7da0438cd8b06ce36254d5efb641b</span>",
-                                            "version": "2"
-                                            }
-                                            </code></pre>
-                                            <span style="color:green">Option B) Coinbase Wallet App</span>: The signature will be shown once signing is complete, in a green box below the button that says Example Message. Copy this signature without the quotes.
-                                        </li>
-                                        <li>
-                                            Close the browser window after copying the above signature. You may disconnect or keep away your Ethereum wallet at this point. You might want to save the signature in a text file for easy access. You will need to connect back to the internet to perform the final step of cross-signing to get the coins.
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <p>
-                                                    Return back to the wallet app and paste the signature in the provided textbox. Then follow rest of the steps in the app to complete the conversion process.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            After a few minutes after completing the steps in the Wallet App, the coin balance in your wallet should get refreshed automatically.
-                                        </li>
-                                        <li>
-                                            Congratulations! At this point, you should have successfuly received the quantum coins. Ensure that you have backed up your quantum wallet and remember the corresponding password always.
-                                        </li>
-                                        <li>
-                                            Remember that if you tried TESTNET first, you will need to perform the same conversion steps again for MAINNET, to get the actual MAINNET coins.
-                                        </li>
-                                    </ol>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq7" role="button" aria-expanded="false" aria-controls="faq7">What language are smart contracts written in?</a>
+                                <div class="multi-collapse collapse" id="faq7">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        Smart Contracts are written in Solidity 7.6. A key difference from Ethereum is that Solidity has been updated to support 32 byte addresses in Quantum Coin.
+                                    </div>
+                                </div>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq8" role="button" aria-expanded="false" aria-controls="faq8">How was initial supply for mainnet determined?</a>
+                                <div class="multi-collapse collapse" id="faq8">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        The initial supply for mainnet was based on the allocation for DogeP tokens as described in the <a href="/multi-fork-blockchain.html">blockchain allocation whitepaper.</a>
+                                    </div>
+                                </div>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq9" role="button" aria-expanded="false" aria-controls="faq9">Are tokens, NFTs supported?</a>
+                                <div class="multi-collapse collapse" id="faq9">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        Yes, tokens in the same model as ERC20 Tokens are supported. Likewise NFTs are supported similar to Etheruem.
+                                    </div>
+                                </div>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq10" role="button" aria-expanded="false" aria-controls="faq10">What is the block time?</a>
+                                <div class="multi-collapse collapse" id="faq10">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        The current block times as seen on mainnet are between 20 to 24 seconds per block. The block time goal is 6 seconds.
+                                    </div>
+                                </div>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq11" role="button" aria-expanded="false" aria-controls="faq11">What is the TPS?</a>
+                                <div class="multi-collapse collapse" id="faq11">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        The TPS is dynamic. For details, see <a href="/tps.html">Dynamic TPS model.</a>
+                                    </div>
+                                </div>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq12" role="button" aria-expanded="false" aria-controls="faq12">What is the gas limit per block?</a>
+                                <div class="multi-collapse collapse" id="faq12">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        The gas limit per block is set to 300 million, though it may be adjusted dynamically in the future. Under ideal network conditions and capable hardware, this equates to about 14285 basic transactions per block.
+                                    </div>
+                                </div>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq13" role="button" aria-expanded="false" aria-controls="faq13">What is the block finality?</a>
+                                <div class="multi-collapse collapse" id="faq13">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        Blocks are considered finalized as soon as they are committed, because of the 3 phase pBFT consensus algorithm.
+                                    </div>
+                                </div>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq14" role="button" aria-expanded="false" aria-controls="faq14">How much are the block mining rewards?</a>
+                                <div class="multi-collapse collapse" id="faq14">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        The current block reward per block is 951293 coins that will halven every 21024000 blocks. For details, see <a href="/allocation-block-rewards">block rewards.</a>
+                                    </div>
+                                </div>
+                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#faq15" role="button" aria-expanded="false" aria-controls="faq15">How were initial validators for mainnet determined?</a>
+                                <div class="multi-collapse collapse" id="faq15">
+                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                        The initial validators were those who had DogeP tokens and opted to become genesis validators. For details, see <a href="https://github.com/quantumcoinproject/quantum-coin-go/blob/dogep/consensus/proofofstake/README.md">Genesis Validators.</a>
+                                    </div>
                                 </div>
                                 <!-- Content End -->
 
