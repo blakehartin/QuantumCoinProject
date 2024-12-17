@@ -1,0 +1,870 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript">
+        if (window.location.hostname.toLowerCase() === "dpdocs.org") {
+            window.location.href = "https://quantumcoin.org" + window.location.pathname
+        }
+        else if (location.protocol === 'http:') {
+            location.replace(`https:${location.href.substring(location.protocol.length)}`);
+        }
+    </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="https://static.dpdocs.org/img/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/bootstrap/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/font-size/css/rvfs.css">
+    <!-- icon css-->
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/elagent-icon/style.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/font-awesome/css/all.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/niceselectpicker/nice-select.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/animation/animate.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/prism/prism.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/prism/prism-coy.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/mcustomscrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/css/style.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/css/responsive.css">
+    <title>Quantum Coin Connecting To Mainnet from snapshot</title>
+    <link rel="stylesheet" href="https://static.dpdocs.org/scss/_header.scss">
+    <link rel="stylesheet" href="https://static.dpdocs.org/scss/_doclist.scss">
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example3" data-offset="86" class="full-width-doc sticky-nav-doc doc">
+
+    <div class="body_wrapper sticky_menu">
+        <nav class="navbar navbar-expand-lg menu_one display_none" id="stickyTwo" style="height:60px">
+            <div class="container-fluid pl-60 pr-60">
+                <a class="navbar-brand" href="index.html">
+                    <img src="https://downloads.quantumcoin.org/quantum-coin-icon.png" alt="Quantum Coin logo" style="display:inline-block;max-width:50px;">
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="menu_toggle">
+                        <span class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <span class="hamburger-cross">
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav menu ml-auto">
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="https://t.me/QuantumCoin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://static.dpdocs.org/img/telegram.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="https://x.com/TheQuantumCoin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://static.dpdocs.org/img/twitter-logo.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="https://www.reddit.com/r/TheQuantumCoin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://static.dpdocs.org/img/reddit.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="https://discord.gg/bbbMPyzJTM" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://static.dpdocs.org/img/discord.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="mobile_main_menu" id="sticky">
+            <div class="container">
+                <div class="mobile_menu_left">
+                    <button type="button" class="navbar-toggler mobile_menu_btn">
+                        <span class="menu_toggle ">
+                            <span class="hamburger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="https://downloads.quantumcoin.org/quantum-coin-icon.png" alt="Quantum Coin logo" style="display:inline-block;max-width:50px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="click_capture"></div>
+        <div class="side_menu">
+            <div class="mobile_menu_header">
+                <div class="close_nav">
+                    <i class="arrow_left"></i>
+                    <i class="icon_close"></i>
+                </div>
+                <div class="mobile_logo">
+                    <img src="https://downloads.quantumcoin.org/quantum-coin-icon.png" alt="Quantum Coin logo" style="display:inline-block;max-width:50px;">
+                </div>
+            </div>
+            <div class="mobile_nav_wrapper">
+                <nav class="mobile_nav_top">
+                    <ul class="navbar-nav menu ml-auto">
+                        <li class="nav-item dropdown submenu">
+                            <a href="/" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a href="https://quantumcoin.org" class="nav-link">quantumcoin.org</a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a href="https://scan.quantumcoin.org" class="nav-link">Block Explorer</a>
+                        </li>
+                        <li class="nav-item dropdown submenu active">
+                            <a class="nav-link" href="#">
+                                Community
+                            </a>
+                            <i class="arrow_carrot-down_alt2 mobile_dropdown_icon"></i>
+                            <ul class="dropdown-menu dropdown_menu_two">
+                                <li class="nav-item">
+                                    <a href="https://t.me/QuantumCoin" class="nav-link">
+                                        <img src="https://static.dpdocs.org/img/telegram.png" alt="Telegram">
+                                        <div class="text">
+                                            <h5>Telegram</h5>
+                                            <p>@DogeProtocolCommunity</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://discord.gg/bbbMPyzJTM" class="nav-link">
+                                        <img src="https://static.dpdocs.org/img/discord.png" alt="Discord">
+                                        <div class="text">
+                                            <h5>Discord</h5>
+                                            <p>discord.gg/bbbMPyzJTM</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://x.com/TheQuantumCoin" class="nav-link">
+                                        <img src="https://static.dpdocs.org/img/twitter-logo.png" alt="Twitter">
+                                        <div class="text">
+                                            <h5>Twitter</h5>
+                                            <p>@DogeProtocol1</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://www.reddit.com/r/TheQuantumCoin" class="nav-link">
+                                        <img src="https://static.dpdocs.org/img/reddit.png" alt="Reddit">
+                                        <div class="text">
+                                            <h5>Reddit</h5>
+                                            <p>/r/DogeProtocol1</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile_nav_bottom">
+                    <aside class="doc_left_sidebarlist">
+                        <h2>Quantum Coin Docs</h2>
+                        <div class="scroll">
+                            <ul class="list-unstyled nav-sidebar">
+                                <li class="nav-item">
+                                    <a href="/" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/home.png" alt="Quantum Coin home">Home</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="/vision.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/vision.png" alt="Quantum Coin Vision Paper" style="max-width:33px;">Vision</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/whitepapers.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/whitepaper.png" alt="Quantum Coin Whitepapers" style="max-width:33px;">Whitepapers</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a href="/quantum-resistance.html">Quantum Resistance</a></li>
+                                        <li><a href="/consensus.html">Consensus (PoS)</a></li>
+                                        <li><a href="/data-availability.html">Data Availability</a></li>
+                                        <li><a href="/multi-fork-blockchain.html">Allocation</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="#" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/chat1.png" alt="Quantum Coin Details">Details</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a href="/smart-contracts.html" class="active">Smart Contracts</a></li>
+                                        <li><a href="/tps.html">Dynamic TPS</a></li>
+                                        <li><a href="https://scan.quantumcoin.org">Block Explorer</a></li>
+                                        <li><a href="/desktop-wallet.html">Desktop Wallet</a></li>
+                                        <li><a href="/android-wallet.html">Android Wallet</a></li>
+                                        <li><a href="/connecting-to-mainnet.html">Connecting To Mainnet</a></li>
+                                        <li><a href="/validator-deposit-withdraw.html">Validator Staking</a></li>
+                                        <li><a href="/sdk.html">SDK</a></li>
+                                        <li><a href="/faq.html">FAQ</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled nav-sidebar coding_nav">
+                                <li class="nav-item">
+                                    <a href="https://linktr.ee/quantumcoin" class="nav-link"><img src="https://downloads.quantumcoin.org/quantum-coin-icon.png" alt="Quantum Coin Links" style="max-width:33px;">Links</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://github.com/QuantumCoinProject" class="nav-link"><img src="https://static.dpdocs.org/img/other/github.png" alt="Quantum Coin Github source code, documentation" style="max-width:33px;">Github</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+        <section class="doc_documentation_area doc_documentation_full_area body_fixed">
+            <div class="overlay_bg"></div>
+            <div class="container-fluid pl-60 pr-60">
+                <div class="row">
+                    <div class="col-lg-2 doc_mobile_menu">
+                        <aside class="doc_left_sidebarlist" style="padding-top:25px;">
+                            <div class="scroll">
+                                <ul class="list-unstyled nav-sidebar">
+                                    <li class="nav-item">
+                                        <a href="/" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/home.png" alt="Quantum Coin home">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/vision.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/vision.png" alt="Quantum Coin Vision Paper" style="max-width:33px;">Vision</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a href="/whitepapers.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/whitepaper.png" alt="Quantum Coin Whitepapers" style="max-width:33px;">Whitepapers</a>
+                                        <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                        <ul class="list-unstyled dropdown_nav">
+                                            <li><a href="/quantum-resistance.html">Quantum Resistance</a></li>
+                                            <li><a href="/consensus.html">Consensus (PoS)</a></li>
+                                            <li><a href="/data-availability.html">Data Availability</a></li>
+                                            <li><a href="/multi-fork-blockchain.html">Allocation</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a href="#" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/chat1.png" alt="Quantum Coin Details">Details</a>
+                                        <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                        <ul class="list-unstyled dropdown_nav">
+                                            <li><a href="/smart-contracts.html">Smart Contracts</a></li>
+                                            <li><a href="/tps.html">Dynamic TPS</a></li>
+                                            <li><a href="https://scan.quantumcoin.org">Block Explorer</a></li>
+                                            <li><a href="/desktop-wallet.html">Desktop Wallet</a></li>
+                                            <li><a href="/android-wallet.html">Android Wallet</a></li>
+                                            <li><a href="/connecting-to-mainnet.html">Connecting To Mainnet</a></li>
+                                            <li><a href="/validator-deposit-withdraw.html">Validator Staking</a></li>
+                                            <li><a href="/sdk.html">SDK</a></li>
+                                            <li><a href="/faq.html">FAQ</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled nav-sidebar coding_nav">
+                                    <li class="nav-item">
+                                        <a href="https://linktr.ee/quantumcoin" class="nav-link"><img src="https://downloads.quantumcoin.org/quantum-coin-icon.png" alt="Quantum Coin Links" style="max-width:33px;">Links</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://github.com/QuantumCoinProject" class="nav-link"><img src="https://static.dpdocs.org/img/other/github.png" alt="Quantum Coin Github source code, documentation" style="max-width:33px;">Github</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <div id="post" class="documentation_info">
+                            <article class="documentation_body" id="documentation" style="padding-top:100px;">
+                                <!-- Content Start -->
+                                <div class="shortcode_title">
+                                    <h1>Connecting to mainnet</h1>
+                                    <p>
+                                        You can connect to mainnet using two different ways. <a href="/connecting-to-mainnet.html">Method 1 is the default method</a> of connecting by downloading all blocks from the start.
+                                        Method 2 works by downloading a pre-created snapshot and downloading recent blocks after the snapshot.
+                                    </p>
+                                </div>
+
+
+                                <div class="alert media message_alert alert-warning fade show" role="alert">
+                                    <i class="icon_error-circle_alt"></i>
+                                    <div class="media-body">
+                                        <h5>Warning</h5>
+                                        <p>This is blockchain software. Do not use on a computer or device with sensitive or important personal data. Using this software will require opening firewall ports. Using this software may result in heavy internet data usage. Use at your own risk.</p>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="icon_close"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h3>Method 2</h3>
+                                </div>
+
+                                <div class="steps-panel">
+                                    <ol class="ordered-list">
+                                        <li>
+                                            <div>
+                                                <p>Open the appropriate shell window.</p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win1" role="button" aria-expanded="false" aria-controls="win1">Windows</a>
+                                                <div class="multi-collapse collapse" id="win1">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        Open Powershell
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac1" role="button" aria-expanded="false" aria-controls="mac1">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac1">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        Open Terminal
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin1" role="button" aria-expanded="false" aria-controls="lin1">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin1">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        Open Terminal
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Run the following command to open firewall port. Make sure that the commands succeed.<br />
+                                                    If you are connecting from a cloud computer (such as AWS), you will need to additionally open the 30303 port under security rules, to allow incoming connections from 0.0.0.0/0.<br />
+                                                    If you are connecting from a home computer, you may need to additionally open the firewall port 30303 in your router.
+                                                </p>
+
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win8" role="button" aria-expanded="false" aria-controls="win8">Windows</a>
+                                                <div class="multi-collapse collapse" id="win8" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">netsh advfirewall firewall add rule name="TCP Port 30303" dir=in action=allow protocol=TCP localport=30303</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac8" role="button" aria-expanded="false" aria-controls="mac8">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac8" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        1. Open System Preferences. <br />
+                                                        2. Click on Security & Privacy. <br />
+                                                        3. Click the Firewall tab. <br />
+                                                        4. Click the lock icon to unlock the firewall settings. <br />
+                                                        5. Click the Add (+) button. <br />
+                                                        6. Enter port 30303 in the Port field. <br />
+                                                        7. Enter &quot;blockchain&quot; in the Application field. <br />
+                                                        8. Click the Add button. <br />
+                                                        9. Click the Start button to enable the firewall.
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin8" role="button" aria-expanded="false" aria-controls="lin8">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin8" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        Note that in case you are SSH'd into this computer, you might get logged out when you run these commands. In this case, you will need to SSH again and re-run the applicable steps before this step.
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">sudo ufw allow 30303/tcp</code></pre>
+                                                        The next command to open port 22 is required only if you are SSH'd into the computer. If you do not open this port but enable firewall in the next command, then you might get permanently get locked out of the machine. But if you are logged in locally, do not run this command.
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">sudo ufw allow 22/tcp</code></pre>
+                                                        Run the following command to enable firewall.
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">sudo ufw enable</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>Create a folder named dp.</p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win2" role="button" aria-expanded="false" aria-controls="win2">Windows</a>
+                                                <div class="multi-collapse collapse" id="win2">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">mkdir c:\dp</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac2" role="button" aria-expanded="false" aria-controls="mac2">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac2">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">mkdir $HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin2" role="button" aria-expanded="false" aria-controls="lin2">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin2">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">mkdir $HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Change to the folder dp.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win3" role="button" aria-expanded="false" aria-controls="win3">Windows</a>
+                                                <div class="multi-collapse collapse" id="win3" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">cd c:\dp</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac3" role="button" aria-expanded="false" aria-controls="mac3">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac3" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">cd $HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin3" role="button" aria-expanded="false" aria-controls="lin3">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin3" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">cd $HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Download the updated CLI (command line interface) wallet by running the following command:
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win4" role="button" aria-expanded="false" aria-controls="win4">Windows</a>
+                                                <div class="multi-collapse collapse" id="win4" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl https://github.com/quantumcoinproject/quantum-coin-go/releases/download/v2.0.57/dp-release-windows-v2.0.57.zip -o dp-release-windows-v2.0.57.zip</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac4" role="button" aria-expanded="false" aria-controls="mac4">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac4" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo dp-release-mac-v2.0.57.tar.gz https://github.com/quantumcoinproject/quantum-coin-go/releases/download/v2.0.57/dp-release-mac-v2.0.57.tar.gz</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin4" role="button" aria-expanded="false" aria-controls="lin4">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin4" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo dp-release-ubuntu-v2.0.57.tar.gz https://github.com/quantumcoinproject/quantum-coin-go/releases/download/v2.0.57/dp-release-ubuntu-v2.0.57.tar.gz</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Extract the contents of the downloaded zip file to a folder.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win5" role="button" aria-expanded="false" aria-controls="win5">Windows</a>
+                                                <div class="multi-collapse collapse" id="win5" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">Expand-Archive -Path dp-release-windows-v2.0.57.zip -DestinationPath c:\</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac5" role="button" aria-expanded="false" aria-controls="mac5">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac5" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">tar -xzvf dp-release-mac-v2.0.57.tar.gz</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin5" role="button" aria-expanded="false" aria-controls="lin5">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin5" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">tar -xzvf dp-release-ubuntu-v2.0.57.tar.gz</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    This step is specific to Mac and Linux. Set the environment variable to the required library path. Remember that if you open a new Terminal window anytime, you will need to run this command again, to set the environment variable. You might want to add this environment variable to your shell profile.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac7" role="button" aria-expanded="false" aria-controls="mac7">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac7" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DYLD_LIBRARY_PATH=$HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin7" role="button" aria-expanded="false" aria-controls="lin7">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin7" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">export LD_LIBRARY_PATH=$HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    This command is just required the first time and you do not have to run it each time. Run the following command to configure the software to download the Quantum Coin blockchain snapshot. Do not run it more than once. Ensure that the command succeeds and no errors or warnings are reported.
+                                                    You may also download the file using a browser and place it in the expected location.
+                                                </p>
+                                            </div>
+                                            <div class="alert media message_alert alert-warning fade show" role="alert">
+                                                <i class="icon_error-circle_alt"></i>
+                                                <div class="media-body">
+                                                    <h5>Warning</h5>
+                                                    <p>This command can take multiple hours to complete. it is recommended you have atleast 100 Mbps internet download speed.</p>
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <i class="icon_close"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win9" role="button" aria-expanded="false" aria-controls="win9">Windows</a>
+                                                <div class="multi-collapse collapse" id="win9" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl https://qcsnapshot.s3.us-west-2.amazonaws.com/qc-14-dec-2024.snapshot -o dp-snapshot.zip</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac9" role="button" aria-expanded="false" aria-controls="mac9">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac9" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo dp-snapshot.zip https://qcsnapshot.s3.us-west-2.amazonaws.com/qc-14-dec-2024.snapshot</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin9" role="button" aria-expanded="false" aria-controls="lin9">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin9" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo dp-snapshot.zip https://qcsnapshot.s3.us-west-2.amazonaws.com/qc-14-dec-2024.snapshot</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Run the following command to connect to the mainnet. You may additionally have to add exclusion in your anti-virus software, if the software shows a prompt. If successful, you should see your node connecting to the blockchain and blocks getting created.
+                                                </p>
+                                            </div>
+                                            <div class="alert media message_alert alert-warning fade show" role="alert">
+                                                <i class="icon_error-circle_alt"></i>
+                                                <div class="media-body">
+                                                    <h5>Warning</h5>
+                                                    <p>This command can take multiple hours to complete.</p>
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                        <i class="icon_close"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win10" role="button" aria-expanded="false" aria-controls="win10">Windows</a>
+                                                <div class="multi-collapse collapse" id="win10" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">Expand-Archive -Path dp-snapshot.zip -DestinationPath c:\dp</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac10" role="button" aria-expanded="false" aria-controls="mac10">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac10" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">sudo apt install unzip</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">unzip -o ./dp-snapshot.zip -d .</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin10" role="button" aria-expanded="false" aria-controls="lin10">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin10" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">brew install unzip</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">unzip -o ./dp-snapshot.zip -d .</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    This step is specific to Windows.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win6" role="button" aria-expanded="false" aria-controls="win6">Windows</a>
+                                                <div class="multi-collapse collapse" id="win6" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        Close the Powershell window. Open a command prompt instead and change to the following folder.
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">cd c:\dp</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Run the following command to connect to the mainnet. You may additionally have to add exclusion in your anti-virus software, if the software shows a prompt. If successful, you should see your node connecting to the blockchain and blocks getting created.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win11" role="button" aria-expanded="false" aria-controls="win11">Windows</a>
+                                                <div class="multi-collapse collapse" id="win11" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">connect.cmd</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac11" role="button" aria-expanded="false" aria-controls="mac11">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac11" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">source ./connect.sh</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin11" role="button" aria-expanded="false" aria-controls="lin11">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin11" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./connect.sh</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    To stop the blockchain node client, do not close the window or logout or shutdown directly. Instead press CTRL+C.
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <!-- Content End -->
+
+                                <div class="row" style="margin-top:25px;">
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/vision.png" alt="Quantum Coin Vision">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/vision.html">
+                                                    <h5>Vision</h5>
+                                                </a>
+                                                <p>The Vision of Quantum Coin.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/quantum-resistance.png" alt="Quantum Coin Quantum Resistance">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/quantum-resistance.html">
+                                                    <h5>Quantum Resistance</h5>
+                                                </a>
+                                                <p>Quantum Resistance in the Quantum Coin blockchain.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/home_one/icon/newspaper.png" alt="Quantum Coin Blockchain Smart Contracts">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/smart-contracts.html">
+                                                    <h5>Smart Contracts</h5>
+                                                </a>
+                                                <p>Smart Contract support in the Quantum Coin blockchain.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/handshake.png" alt="Quantum Coin Proof-of-Stake consensus">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/consensus.html">
+                                                    <h5>Consensus</h5>
+                                                </a>
+                                                <p>Proof of Stake consensus.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/data-availability.png" alt="Data Availability in Quantum Coin Blockchain">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/data-availability.html">
+                                                    <h5>Data Availability</h5>
+                                                </a>
+                                                <p>Data Availability, long term and short term.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/blockchain-allocation.png" alt="Quantum Coin Blockchain Allocation">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/multi-fork-blockchain.html">
+                                                    <h5>Blockchain Allocation</h5>
+                                                </a>
+                                                <p>Bitcoin + Ethereum + Dogecoin + DogeP multi-fork.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/dynamic-tps.png" alt="Dynamic Transactions Per Second model, Quantum Coin Blockchain">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/tps.html">
+                                                    <h5>Dynamic TPS</h5>
+                                                </a>
+                                                <p>Dynamic Transactions Per Second model.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/dogep.png" alt="Quantum Coin Block Explorer">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="https://scan.quantumcoin.org">
+                                                    <h5>Block Explorer</h5>
+                                                </a>
+
+                                                <p><a href="https://scan.quantumcoin.org">scan.quantumcoin.org</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/github.png" alt="Quantum Coin Github source code, documentation">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="https://github.com/quantumcoinproject">
+                                                    <h5>Github</h5>
+                                                </a>
+                                                <p>Source code, documentation are maintained in Github.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/dogep.png" alt="Quantum Coin Improvement Proposals">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="https://ips.dpdocs.org">
+                                                    <h5>QCIPs</h5>
+                                                </a>
+                                                <p>Quantum Coin Improvement Proposals</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border_bottom"></div>
+                            </article>
+                            <div class="border_bottom"></div>
+                            <article class="help_text" id="help">
+                                <div class="resource">
+                                    <h4 class="c_head">Help</h4>
+                                    <p>Quantum Coin is developed and maintained by an open community. Hop on to the <a href="https://discord.gg/bbbMPyzJTM">community discord server</a> for help with development.</p>
+                                </div>
+                                <div class="border_bottom"></div>
+
+                            </article>
+                            <div class="border_bottom"></div>
+
+                            <div class="border_bottom"></div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 doc_right_mobile_menu">
+                        <div class="open_icon" id="right">
+                            <i class="arrow_carrot-left"></i>
+                            <i class="arrow_carrot-right"></i>
+                        </div>
+                        <div class="doc_rightsidebar scroll">
+                            <div id="font-switcher" class="d-flex justify-content-between align-items-center">
+                                <div id="rvfs-controllers" class="fontsize-controllers group"></div>
+                                <a href="javascript:window.print()" class="print"><i class="icon_printer"></i></a>
+                            </div>
+                            <div class="doc_switch">
+                                <label for="something" class="tab-btn tab-btns"><i class="icon_lightbulb_alt"></i></label>
+                                <input type="checkbox" name="something" id="something" class="tab_switcher">
+                                <label for="something" class="tab-btn"><i class="far fa-moon"></i></label>
+                            </div>
+                            <h6>On this page:</h6>
+                            <nav class="list-unstyled doc_menu" id="navbar-example3">
+                                <a href="#documentation" class="nav-link active">Documentation</a>
+                                <a href="#getting" class="nav-link">Introduction</a>
+                                <a href="#help" class="nav-link">Help!</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="simple_footer">
+            <img class="leaf_right" src="img/home_one/leaf_footter.png" alt="">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <p><a href="https://quantumcoin.org">quantumcoin.org</a></p>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <ul class="list-unstyled f_social_icon">
+                            <li>
+                                <a href="https://t.me/QuantumCoin" style="border: 0px">
+                                    <img src="https://static.dpdocs.org/img/telegram.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://x.com/TheQuantumCoin" style="border: 0px">
+                                    <img src="https://static.dpdocs.org/img/twitter-logo.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.reddit.com/r/TheQuantumCoin" style="border: 0px">
+                                    <img src="https://static.dpdocs.org/img/reddit.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://discord.gg/bbbMPyzJTM" style="border: 0px">
+                                    <img src="https://static.dpdocs.org/img/discord.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://static.dpdocs.org/js/jquery-3.2.1.min.js"></script>
+    <script src="https://static.dpdocs.org/js/pre-loader.js"></script>
+    <script src="https://static.dpdocs.org/assets/bootstrap/js/popper.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/bootstrap/js/bootstrap-select.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/font-size/js/rv-jquery-fontsize-2.0.3.js"></script>
+    <script src="https://static.dpdocs.org/js/parallaxie.js"></script>
+    <script src="https://static.dpdocs.org/js/TweenMax.min.js"></script>
+    <script src="https://static.dpdocs.org/js/jquery.wavify.js"></script>
+    <script src="https://static.dpdocs.org/js/anchor.js"></script>
+    <script src="https://static.dpdocs.org/assets/wow/wow.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/prism/prism.js"></script>
+    <script src="https://static.dpdocs.org/assets/niceselectpicker/jquery.nice-select.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://static.dpdocs.org/js/main.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            var lightBox = document.getElementById('something');
+            if (lightBox.checked) {
+                lightBox.click();
+            } else {
+
+            }
+        });
+    </script>
+</body>
+
+</html>
