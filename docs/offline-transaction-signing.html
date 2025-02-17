@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript">
+        if (window.location.hostname.toLowerCase() === "dpdocs.org") {
+            window.location.href = "https://quantumcoin.org" + window.location.pathname
+        }
+        else if (location.protocol === 'http:') {
+            location.replace(`https:${location.href.substring(location.protocol.length)}`);
+        }
+    </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="https://static.dpdocs.org/img/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/bootstrap/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/font-size/css/rvfs.css">
+    <!-- icon css-->
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/elagent-icon/style.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/font-awesome/css/all.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/niceselectpicker/nice-select.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/animation/animate.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/prism/prism.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/prism/prism-coy.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/assets/mcustomscrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/css/style.css">
+    <link rel="stylesheet" href="https://static.dpdocs.org/css/responsive.css">
+    <title>Offline Transaction Signing - QuantumCoin</title>
+    <link rel="stylesheet" href="https://static.dpdocs.org/scss/_header.scss">
+    <link rel="stylesheet" href="https://static.dpdocs.org/scss/_doclist.scss">
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example3" data-offset="86" class="full-width-doc sticky-nav-doc doc">
+
+    <div class="body_wrapper sticky_menu">
+        <nav class="navbar navbar-expand-lg menu_one display_none" id="stickyTwo" style="height:60px">
+            <div class="container-fluid pl-60 pr-60">
+                <a class="navbar-brand" href="index.html">
+                    <img src="https://downloads.quantumcoin.org/quantum-coin-icon.png" alt="Quantum Coin logo" style="display:inline-block;max-width:50px;">
+                </a>
+                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="menu_toggle">
+                        <span class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <span class="hamburger-cross">
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav menu ml-auto">
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="https://t.me/QuantumCoin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://static.dpdocs.org/img/telegram.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="https://x.com/TheQuantumCoin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://static.dpdocs.org/img/twitter-logo.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="https://www.reddit.com/r/TheQuantumCoin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://static.dpdocs.org/img/reddit.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a class="nav-link dropdown-toggle" href="https://discord.gg/bbbMPyzJTM" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://static.dpdocs.org/img/discord.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="mobile_main_menu" id="sticky">
+            <div class="container">
+                <div class="mobile_menu_left">
+                    <button type="button" class="navbar-toggler mobile_menu_btn">
+                        <span class="menu_toggle ">
+                            <span class="hamburger">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="https://downloads.quantumcoin.org/quantum-coin-icon.png" alt="Quantum Coin logo" style="display:inline-block;max-width:50px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="click_capture"></div>
+        <div class="side_menu">
+            <div class="mobile_menu_header">
+                <div class="close_nav">
+                    <i class="arrow_left"></i>
+                    <i class="icon_close"></i>
+                </div>
+                <div class="mobile_logo">
+                    <img src="https://downloads.quantumcoin.org/quantum-coin-icon.png" alt="Quantum Coin logo" style="display:inline-block;max-width:50px;">
+                </div>
+            </div>
+            <div class="mobile_nav_wrapper">
+                <nav class="mobile_nav_top">
+                    <ul class="navbar-nav menu ml-auto">
+                        <li class="nav-item dropdown submenu">
+                            <a href="/" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a href="https://quantumcoin.org" class="nav-link">quantumcoin.org</a>
+                        </li>
+                        <li class="nav-item dropdown submenu">
+                            <a href="https://QuantumScan.com" class="nav-link">Block Explorer</a>
+                        </li>
+                        <li class="nav-item dropdown submenu active">
+                            <a class="nav-link" href="#">
+                                Community
+                            </a>
+                            <i class="arrow_carrot-down_alt2 mobile_dropdown_icon"></i>
+                            <ul class="dropdown-menu dropdown_menu_two">
+                                <li class="nav-item">
+                                    <a href="https://t.me/QuantumCoin" class="nav-link">
+                                        <img src="https://static.dpdocs.org/img/telegram.png" alt="Telegram">
+                                        <div class="text">
+                                            <h5>Telegram</h5>
+                                            <p>@QuantumCoin</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://discord.gg/bbbMPyzJTM" class="nav-link">
+                                        <img src="https://static.dpdocs.org/img/discord.png" alt="Discord">
+                                        <div class="text">
+                                            <h5>Discord</h5>
+                                            <p>discord.gg/bbbMPyzJTM</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://x.com/TheQuantumCoin" class="nav-link">
+                                        <img src="https://static.dpdocs.org/img/twitter-logo.png" alt="Twitter">
+                                        <div class="text">
+                                            <h5>Twitter (X)</h5>
+                                            <p>@TheQuantumCoin</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://www.reddit.com/r/TheQuantumCoin" class="nav-link">
+                                        <img src="https://static.dpdocs.org/img/reddit.png" alt="Reddit">
+                                        <div class="text">
+                                            <h5>Reddit</h5>
+                                            <p>/r/TheQuantumCoin</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mobile_nav_bottom">
+                    <aside class="doc_left_sidebarlist">
+                        <h2>Quantum Coin Docs</h2>
+                        <div class="scroll">
+                            <ul class="list-unstyled nav-sidebar">
+                                <li class="nav-item">
+                                    <a href="/" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/home.png" alt="Quantum Coin home">Home</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="/vision.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/vision.png" alt="Quantum Coin Vision Paper" style="max-width:33px;">Vision</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/whitepapers.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/whitepaper.png" alt="Quantum Coin Whitepapers" style="max-width:33px;">Whitepapers</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a href="/quantum-resistance.html">Quantum Resistance</a></li>
+                                        <li><a href="/consensus.html">Consensus (PoS)</a></li>
+                                        <li><a href="/data-availability.html">Data Availability</a></li>
+                                        <li><a href="/multi-fork-blockchain.html">Allocation</a></li>
+                                        <li><a href="/whitepapers/Heisen-GameChain.pdf">Heisen GameChain</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="#" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/chat1.png" alt="Quantum Coin Details">Details</a>
+                                    <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                    <ul class="list-unstyled dropdown_nav">
+                                        <li><a href="/smart-contracts.html" class="active">Smart Contracts</a></li>
+                                        <li><a href="/tps.html">Dynamic TPS</a></li>
+                                        <li><a href="https://QuantumScan.com">Block Explorer</a></li>
+                                        <li><a href="/desktop-wallet.html">Desktop Wallet</a></li>
+                                        <li><a href="/android-wallet.html">Android Wallet</a></li>
+                                        <li><a href="/connecting-to-mainnet.html">Connecting To Mainnet</a></li>
+                                        <li><a href="/validator-deposit-withdraw.html">Validator Staking</a></li>
+                                        <li><a href="/sdk.html">SDK</a></li>
+                                        <li><a href="/faq.html">FAQ</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled nav-sidebar coding_nav">
+                                <li class="nav-item">
+                                    <a href="https://linktr.ee/quantumcoin" class="nav-link"><img src="https://downloads.quantumcoin.org/quantum-coin-icon.png" alt="Quantum Coin Links" style="max-width:33px;">Links</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://github.com/QuantumCoinProject" class="nav-link"><img src="https://static.dpdocs.org/img/other/github.png" alt="Quantum Coin Github source code, documentation" style="max-width:33px;">Github</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+        <section class="doc_documentation_area doc_documentation_full_area body_fixed">
+            <div class="overlay_bg"></div>
+            <div class="container-fluid pl-60 pr-60">
+                <div class="row">
+                    <div class="col-lg-2 doc_mobile_menu">
+                        <aside class="doc_left_sidebarlist" style="padding-top:25px;">
+                            <div class="scroll">
+                                <ul class="list-unstyled nav-sidebar">
+                                    <li class="nav-item">
+                                        <a href="/" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/home.png" alt="Quantum Coin home">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/vision.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/vision.png" alt="Quantum Coin Vision Paper" style="max-width:33px;">Vision</a>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a href="/whitepapers.html" class="nav-link"><img src="https://static.dpdocs.org/img/other/whitepaper.png" alt="Quantum Coin Whitepapers" style="max-width:33px;">Whitepapers</a>
+                                        <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                        <ul class="list-unstyled dropdown_nav">
+                                            <li><a href="/quantum-resistance.html">Quantum Resistance</a></li>
+                                            <li><a href="/consensus.html">Consensus (PoS)</a></li>
+                                            <li><a href="/data-availability.html">Data Availability</a></li>
+                                            <li><a href="/multi-fork-blockchain.html">Allocation</a></li>
+                                        <li><a href="/whitepapers/Heisen-GameChain.pdf">Heisen GameChain</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item active">
+                                        <a href="#" class="nav-link"><img src="https://static.dpdocs.org/img/side-nav/chat1.png" alt="Quantum Coin Details">Details</a>
+                                        <span class="icon"><i class="arrow_carrot-down"></i></span>
+                                        <ul class="list-unstyled dropdown_nav">
+                                            <li><a href="/smart-contracts.html">Smart Contracts</a></li>
+                                            <li><a href="/tps.html">Dynamic TPS</a></li>
+                                            <li><a href="https://QuantumScan.com">Block Explorer</a></li>
+                                            <li><a href="/desktop-wallet.html">Desktop Wallet</a></li>
+                                            <li><a href="/android-wallet.html">Android Wallet</a></li>
+                                            <li><a href="/connecting-to-mainnet.html">Connecting To Mainnet</a></li>
+                                            <li><a href="/validator-deposit-withdraw.html">Validator Staking</a></li>
+                                            <li><a href="/sdk.html">SDK</a></li>
+                                            <li><a href="/faq.html">FAQ</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="list-unstyled nav-sidebar coding_nav">
+                                    <li class="nav-item">
+                                        <a href="https://linktr.ee/quantumcoin" class="nav-link"><img src="https://downloads.quantumcoin.org/quantum-coin-icon.png" alt="Quantum Coin Links" style="max-width:33px;">Links</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://github.com/QuantumCoinProject" class="nav-link"><img src="https://static.dpdocs.org/img/other/github.png" alt="Quantum Coin Github source code, documentation" style="max-width:33px;">Github</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <div id="post" class="documentation_info">
+                            <article class="documentation_body" id="documentation" style="padding-top:100px;">
+                                <!-- Content Start -->
+                                <div class="shortcode_title">
+                                    <h1>Offline Transaction Signing</h1>
+                                    <p>
+                                        It is a better security measure to store your wallets in an offline device that is air-gapped, to mitigate risks of your wallet keys getting stolen.
+                                        For example, you can disconnect all network connections, bluetooth, wi-fi etc. in a new laptop and store your wallets in the air-gapped device.
+                                        When you need to execute a transaction from a wallet stored in such a device, instead of connecting the laptop to a network, you can instead
+                                        use the offline transaction signing feature described below.
+                                    </p>
+                                </div>
+
+                                <div class="steps-panel">
+                                    <ol class="ordered-list">
+                                        <li>
+                                            <div>
+                                                <p>Ensure you have the <a href="/desktop-wallet">latest version of the desktop wallet installed</a>. You may either download this wallet once and disconnect the laptop from all networks or
+                                                copy over the wallet from another device in a USB drive. It is best to use a new USB drive and ensure you scan the drive using an antivirus software.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Open the desktop wallet app in the disconnected device and create or import your wallets.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>Under the settings option down on right bottom side of the app, select the option that says &#39;Offline Transaction Signing&#39;.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Select &#39;Enable&#39; and then &#39;Ok&#39;
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Next time you want to send a transaction, just use click send button. Other transactions types such as conversions also will display similar pattern described below.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Among other fields prompting your input, you will also see a field named the &#39;nonce&#39;. If this is the first transaction that is being sent from the wallet, you can leave the default value as is.
+                                                    If you had sent other transactions from this address before (including conversions), you will have to note down the nonce from <a href="https://QuantumScan.com">QuantumScan block explorer</a> on another
+                                                    connected device. To do this, paste the address in the connected device and search for it in <a href="https://QuantumScan.com">QuantumScan</a>. You can also get the address to search from your wallet screen's QR code option for the wallet.
+                                                </p>
+                                                <p>
+                                                    Note that if QuantumScan shows that your address is not found, then it is likely there were no transactions sent from it yet, in which case you can leave the nonce to it's default value.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Enter the nonce value in the input box for the nonce in the disconnected device in the send interface.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Fill rest of the fields for sending the transaction. Click on send and continue the steps in the wallet app. In the final stage of the send process, you will be shown the signed transaction data.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Copy the signed transaction data into a USB drive and bring it to another computer that is connected to the internet.
+                                                    In the future, you will be able to do this using a QR code, but QR code support is not available at the moment.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    In the computer that is connected to the internet, open this current webpage: <a href="https://QuantumCoin.org/offline-transaction-signing.html">https://QuantumCoin.org/offline-transaction-signing.html</a>.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Paste the signed transaction data into the following textbox and then press &#39;Submit Transaction&#39;.
+                                                </p>
+                                                <p>
+                                                    <script type="text/javascript">
+                                                        async function postTransaction(txnData) {
+                                                            let url = "https://app.writerelay.quantumcoinapi.com/transactions";
+                                                            if (txnData == null) {
+                                                                throw new Error("invalid txnData");
+                                                            }
+
+                                                            let txnDataJson = JSON.stringify({ txnData: txnData });
+
+                                                            const response = await fetch(url, {
+                                                                method: 'POST',
+                                                                headers: { 'Content-Type': 'application/json' },
+                                                                body: txnDataJson
+                                                            });
+
+                                                            if (response == null) {
+                                                                throw new Error("server returned invalid response");
+                                                            }
+
+                                                            return response;
+                                                        }
+
+                                                        async function submitTransaction() {
+                                                            try{
+                                                                let signedData = document.getElementById('txtSignedData').value;
+                                                                if (signedData === null || signedData === '') {
+                                                                    alert("Please enter the signed transaction data.");
+                                                                    return false;
+                                                                }
+
+                                                                document.getElementById('txtSignedData').disabled = true;
+                                                                document.getElementById('btnSubmit').disabled = true;
+                                                                document.getElementById('btnSubmit').textContent = 'Submitting...';
+
+                                                                let resp = await postTransaction(signedData);
+                                                                if (resp.status == 200 || resp.status == 204) {
+                                                                    alert('Transaction submitted successfully. Please monitor it in https://QuantumScan.com');
+                                                                } else {
+                                                                    alert('Transaction could not be submitted successfully. Please verify the signed data and ensure your account has enough coins for gas fees.');
+                                                                }
+
+                                                                document.getElementById('txtSignedData').disabled = false;
+                                                                document.getElementById('btnSubmit').disabled = false;
+                                                                document.getElementById('btnSubmit').textContent = 'Submit Transaction';
+                                                            } catch (error) {
+                                                                alert('An error occurred while submitting your transaction: ' + error);
+                                                                document.getElementById('txtSignedData').disabled = false;
+                                                                document.getElementById('btnSubmit').disabled = false;
+                                                                document.getElementById('btnSubmit').textContent = 'Submit Transaction';
+                                                            }
+                                                            return false;
+                                                        }
+                                                    </script>
+                                                    <textarea rows="15" cols="50" id="txtSignedData"></textarea><br/>
+                                                    <button id="btnSubmit" type="button" onclick="return submitTransaction();">Submit Transaction</button>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                 If the submission was successful, you can monitor the status of the transaction in <a href="https://QuantumScan.com">QuantumScan</a> for your address.
+                                                 Note that it can take many seconds to minutes for the transaction to show up in QuantumScan.
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <!-- Content End -->
+
+                                <div class="row" style="margin-top:25px;">
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/vision.png" alt="Quantum Coin Vision">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/vision.html">
+                                                    <h5>Vision</h5>
+                                                </a>
+                                                <p>The Vision of Quantum Coin.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/quantum-resistance.png" alt="Quantum Coin Quantum Resistance">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/quantum-resistance.html">
+                                                    <h5>Quantum Resistance</h5>
+                                                </a>
+                                                <p>Quantum Resistance in the Quantum Coin blockchain.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/home_one/icon/newspaper.png" alt="Quantum Coin Blockchain Smart Contracts">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/smart-contracts.html">
+                                                    <h5>Smart Contracts</h5>
+                                                </a>
+                                                <p>Smart Contract support in the Quantum Coin blockchain.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/handshake.png" alt="Quantum Coin Proof-of-Stake consensus">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/consensus.html">
+                                                    <h5>Consensus</h5>
+                                                </a>
+                                                <p>Proof of Stake consensus.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/data-availability.png" alt="Data Availability in Quantum Coin Blockchain">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/data-availability.html">
+                                                    <h5>Data Availability</h5>
+                                                </a>
+                                                <p>Data Availability, long term and short term.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/blockchain-allocation.png" alt="Quantum Coin Blockchain Allocation">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/multi-fork-blockchain.html">
+                                                    <h5>Blockchain Allocation</h5>
+                                                </a>
+                                                <p>Bitcoin + Ethereum + Dogecoin + DogeP multi-fork.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/dynamic-tps.png" alt="Dynamic Transactions Per Second model, Quantum Coin Blockchain">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="/tps.html">
+                                                    <h5>Dynamic TPS</h5>
+                                                </a>
+                                                <p>Dynamic Transactions Per Second model.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/dogep.png" alt="Quantum Coin Block Explorer">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="https://QuantumScan.com">
+                                                    <h5>Block Explorer</h5>
+                                                </a>
+
+                                                <p><a href="https://QuantumScan.com">QuantumScan.com</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/github.png" alt="Quantum Coin Github source code, documentation">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="https://github.com/quantumcoinproject">
+                                                    <h5>Github</h5>
+                                                </a>
+                                                <p>Source code, documentation are maintained in Github.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-sm-6">
+                                        <div class="media documentation_item">
+                                            <div class="icon">
+                                                <img src="https://static.dpdocs.org/img/other/dogep.png" alt="Quantum Coin Improvement Proposals">
+                                            </div>
+                                            <div class="media-body">
+                                                <a href="https://ips.dpdocs.org">
+                                                    <h5>QCIPs</h5>
+                                                </a>
+                                                <p>Quantum Coin Improvement Proposals</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border_bottom"></div>
+                            </article>
+                            <div class="border_bottom"></div>
+                            <article class="help_text" id="help">
+                                <div class="resource">
+                                    <h4 class="c_head">Help</h4>
+                                    <p>Quantum Coin is developed and maintained by an open community. Hop on to the <a href="https://discord.gg/bbbMPyzJTM">community discord server</a> for help with development.</p>
+                                </div>
+                                <div class="border_bottom"></div>
+
+                            </article>
+                            <div class="border_bottom"></div>
+
+                            <div class="border_bottom"></div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 doc_right_mobile_menu">
+                        <div class="open_icon" id="right">
+                            <i class="arrow_carrot-left"></i>
+                            <i class="arrow_carrot-right"></i>
+                        </div>
+                        <div class="doc_rightsidebar scroll">
+                            <div id="font-switcher" class="d-flex justify-content-between align-items-center">
+                                <div id="rvfs-controllers" class="fontsize-controllers group"></div>
+                                <a href="javascript:window.print()" class="print"><i class="icon_printer"></i></a>
+                            </div>
+                            <div class="doc_switch">
+                                <label for="something" class="tab-btn tab-btns"><i class="icon_lightbulb_alt"></i></label>
+                                <input type="checkbox" name="something" id="something" class="tab_switcher">
+                                <label for="something" class="tab-btn"><i class="far fa-moon"></i></label>
+                            </div>
+                            <h6>On this page:</h6>
+                            <nav class="list-unstyled doc_menu" id="navbar-example3">
+                                <a href="#documentation" class="nav-link active">Documentation</a>
+                                <a href="#getting" class="nav-link">Introduction</a>
+                                <a href="#help" class="nav-link">Help!</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="simple_footer">
+            <img class="leaf_right" src="img/home_one/leaf_footter.png" alt="">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <p><a href="https://quantumcoin.org">quantumcoin.org</a></p>
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        <ul class="list-unstyled f_social_icon">
+                            <li>
+                                <a href="https://t.me/QuantumCoin" style="border: 0px">
+                                    <img src="https://static.dpdocs.org/img/telegram.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://x.com/TheQuantumCoin" style="border: 0px">
+                                    <img src="https://static.dpdocs.org/img/twitter-logo.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.reddit.com/r/TheQuantumCoin" style="border: 0px">
+                                    <img src="https://static.dpdocs.org/img/reddit.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://discord.gg/bbbMPyzJTM" style="border: 0px">
+                                    <img src="https://static.dpdocs.org/img/discord.png" width="30" alt="" style="max-width:50px;max-height:50px;" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://static.dpdocs.org/js/jquery-3.2.1.min.js"></script>
+    <script src="https://static.dpdocs.org/js/pre-loader.js"></script>
+    <script src="https://static.dpdocs.org/assets/bootstrap/js/popper.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/bootstrap/js/bootstrap-select.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/font-size/js/rv-jquery-fontsize-2.0.3.js"></script>
+    <script src="https://static.dpdocs.org/js/parallaxie.js"></script>
+    <script src="https://static.dpdocs.org/js/TweenMax.min.js"></script>
+    <script src="https://static.dpdocs.org/js/jquery.wavify.js"></script>
+    <script src="https://static.dpdocs.org/js/anchor.js"></script>
+    <script src="https://static.dpdocs.org/assets/wow/wow.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/prism/prism.js"></script>
+    <script src="https://static.dpdocs.org/assets/niceselectpicker/jquery.nice-select.min.js"></script>
+    <script src="https://static.dpdocs.org/assets/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://static.dpdocs.org/js/main.js"></script>
+    <script>
+        window.addEventListener("load", function () {
+            var lightBox = document.getElementById('something');
+            if (lightBox.checked) {
+                lightBox.click();
+            } else {
+
+            }
+        });
+    </script>
+</body>
+
+</html>
