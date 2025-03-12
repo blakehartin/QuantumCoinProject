@@ -285,11 +285,22 @@
                                     <p>Mac: M1 or later</p>
                                     <p>Linux: Haven't been tested</p>
                                 </div>
+
+                                <div class="alert media message_alert alert-warning fade show" role="alert">
+                                    <i class="icon_error-circle_alt"></i>
+                                    <div class="media-body">
+                                        <h5>Warning</h5>
+                                        <p>Always keep multiple copies of your seed phrases and backup wallet files offline. If you are updating to a newer version of the wallet from an existing version, take a backup of your wallets before updating.</p>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="icon_close"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
                                 <div style="margin-bottom:20px;">
                                     <h4 class="s_title load-order-2" id="toggle">Notes</h4>
                                     <p>Aternatively, you may also use the <a href="/getting-coins-for-tokens-cli-wallet.html">CLI wallet to get coins for tokens</a>.</p>
                                     <p>Some versions of Avast anti-virus may incorrectly flag the wallet app file. In this case, you may have to add an exclusion or use the CLI wallet in this case.</p>
-                                    <p>By default, TESTNET is selected in the Wallet. Once you try out TESTNET, you can switch the network to MAINNET from the interface provided.</p>
                                 </div>
                                 <h4 class="s_title load-order-2" id="setup">Setup</h4>
                                 <div class="steps-panel">
@@ -332,19 +343,19 @@
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win4" role="button" aria-expanded="false" aria-controls="win4">Windows</a>
                                                 <div class="multi-collapse collapse" id="win4" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl https://github.com/DogeProtocol/desktop-wallet/releases/download/v3.0.25/quantumwallet-3.0.25.Setup.exe -o $HOME\downloads\quantumwallet-3.0.25.Setup.exe</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl https://github.com/quantumcoinproject/quantum-coin-wallet-desktop/releases/download/v3.1.2/quantumwallet-3.1.2.Setup.exe -o $HOME\downloads\quantumwallet-3.1.2.Setup.exe</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac4" role="button" aria-expanded="false" aria-controls="mac4">Mac</a>
                                                 <div class="multi-collapse collapse" id="mac4" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo ~/downloads/quantumwallet.dmg https://github.com/DogeProtocol/desktop-wallet/releases/download/v3.0.25/quantumwallet.dmg</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo ~/downloads/quantumwallet.dmg https://github.com/quantumcoinproject/quantum-coin-wallet-desktop/releases/download/v3.1.2/quantumwallet.dmg</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin4" role="button" aria-expanded="false" aria-controls="lin4">Linux</a>
                                                 <div class="multi-collapse collapse" id="lin4" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo quantumwallet_3.0.25_amd64.deb https://github.com/DogeProtocol/desktop-wallet/releases/download/v3.0.25/quantumwallet_3.0.25_amd64.deb</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo quantumwallet_3.1.2_amd64.deb https://github.com/quantumcoinproject/quantum-coin-wallet-desktop/releases/download/v3.1.2/quantumwallet_3.1.2_amd64.deb</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
@@ -359,7 +370,7 @@
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win5" role="button" aria-expanded="false" aria-controls="win5">Windows</a>
                                                 <div class="multi-collapse collapse" id="win5" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">start $HOME\downloads\quantumwallet-3.0.25.Setup.exe</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">start $HOME\downloads\quantumwallet-3.1.2.Setup.exe</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac5" role="button" aria-expanded="false" aria-controls="mac5">Mac</a>
@@ -374,6 +385,9 @@
                                             <div>
                                                 <p>
                                                     Continue rest of the steps to create your quantum wallet. Backup the seed words to atleast three offline devices. If you loose the seed words, your coins and tokens will be lost. For additional safety, you should also backup the actual wallet files whem prompted.
+                                                </p>
+                                                <p>
+                                                    If you want to maintain a cold wallet, see using the desktop wallet for <a href="/offline-transaction-signing.html">offline transaction signing</a>.
                                                 </p>
                                             </div>
                                         </li>
@@ -391,7 +405,6 @@
                                     <p>
                                         It is recommended that you do not have any coins or tokens (including DogeP tokens) in your Ethereum wallet before proceeding.
                                     </p>
-                                    <p>By default, TESTNET is selected in the Wallet. Once you try out the conversion on the TESTNET, you can switch the network to MAINNET from the interface provided and try the conversion again.</p>
                                 </div>
 
                                 <div class="steps-panel">
@@ -411,9 +424,6 @@
                                         </li>
                                         <li>
                                             Congratulations! At this point, you should have successfuly received the quantum coins. Ensure that you have backed up your quantum wallet and remember the corresponding password always.
-                                        </li>
-                                        <li>
-                                            Remember that if you tried TESTNET first, you will need to perform the same conversion steps again for MAINNET, to get the actual MAINNET coins.
                                         </li>
                                     </ol>
                                 </div>
@@ -499,9 +509,6 @@
                                         </li>
                                         <li>
                                             Congratulations! At this point, you should have successfuly received the quantum coins. Ensure that you have backed up your quantum wallet and remember the corresponding password always.
-                                        </li>
-                                        <li>
-                                            Remember that if you tried TESTNET first, you will need to perform the same conversion steps again for MAINNET, to get the actual MAINNET coins.
                                         </li>
                                     </ol>
                                 </div>
