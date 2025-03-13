@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://static.dpdocs.org/assets/mcustomscrollbar/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="https://static.dpdocs.org/css/style.css">
     <link rel="stylesheet" href="https://static.dpdocs.org/css/responsive.css">
-    <title>Quantum Coin Connecting To Mainnet from snapshot</title>
+    <title>Quantum Coin Connecting To Mainnet from snapshot with a compact node</title>
     <link rel="stylesheet" href="https://static.dpdocs.org/scss/_header.scss">
     <link rel="stylesheet" href="https://static.dpdocs.org/scss/_doclist.scss">
 </head>
@@ -275,20 +275,12 @@
                         <div id="post" class="documentation_info">
                             <article class="documentation_body" id="documentation" style="padding-top:100px;">
                                 <!-- Content Start -->
-                                <div class="shortcode_title">
-                                    <h1>Connecting to mainnet</h1>
-                                    <p>
-                                        You can connect to mainnet using two different ways. <a href="/connecting-to-mainnet.html">Method 1 is the default method</a> of connecting by downloading all blocks from the start.
-                                        Method 2 works by downloading a pre-created snapshot and downloading recent blocks after the snapshot.
-                                    </p>
-                                </div>
-
-
                                 <div class="alert media message_alert alert-warning fade show" role="alert">
                                     <i class="icon_error-circle_alt"></i>
                                     <div class="media-body">
                                         <h5>Warning</h5>
                                         <p>This is blockchain software. Do not use on a computer or device with sensitive or important personal data. Using this software will require opening firewall ports. Using this software may result in heavy internet data usage. Use at your own risk.</p>
+                                        <p>The compact mode is experimental, it cannot be used with relays.</p>
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <i class="icon_close"></i>
                                         </button>
@@ -296,7 +288,10 @@
                                 </div>
 
                                 <div>
-                                    <h3>Method 2</h3>
+                                    <h3>Connecting to mainnet with a compact node</h3>
+                                    <p>
+                                        A compact node occupies much lesser disk space unlike an archive node. The compact mode is experimental. It cannot be used with relays.
+                                    </p>
                                 </div>
 
                                 <div class="steps-panel">
@@ -431,19 +426,19 @@
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win4" role="button" aria-expanded="false" aria-controls="win4">Windows</a>
                                                 <div class="multi-collapse collapse" id="win4" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl https://github.com/quantumcoinproject/quantum-coin-go/releases/download/v2.0.63/qc-release-windows-v2.0.63.zip -o qc-release-windows-v2.0.63.zip</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl https://github.com/quantumcoinproject/quantum-coin-go/releases/download/v2.0.66/qc-release-windows-compact-v2.0.66.zip -o qc-release-windows-v2.0.66.zip</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac4" role="button" aria-expanded="false" aria-controls="mac4">Mac</a>
                                                 <div class="multi-collapse collapse" id="mac4" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo qc-release-mac-v2.0.63.tar.gz https://github.com/quantumcoinproject/quantum-coin-go/releases/download/v2.0.63/qc-release-mac-v2.0.63.tar.gz</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo qc-release-mac-v2.0.66.tar.gz https://github.com/quantumcoinproject/quantum-coin-go/releases/download/v2.0.66/qc-release-mac-compact-v2.0.66.tar.gz</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin4" role="button" aria-expanded="false" aria-controls="lin4">Linux</a>
                                                 <div class="multi-collapse collapse" id="lin4" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo qc-release-ubuntu-v2.0.63.tar.gz https://github.com/quantumcoinproject/quantum-coin-go/releases/download/v2.0.63/qc-release-ubuntu-v2.0.63.tar.gz</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo qc-release-ubuntu-v2.0.66.tar.gz https://github.com/quantumcoinproject/quantum-coin-go/releases/download/v2.0.66/qc-release-ubuntu-compact-v2.0.66.tar.gz</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
@@ -458,19 +453,19 @@
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win5" role="button" aria-expanded="false" aria-controls="win5">Windows</a>
                                                 <div class="multi-collapse collapse" id="win5" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">Expand-Archive -Path qc-release-windows-v2.0.63.zip -DestinationPath c:\</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">Expand-Archive -Path qc-release-windows-v2.0.66.zip -DestinationPath c:\</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac5" role="button" aria-expanded="false" aria-controls="mac5">Mac</a>
                                                 <div class="multi-collapse collapse" id="mac5" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">tar -xzvf qc-release-mac-v2.0.63.tar.gz</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">tar -xzvf qc-release-mac-v2.0.66.tar.gz</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin5" role="button" aria-expanded="false" aria-controls="lin5">Linux</a>
                                                 <div class="multi-collapse collapse" id="lin5" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">tar -xzvf qc-release-ubuntu-v2.0.63.tar.gz</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">tar -xzvf qc-release-ubuntu-v2.0.66.tar.gz</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
@@ -514,23 +509,23 @@
                                                 </div>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <p>You may also download the following snapshot using a browser which is quicker, rename from and place it in the same folder as dp. Rename the file to zip extension after downloading. <a href="https://qcsnapshot.s3.us-west-2.amazonaws.com/qc-4-feb-2025.snapshot">https://qcsnapshot.s3.us-west-2.amazonaws.com/qc-4-feb-2025.snapshot</a></p>
+                                                <p>You may also download the following snapshot using a browser which is quicker, rename from and place it in the same folder as dp. Rename the file to zip extension after downloading. <a href="https://qcsnapshot.s3.us-west-2.amazonaws.com/qc-snapshot-compact-mar-12-2025.zip">https://qcsnapshot.s3.us-west-2.amazonaws.com/qc-snapshot-compact-mar-12-2025.zip</a></p>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win9" role="button" aria-expanded="false" aria-controls="win9">Windows</a>
                                                 <div class="multi-collapse collapse" id="win9" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl https://qcsnapshot.s3.us-west-2.amazonaws.com/qc-4-feb-2025.snapshot -o dp-snapshot.zip</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl https://qcsnapshot.s3.us-west-2.amazonaws.com/qc-snapshot-compact-mar-12-2025.zip -o qc-snapshot.zip</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac9" role="button" aria-expanded="false" aria-controls="mac9">Mac</a>
                                                 <div class="multi-collapse collapse" id="mac9" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo dp-snapshot.zip https://qcsnapshot.s3.us-west-2.amazonaws.com/qc-4-feb-2025.snapshot</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo qc-snapshot.zip https://qcsnapshot.s3.us-west-2.amazonaws.com/qc-snapshot-compact-mar-12-2025.zip</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin9" role="button" aria-expanded="false" aria-controls="lin9">Linux</a>
                                                 <div class="multi-collapse collapse" id="lin9" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo dp-snapshot.zip https://qcsnapshot.s3.us-west-2.amazonaws.com/qc-4-feb-2025.snapshot</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo qc-snapshot.zip https://qcsnapshot.s3.us-west-2.amazonaws.com/qc-snapshot-compact-mar-12-2025.zip</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
@@ -555,21 +550,21 @@
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win10" role="button" aria-expanded="false" aria-controls="win10">Windows</a>
                                                 <div class="multi-collapse collapse" id="win10" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">Expand-Archive -Path dp-snapshot.zip -DestinationPath c:\dp</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">Expand-Archive -Path qc-snapshot.zip -DestinationPath c:\dp</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac10" role="button" aria-expanded="false" aria-controls="mac10">Mac</a>
                                                 <div class="multi-collapse collapse" id="mac10" style="">
                                                     <div class="card card-body toggle_body">
                                                         <pre class="language-html"><code class="language-html" data-lang="html">brew install unzip</code></pre>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">unzip -o ./dp-snapshot.zip -d .</code></pre>                                                        
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">unzip -o ./qc-snapshot.zip -d .</code></pre>                                                        
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin10" role="button" aria-expanded="false" aria-controls="lin10">Linux</a>
                                                 <div class="multi-collapse collapse" id="lin10" style="">
                                                     <div class="card card-body toggle_body">
                                                         <pre class="language-html"><code class="language-html" data-lang="html">sudo apt install unzip</code></pre>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">unzip -o ./dp-snapshot.zip -d .</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">unzip -o ./qc-snapshot.zip -d .</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
@@ -625,6 +620,48 @@
                                             </div>
                                         </li>
                                     </ol>
+                                </div>
+
+                                <div>
+                                    <h3>Periodically reducing disk space usage</h3>
+                                    <p>
+                                        The disk space usage of the blockchain grows over time. You have to periodically (such as once a month) stop the node and run the following steps, to compact and reduce the disk space usage.
+                                    </p>
+                                </div>
+
+                                <div class="alert media message_alert alert-warning fade show" role="alert">
+                                    <i class="icon_error-circle_alt"></i>
+                                    <div class="media-body">
+                                        <h5>Warning</h5>
+                                        <p>These commands can take multiple hours to complete.</p>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <i class="icon_close"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                    <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win12" role="button" aria-expanded="false" aria-controls="win12">Windows</a>
+                                    <div class="multi-collapse collapse" id="win12" style="">
+                                        <div class="card card-body toggle_body">
+                                            <pre class="language-html"><code class="language-html" data-lang="html">dp --datadir data snapshot compact-chaindb</code></pre>
+                                            <pre class="language-html"><code class="language-html" data-lang="html">dp --datadir data snapshot prune-state</code></pre>
+                                        </div>
+                                    </div>
+                                    <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac12" role="button" aria-expanded="false" aria-controls="mac12">Mac</a>
+                                    <div class="multi-collapse collapse" id="mac12" style="">
+                                        <div class="card card-body toggle_body">
+                                            <pre class="language-html"><code class="language-html" data-lang="html">./dp --datadir data snapshot compact-chaindb</code></pre>
+                                            <pre class="language-html"><code class="language-html" data-lang="html">./dp --datadir data snapshot prune-state</code></pre>
+                                        </div>
+                                    </div>
+                                    <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin12" role="button" aria-expanded="false" aria-controls="lin12">Linux</a>
+                                    <div class="multi-collapse collapse" id="lin12" style="">
+                                        <div class="card card-body toggle_body">
+                                            <pre class="language-html"><code class="language-html" data-lang="html">./dp --datadir data snapshot compact-chaindb</code></pre>
+                                            <pre class="language-html"><code class="language-html" data-lang="html">./dp --datadir data snapshot prune-state</code></pre>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- Content End -->
 
