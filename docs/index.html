@@ -31,6 +31,64 @@
     <title>Quantum Coin (Q) - Quantum Resistant Blockchain - Documentation</title>
     <link rel="stylesheet" href="https://static.dpdocs.org/scss/_header.scss">
     <link rel="stylesheet" href="https://static.dpdocs.org/scss/_doclist.scss">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Hide the checkbox */
+        #popup-toggle {
+            display: none;
+        }
+
+        /* Style for the popup overlay */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.0);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+
+        /* Show overlay when checkbox is checked */
+        #popup-toggle:checked + .popup-overlay {
+            display: flex;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            color: black;
+        }
+
+        .popup-buttons {
+            margin-top: 20px;
+        }
+
+        .popup-buttons button {
+            margin: 0 10px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-yes {
+            background-color: #28a745;
+            color: white;
+        }
+
+    </style>
 </head>
 
 <body data-spy="scroll" data-target="#navbar-example3" data-offset="86" class="full-width-doc sticky-nav-doc doc">
@@ -292,10 +350,31 @@
                                     <p>
                                         For more information on Quantum Coin, please see the <a href="/faq.html">FAQ</a>.
                                     </p>
-                                    <div>
+                                    <!-- Trigger button -->
+                                    <label for="popup-toggle" style="padding: 10px 10px; background: #007bff; color: white; border-radius: 5px; cursor: pointer;margin-top:10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
+                                        Get QuantumCoin (Q)
+                                    </label>
+
+                                    <!-- Hidden checkbox to toggle popup -->
+                                    <input type="checkbox" id="popup-toggle" />
+
+                                    <!-- Popup overlay -->
+                                    <div class="popup-overlay">
+                                        <div class="popup-content">
+                                            <p>You can get QuantumCoin (Q) in the following Exchanges.</p>
+                                            <div class="popup-buttons">
+                                                <button class="btn-yes" onclick="window.location.href='https://www.xt.com/en/trade/q_usdt';">XT.com Exchange</button>
+                                                <button class="btn-yes" style="margin-top:20px;" onclick="window.location.href='https://p2pb2b.com/trade/Q_USDT';">P2pB2b Exchange</button>
+                                                <p>
+                                                    <label for="popup-toggle" class="btn-no" style="margin-top:10px;cursor:pointer;">Close</label>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--<div>
                                         <h5>Q</h5>
                                         Q is the short name and ticker for QuantumCoin. You can get Q at <a style="margin-top:20px;" href="https://www.xt.com/en/trade/q_usdt">XT</a>,&nbsp;&nbsp;<a href="https://p2pb2b.com/trade/Q_USDT/">P2PB2B</a>.
-                                    </div>
+                                    </div>-->
                                 </div>
                                 <article class="get_started" style="padding-top:1px;">                                    
                                     <div class="link">
