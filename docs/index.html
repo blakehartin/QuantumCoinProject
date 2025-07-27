@@ -294,9 +294,11 @@
                                         For more information on Quantum Coin, please see the <a href="/faq.html">FAQ</a>.
                                     </p>
                                     <!-- Trigger button -->
-                                    <label style="padding: 10px 10px; background: #007bff; color: white; border-radius: 5px; cursor: pointer;margin-top:10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
-                                        <a href="/get-quantumcoin.html" style="color:white;">Get QuantumCoin (Q)</a>
+                                    <label for="popup-toggle" style="padding: 10px 10px; background: #007bff; color: white; border-radius: 5px; cursor: pointer;margin-top:10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
+                                        <a id="agetq" href="/get-quantumcoin.html" style="color:white;">Get QuantumCoin (Q)</a>
                                     </label>
+                                    <!-- Hidden checkbox to toggle popup -->
+                                    <input type="checkbox" id="popup-toggle" onclick="window.location.href='/get-quantumcoin.html';" />
 
                                 </div>
                                 <article class="get_started" style="padding-top:1px;">                                    
