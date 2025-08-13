@@ -376,7 +376,7 @@
                                                 <p>
                                                     <script type="text/javascript">
                                                         async function postTransaction(txnData) {
-                                                            let url = "https://app.writerelay.quantumcoinapi.com/transactions";
+                                                            let url = document.getElementById("txtWriteRelayUrl").value + "/transactions";
                                                             if (txnData == null) {
                                                                 throw new Error("invalid txnData");
                                                             }
@@ -412,7 +412,8 @@
                                                                 if (resp.status == 200 || resp.status == 204) {
                                                                     alert('Transaction submitted successfully. Please monitor it in https://QuantumScan.com');
                                                                 } else {
-                                                                    alert('Transaction could not be submitted successfully. Please verify the signed data and ensure your account has enough coins for gas fees.');
+                                                                    let body = await resp.text();
+                                                                    alert('Transaction could not be submitted successfully. The following error occurred: \n ' + body);
                                                                 }
 
                                                                 document.getElementById('txtSignedData').disabled = false;
@@ -427,7 +428,8 @@
                                                             return false;
                                                         }
                                                     </script>
-                                                    <textarea rows="15" style="width:95%;" id="txtSignedData"></textarea><br/>
+                                                    <textarea rows="15" style="width:95%;" id="txtSignedData"></textarea><br/>>
+                                                    <input type="text" value="https://app.writerelay.quantumcoinapi.com" id="txtWriteRelayUrl" style="width:360px;margin-top:10px;margin-bottom:10px;"/><br/>
                                                     <button id="btnSubmit" type="button" onclick="return submitTransaction();">Submit Transaction</button>
                                                 </p>
                                             </div>
