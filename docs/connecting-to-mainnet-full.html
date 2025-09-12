@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://static.quantumcoin.org/assets/mcustomscrollbar/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="https://static.quantumcoin.org/css/style.css">
     <link rel="stylesheet" href="https://static.quantumcoin.org/css/responsive.css">
-    <title>Quantum Coin - Validator Staking, Deposit and Withdrawal</title>
+    <title>Quantum Coin Connecting To Layer 1 Mainnet</title>
     <link rel="stylesheet" href="https://static.quantumcoin.org/scss/_header.scss">
     <link rel="stylesheet" href="https://static.quantumcoin.org/scss/_doclist.scss">
 </head>
@@ -284,62 +284,40 @@
                             <article class="documentation_body" id="documentation" style="padding-top:100px;">
                                 <!-- Content Start -->
                                 <div class="shortcode_title">
-                                    <h1>Validator staking, deposit and withdrawal</h1>
+                                    <h1>Connecting to Layer 1 mainnet</h1>
+                                    <p>
+                                        You can connect to mainnet using two different ways. Method 1 is the default method of connecting by downloading all blocks from the start.
+                                        <a href="/connecting-to-mainnet-snapshot.html">Method 2 works by downloading a pre-created snapshot</a> and downloading recent blocks after the snapshot.
+                                    </p>
                                 </div>
+
 
                                 <div class="alert media message_alert alert-warning fade show" role="alert">
                                     <i class="icon_error-circle_alt"></i>
                                     <div class="media-body">
-                                        <h5>Important, please read before proceeding</h5>
-                                        <ol>
-                                            <li>
-                                                This is blockchain software. Do not use on a computer or device with sensitive or important personal data. Using this software will require opening firewall ports. Using this software may result in heavy internet data usage. Use at your own risk.
-                                            </li>
-                                            <li>
-                                                After depositing, if you want to withdraw the coins, you will have to wait for 256000 blocks from the block from which the withdrawal was initiatied. This can be upto 60 days or more. This is for security reasons.
-                                            </li>
-                                            <li>
-                                                Block Rewards are enabled only from a block that roughly co-incides with April 14th 2024, World Quantum Day. Unless you run the validator node, you will not get block rewards.
-                                            </li>
-                                            <li>
-                                                You will have to update the latest node client software around the first week of April 2024, to take in bug fixes, new features and updates. After that, you will have to periodically update the node client software, when new features or updates or bug fixes are made.
-                                            </li>
-                                            <li>
-                                                After depositing coins, if you do not run the validator node, you may loose coins to slashing and might not be able to recover your original deposit amount. The slashing is enabled from a block that roughly co-incides with April 14th 2024, World Quantum Day.
-                                            </li>
-                                            <li>
-                                                If you had already registered as a genesis validator, these steps are not applicable. You may start validating by following the instructions at <a href="/connecting-to-mainnet-snapshot.html">Connecting to the mainnet as a validator</a>.
-                                            </li>
-                                        </ol>
+                                        <h5>Warning</h5>
+                                        <p>This is blockchain software. Do not use on a computer or device with sensitive or important personal data. Using this software will require opening firewall ports. Using this software may result in heavy internet data usage. Use at your own risk.</p>
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <i class="icon_close"></i>
                                         </button>
                                     </div>
                                 </div>
 
+                                <div>
+                                    <h3>Method 1</h3>
+                                </div>
+
                                 <div class="steps-panel">
-                                    <h5>Recommended hardware and internet configuration</h5>
-                                    <ul class="ordered-list">
-                                        <li>SSD disk with at-least 2 TB of free space for a Full Node or 128 GB of disk space for a Compact Node</li>
-                                        <li>8 Cores</li>
-                                        <li>16 GB RAM</li>
-                                        <li>100 Mbps upload and download speed</li>
-                                    </ul>                                   
-                                    <h5>Common steps for depositing and withdrawal</h5>                                    
                                     <ol class="ordered-list">
-                                        <li>Pre-requisite; your computer should be connected to the mainnet. Instructions at: <a href="/connecting-to-mainnet-snapshot.html">Connecting To Mainnet</a>.</li>
-                                        <li>
-                                            Wait for all blocks to get downloaded from the previous step before proceeding to subsequent steps. You can check the latest block at <a href="https://QuantumScan.com">QuantumScan.com</a>. If you try to run the next set of steps before all blocks are downloaded, you might get gas related errors and potential slashings.
-                                        </li>
                                         <li>
                                             <div>
-                                                <p>Open the appropriate shell window. Do not close the other shell window in which the mainnet is connected to.</p>
+                                                <p>Open the appropriate shell window.</p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win1" role="button" aria-expanded="false" aria-controls="win1">Windows</a>
                                                 <div class="multi-collapse collapse" id="win1">
                                                     <div class="card card-body toggle_body" style="padding:15px;">
-                                                        Open Command Prompt
+                                                        Open Powershell
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac1" role="button" aria-expanded="false" aria-controls="mac1">Mac</a>
@@ -359,7 +337,75 @@
                                         <li>
                                             <div>
                                                 <p>
-                                                    Change to the folder where the blockchain node client is located.
+                                                    Run the following command to open firewall port. Make sure that the commands succeed.<br />
+                                                    If you are connecting from a cloud computer (such as AWS), you will need to additionally open the 30303 port under security rules, to allow incoming connections from 0.0.0.0/0.<br />
+                                                    If you are connecting from a home computer, you may need to additionally open the firewall port 30303 in your router.
+                                                </p>
+
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win8" role="button" aria-expanded="false" aria-controls="win8">Windows</a>
+                                                <div class="multi-collapse collapse" id="win8" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">netsh advfirewall firewall add rule name="TCP Port 30303" dir=in action=allow protocol=TCP localport=30303</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac8" role="button" aria-expanded="false" aria-controls="mac8">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac8" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        1. Open System Preferences. <br />
+                                                        2. Click on Security & Privacy. <br />
+                                                        3. Click the Firewall tab. <br />
+                                                        4. Click the lock icon to unlock the firewall settings. <br />
+                                                        5. Click the Add (+) button. <br />
+                                                        6. Enter port 30303 in the Port field. <br />
+                                                        7. Enter &quot;blockchain&quot; in the Application field. <br />
+                                                        8. Click the Add button. <br />
+                                                        9. Click the Start button to enable the firewall.
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin8" role="button" aria-expanded="false" aria-controls="lin8">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin8" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        Note that in case you are SSH'd into this computer, you might get logged out when you run these commands. In this case, you will need to SSH again and re-run the applicable steps before this step.
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">sudo ufw allow 30303/tcp</code></pre>
+                                                        The next command to open port 22 is required only if you are SSH'd into the computer. If you do not open this port but enable firewall in the next command, then you might get permanently get locked out of the machine. But if you are logged in locally, do not run this command.
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">sudo ufw allow 22/tcp</code></pre>
+                                                        Run the following command to enable firewall.
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">sudo ufw enable</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>Create a folder named dp.</p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win2" role="button" aria-expanded="false" aria-controls="win2">Windows</a>
+                                                <div class="multi-collapse collapse" id="win2">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">mkdir c:\dp</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac2" role="button" aria-expanded="false" aria-controls="mac2">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac2">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">mkdir $HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin2" role="button" aria-expanded="false" aria-controls="lin2">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin2">
+                                                    <div class="card card-body toggle_body" style="padding:15px;">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">mkdir $HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Change to the folder dp.
                                                 </p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
@@ -379,6 +425,76 @@
                                                 <div class="multi-collapse collapse" id="lin3" style="">
                                                     <div class="card card-body toggle_body">
                                                         <pre class="language-html"><code class="language-html" data-lang="html">cd $HOME/dp</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Download the updated CLI (command line interface) wallet by running the following command:
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win4" role="button" aria-expanded="false" aria-controls="win4">Windows</a>
+                                                <div class="multi-collapse collapse" id="win4" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl https://github.com/quantumcoinproject/quantum-coin-go/releases/download/v2.0.67/qc-release-windows-v2.0.67.zip -o qc-release-windows-v2.0.67.zip</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac4" role="button" aria-expanded="false" aria-controls="mac4">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac4" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo qc-release-mac-v2.0.67.tar.gz https://github.com/quantumcoinproject/quantum-coin-go/releases/download/v2.0.67/qc-release-mac-v2.0.67.tar.gz</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin4" role="button" aria-expanded="false" aria-controls="lin4">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin4" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">curl -Lo qc-release-ubuntu-v2.0.67.tar.gz https://github.com/quantumcoinproject/quantum-coin-go/releases/download/v2.0.67/qc-release-ubuntu-v2.0.67.tar.gz</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Extract the contents of the downloaded zip file to a folder.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win5" role="button" aria-expanded="false" aria-controls="win5">Windows</a>
+                                                <div class="multi-collapse collapse" id="win5" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">Expand-Archive -Path qc-release-windows-v2.0.67.zip -DestinationPath c:\</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac5" role="button" aria-expanded="false" aria-controls="mac5">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac5" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">tar -xzvf qc-release-mac-v2.0.67.tar.gz</code></pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin5" role="button" aria-expanded="false" aria-controls="lin5">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin5" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">tar -xzvf qc-release-ubuntu-v2.0.67.tar.gz</code></pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    This step is specific to Windows.
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win6" role="button" aria-expanded="false" aria-controls="win6">Windows</a>
+                                                <div class="multi-collapse collapse" id="win6" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        Close the Powershell window. Open a command prompt instead and change to the following folder.
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">cd c:\dp</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
@@ -407,259 +523,26 @@
                                         <li>
                                             <div>
                                                 <p>
-                                                    Set the environment variables to point to the data folder and DP_RAW_URL.
+                                                    This command is just required the first time and you do not have to run it each time. Run the following command to configure the software to connect to the Quantum Coin blockchain. Do not run it more than once. Ensure that the command succeeds and no errors or warnings are reported.
                                                 </p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win9" role="button" aria-expanded="false" aria-controls="win9">Windows</a>
                                                 <div class="multi-collapse collapse" id="win9" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">set DP_KEY_FILE_DIR=c:\dp\data\keystore</code></pre>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">set DP_RAW_URL=\\.\pipe\geth.ipc</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">dp --datadir data init genesis.json</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac9" role="button" aria-expanded="false" aria-controls="mac9">Mac</a>
                                                 <div class="multi-collapse collapse" id="mac9" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_KEY_FILE_DIR=$HOME/dp/data/keystore</code></pre>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_RAW_URL=$HOME/dp/data/geth.ipc</code></pre>
-                                                        <p>In case you get any error related to DP_RAW_URL, try the following instead:</p>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_RAW_URL=~/.ethereum/geth.ipc</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dp --datadir data init genesis.json</code></pre>
                                                     </div>
                                                 </div>
                                                 <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin9" role="button" aria-expanded="false" aria-controls="lin9">Linux</a>
                                                 <div class="multi-collapse collapse" id="lin9" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_KEY_FILE_DIR=$HOME/dp/data/keystore</code></pre>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_RAW_URL=$HOME/dp/data/geth.ipc</code></pre>
-                                                        <p>In case you get any error related to DP_RAW_URL, try the following instead:</p>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">export DP_RAW_URL=~/.ethereum/geth.ipc</code></pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ol>
-                                </div>
-
-                                <h5>Depositing</h5>
-                                <div class="steps-panel">
-                                    <ol class="ordered-list">
-                                        <li>Pre-requisite; you should already have a quantum wallet with coins for staking. A minimum of 5,000,000 (5 million) coins are required for staking. It is recommended you deposit atleast 5,500,000 coins to account for any slashing when setting up validation.</li>
-                                        <li>If you used the Desktop Wallet app to manage your quantum coins, click the Wallets option on the left bottom corner, then use the Backup option to save the wallet file into the keystore folder (see previous step for where this folder is located)</li>
-                                        <li>
-                                            <div>
-                                                <p>
-                                                    Create a quantum wallet for validating. This wallet will henceforth be called as the validator wallet. This wallet is different from the wallet from which you will be depositing the coins for staking. You will be prompted to enter a password. Ensure you use a strong password atleast 16 characters in length. You should never forget your password. If you don't remember it, the wallet will be useless and you cannot access any coins or tokens inside it.
-                                                </p>
-                                            </div>
-                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win8" role="button" aria-expanded="false" aria-controls="win8">Windows</a>
-                                                <div class="multi-collapse collapse" id="win8" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dp --datadir data account new</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac8" role="button" aria-expanded="false" aria-controls="mac8">Mac</a>
-                                                <div class="multi-collapse collapse" id="mac8" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dp --datadir data account new</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin8" role="button" aria-expanded="false" aria-controls="lin8">Linux</a>
-                                                <div class="multi-collapse collapse" id="lin8" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dp --datadir data account new</code></pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            Once you execute the above command successfully, the quantum wallet will be created. Note down the address of this wallet from the output of the above command. This will be your validator quantum address.
-                                        </li>
-                                        <li>
-                                            You will also notice that a file has been created under the data\keystore location. This is your quantum wallet. An example is shown below:
-                                            <pre class="language-html"><code class="language-html" data-lang="html">Example: Path of the secret key file: data\keystore\UTC--2024-01-13T21-09-56.375263700Z--a553b8935988e6260b6e3c3ff5b340ee478b504b7166b4881365a9153c80a78c</code></pre>
-                                        </li>
-                                        <li>
-                                            Backup the above wallet file in 3 different offline devices as explained in <a href="/device-preparation.html">Prepare your device</a>. You should not proceed to remaining steps until you backup the wallet.
-                                        </li>
-                                        <li>
-                                            Remember that you will always need the password to use the wallet. If you don't remember it, the wallet will be useless and you cannot access any coins or tokens inside it. Consider noting down this password safely offline in a trusted location.
-                                        </li>
-                                        <li>
-                                            Likewise, even if you remember the password, if the wallet file is lost or corrupted, you cannot access any coins or tokens. If the wallet is stolen and the password is not strong, the attacker can get all the coins or tokens in your wallet. Hence you should keep your wallet well protected.
-                                        </li>
-                                        <li>
-                                            Copy the quantum wallet from which you are depositing the coins from, into the data\keystore folder.
-                                        </li>
-                                        <li>
-                                            <div>
-                                                <p>
-                                                    Run the following command to deposit coins.<br />
-                                                    Replace DEPOSITOR_ADDRESS with the address of the wallet that has the coins to deposit. Ensure this wallet also has additional coins for gas fees for the transaction.<br />
-                                                    Replace VALIDATOR_ADDRESS with the address of the wallet for validating as specified in step 2.<br />
-                                                    Replace DEPOSITOR_AMOUNT with the number of coins you want to deposit. You should leave atleast 10000 coins in your account instead of depositing all coins; this is for gas fees for this deposit transaction and also future transactions when you want to withdraw the deposited coins.
-                                                </p>
-                                            </div>
-                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win12" role="button" aria-expanded="false" aria-controls="win12">Windows</a>
-                                                <div class="multi-collapse collapse" id="win12" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil stakingdeposit DEPOSITOR_ADDRESS VALIDATOR_ADDRESS DEPOSITOR_AMOUNT</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac12" role="button" aria-expanded="false" aria-controls="mac12">Mac</a>
-                                                <div class="multi-collapse collapse" id="mac12" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil stakingdeposit DEPOSITOR_ADDRESS VALIDATOR_ADDRESS DEPOSITOR_AMOUNT</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin12" role="button" aria-expanded="false" aria-controls="lin12">Linux</a>
-                                                <div class="multi-collapse collapse" id="lin12" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil stakingdeposit DEPOSITOR_ADDRESS VALIDATOR_ADDRESS DEPOSITOR_AMOUNT</code></pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            If the above command is successful, you should see a confirmation message. After about 10 minutes, you may check the despoit balance by following the steps in the section below: <a href="#divbalance">Checking Staking Balance</a>.
-                                        </li>
-                                        <li>
-                                            You should proceed to immediately run the validator node by following the steps in <a href="/mainnet-validator-setup.html"></a>. Otherwise you might loose coins due to inactivity slashing.
-                                        </li>
-                                        <li>
-                                            You should move the depositor quantum wallet to a different device and also keep multiple backups offline. You shouldn't keep the depositor quantum wallet in the same computer that is running the blockchain node. Only the validator wallet should be kept on this computer.
-                                            If you loose your depositor quantum wallet or forgot the password or it gets stolen, even if you have the validator wallet, you will not be able to get your deposited coins back. Keep both your depositor and validator wallets safe!
-                                        </li>
-                                    </ol>
-                                </div>
-
-                                <h5>Checking Staking Details, Mining Rewards etc.</h5>
-                                <div class="steps-panel" id="divbalance">
-                                    <ol class="ordered-list">
-                                        <li>Pre-requisite; you should already have staked coins and the validator node is running.</li>
-                                        <li>
-                                            <div>
-                                                <p>
-                                                    You can check the staked balance by running the following command, replacing VALIDATOR_ADDRESS with your validator wallet address.
-                                                </p>
-                                                <p>
-                                                    Alternatively, you can also search by your validator or depositor address in the <a href="https://QuantumScan.com/validator/page">Block Explorer</a>.
-                                                </p>
-                                            </div>
-                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win13" role="button" aria-expanded="false" aria-controls="win13">Windows</a>
-                                                <div class="multi-collapse collapse" id="win13" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil getstakingdetails VALIDATOR_ADDRESS</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac13" role="button" aria-expanded="false" aria-controls="mac13">Mac</a>
-                                                <div class="multi-collapse collapse" id="mac13" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil getstakingdetails VALIDATOR_ADDRESS</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin13" role="button" aria-expanded="false" aria-controls="lin13">Linux</a>
-                                                <div class="multi-collapse collapse" id="lin13" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil getstakingdetails VALIDATOR_ADDRESS</code></pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ol>
-                                </div>
-
-                                <h5>Validator Options using Desktop Wallet</h5>
-                                <div style="margin-bottom:20px;">
-                                    You can increase deposit, withdraw, pause and resume validation using the latest <a href="/desktop-wallet.html">Desktop Wallet</a>. Once installed and configured, add your depositor wallet to the desktop wallet.
-                                    Then use the &quot;Validator Options&quot; under Settings.
-                                </div>
-                                <h5>Increasing Deposit</h5>
-                                <div class="steps-panel" id="divbalance">
-                                    <ol class="ordered-list">
-                                        <li>Pre-requisite; you should already have staked coins and the validator node is running.</li>
-                                        <li>
-                                            <div>
-                                                <p>
-                                                    You can increase your staked coins by running the following command, replacing DEPOSITOR_ADDRESS with your depositor address and ADDITIONAL_DEPOSIT_AMOUNT with the additional number of coins you would like to deposit.
-                                                </p>
-                                                <p>
-                                                    You should always leave about 100,000 coins in your depositor wallet for gas fees in the future when withdrawing coins or mined rewards coins.
-                                                </p>
-                                            </div>
-                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win17" role="button" aria-expanded="false" aria-controls="win17">Windows</a>
-                                                <div class="multi-collapse collapse" id="win17" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil increasedeposit DEPOSITOR_ADDRESS ADDITIONAL_DEPOSIT_AMOUNT</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac17" role="button" aria-expanded="false" aria-controls="mac17">Mac</a>
-                                                <div class="multi-collapse collapse" id="mac17" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil increasedeposit DEPOSITOR_ADDRESS ADDITIONAL_DEPOSIT_AMOUNT</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin17" role="button" aria-expanded="false" aria-controls="lin17">Linux</a>
-                                                <div class="multi-collapse collapse" id="lin17" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil increasedeposit DEPOSITOR_ADDRESS ADDITIONAL_DEPOSIT_AMOUNT</code></pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ol>
-                                </div>
-
-                                <h5>Withdrawing</h5>
-                                <div class="steps-panel" id="divbalance">
-                                    <ol class="ordered-list">
-                                        <li>Pre-requisite; you should already have deposited coins for staking.</li>
-                                        <li>Copy the depositor quantum wallet under the data\keystore folder if not already copied.</li>
-                                        <li>
-                                            <div>
-                                                <p>
-                                                    You can initiate the withdrawal of mined coins (block rewards) by running the following command after block 421888 (before this block, the command was different).
-                                                </p>
-                                                <p>
-                                                    Alternatively, you can also withdraw partially including deposit amount, by running the second command. You have to be careful since giving a large amount (number of coins) can cause your balance to go below the 5 million threshold that is required to become a validator.
-                                                </p>
-                                            </div>
-                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win14" role="button" aria-expanded="false" aria-controls="win14">Windows</a>
-                                                <div class="multi-collapse collapse" id="win14" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Withdraw Rewards</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil initiatewithdrawalrewards DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Alternate: Withdraw Partial Coins</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil initiatepartialwithdrawal DEPOSITOR_ADDRESS AMOUNT</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac14" role="button" aria-expanded="false" aria-controls="mac14">Mac</a>
-                                                <div class="multi-collapse collapse" id="mac14" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Withdraw Rewards</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil initiatewithdrawalrewards DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Alternate: Withdraw Partial Coins</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil initiatepartialwithdrawal DEPOSITOR_ADDRESS AMOUNT</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin14" role="button" aria-expanded="false" aria-controls="lin14">Linux</a>
-                                                <div class="multi-collapse collapse" id="lin14" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Withdraw Rewards</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil initiatewithdrawalrewards DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Alternate: Withdraw Partial Coins</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil initiatepartialwithdrawal DEPOSITOR_ADDRESS AMOUNT</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dp --datadir data init genesis.json</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
@@ -667,131 +550,35 @@
                                         <li>
                                             <div>
                                                 <p>
-                                                    If the above command is successful and the deposit completes, you can withdraw the staked coins after 32000 blocks have been mined, by running the following command. This can be upto 7 days or more as of current block times.
+                                                    Run the following command to connect to the mainnet. You may additionally have to add exclusion in your anti-virus software, if the software shows a prompt. If successful, you should see your node connecting to the blockchain and blocks getting created.
                                                 </p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win15" role="button" aria-expanded="false" aria-controls="win15">Windows</a>
-                                                <div class="multi-collapse collapse" id="win15" style="">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win10" role="button" aria-expanded="false" aria-controls="win10">Windows</a>
+                                                <div class="multi-collapse collapse" id="win10" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <span>For withdrawals initiated after block 421888</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil completepartialwithdrawal DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Alternate: For withdrawals initiated before block 421888</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil completewithdrawal DEPOSITOR_ADDRESS</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">connect.cmd</code></pre>
                                                     </div>
                                                 </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac15" role="button" aria-expanded="false" aria-controls="mac15">Mac</a>
-                                                <div class="multi-collapse collapse" id="mac15" style="">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac10" role="button" aria-expanded="false" aria-controls="mac10">Mac</a>
+                                                <div class="multi-collapse collapse" id="mac10" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <span>For withdrawals initiated after block 421888</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil completepartialwithdrawal DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Alternate: For withdrawals initiated before block 421888</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil completewithdrawal DEPOSITOR_ADDRESS</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">source ./connect.sh</code></pre>
                                                     </div>
                                                 </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin15" role="button" aria-expanded="false" aria-controls="lin15">Linux</a>
-                                                <div class="multi-collapse collapse" id="lin15" style="">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin10" role="button" aria-expanded="false" aria-controls="lin10">Linux</a>
+                                                <div class="multi-collapse collapse" id="lin10" style="">
                                                     <div class="card card-body toggle_body">
-                                                        <span>For withdrawals initiated after block 421888</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil completepartialwithdrawal DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Alternate: For withdrawals initiated before block 421888</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil completewithdrawal DEPOSITOR_ADDRESS</code></pre>
+                                                        <pre class="language-html"><code class="language-html" data-lang="html">./connect.sh</code></pre>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
-                                    </ol>
-                                </div>
-
-                                <h5>Pausing and Resuming Validation</h5>
-                                <div class="steps-panel" id="divPause">
-                                    <ol class="ordered-list">
-                                        <li>Pre-requisite; you should already have staked coins and the validator node is running.</li>
                                         <li>
                                             <div>
                                                 <p>
-                                                    If you have to stop your validator node for maintenance, you can pause and resume validation. This not only helps the blockchain reduce unnecessary time spent waiting for your validator node, but also will prevent slashing (penalty) in the future.
+                                                    To stop the blockchain node client, do not close the window or logout or shutdown directly. Instead press CTRL+C.
                                                 </p>
-                                            </div>
-                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win20" role="button" aria-expanded="false" aria-controls="win20">Windows</a>
-                                                <div class="multi-collapse collapse" id="win20" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Pausing Validation</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil pausevalidation DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Resuming Validation</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil resumevalidation  DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac20" role="button" aria-expanded="false" aria-controls="mac20">Mac</a>
-                                                <div class="multi-collapse collapse" id="mac20" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Pausing Validation</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil pausevalidation DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Resuming Validation</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil resumevalidation DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin20" role="button" aria-expanded="false" aria-controls="lin20">Linux</a>
-                                                <div class="multi-collapse collapse" id="lin20" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Pausing Validation</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil pausevalidation DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Resuming Validation</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil resumevalidation DEPOSITOR_ADDRESS</code></pre>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ol>
-                                </div>
-
-
-                                <h5>Changing Validator Wallet</h5>
-                                <div class="steps-panel" id="divPause">
-                                    <ol class="ordered-list">
-                                        <li>Pre-requisite; you should already have staked coins and the validator node is running.</li>
-                                        <li>
-                                            <div>
-                                                <p>
-                                                    Sometimes you might want to change the validator wallet, for example if it was compromised (stolen). You can run the following command to change the validator wallet.
-                                                </p>
-                                                <p>
-                                                    Ensure that you restart the validator node with the new validator wallet (refer to steps earlier in this document). Move the old validator wallet to a different location before starting the node again. Future improvements will be made to this process to avoid the node restart when changing validator wallets.
-                                                </p>
-                                            </div>
-                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win21" role="button" aria-expanded="false" aria-controls="win21">Windows</a>
-                                                <div class="multi-collapse collapse" id="win21" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <span>Pausing Validation</span>
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">dputil changevalidator DEPOSITOR_ADDRESS NEW_VALIDATOR_ADDRESS</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac21" role="button" aria-expanded="false" aria-controls="mac21">Mac</a>
-                                                <div class="multi-collapse collapse" id="mac21" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil changevalidator DEPOSITOR_ADDRESS NEW_VALIDATOR_ADDRESS</code></pre>
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#lin21" role="button" aria-expanded="false" aria-controls="lin21">Linux</a>
-                                                <div class="multi-collapse collapse" id="lin21" style="">
-                                                    <div class="card card-body toggle_body">
-                                                        <pre class="language-html"><code class="language-html" data-lang="html">./dputil changevalidator DEPOSITOR_ADDRESS NEW_VALIDATOR_ADDRESS</code></pre>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </li>
                                     </ol>
