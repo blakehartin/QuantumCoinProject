@@ -283,39 +283,35 @@
                         <div id="post" class="documentation_info">
                             <article class="documentation_body" id="documentation" style="padding-top:100px;">
                                 <!-- Content Start -->
-                                <div class="shortcode_title">
+                                <div class="shortcode_title" style="margin-bottom:20px;">
                                     <h1>Integrating with the Quantum Coin blockchain</h1>
                                     <p>
-                                        The steps in this documentation is for usecases like Exchanges, Block Explorers. For example, Exchanges that want to integrate with the Quantum Coin blockchain would need to post transactions, find account balance, scan for new transactions etc.
-                                        The typical way to do this is to run the blockchain node and the relay on a machine and then use the SDK to perform operations such as posting a transaction, finding account balance etc.  Follow the below steps to do this:
+                                        The steps in this documentation is for use-cases like Exchanges, Block Explorers. For example, Exchanges that want to integrate with the Quantum Coin blockchain would need to post transactions, find account balance, scan for new transactions etc.
+                                        You can integrate in multiple ways with the QuantumCoin blockchain.
                                     </p>
-                                        You might also want to read about:
-                                        <p style="margin-top:15px;"><a href="https://apidoc.quantumcoin.org/">JSON RPC API Documentation</a></p>
-                                        <p style="margin-top:15px;"><a href="https://solidity.quantumcoin.org">Solidity Documentation</a></p>
+                                    <p>
+                                        You might also want to read about: <a href="https://solidity.quantumcoin.org">Solidity Documentation</a>
+                                    </p>
+                                </div>
+                                <div style="margin-bottom:15px;">
+                                    <p>Important points to remember:</p>
+                                    <ul>
+                                        <li>The wallet account keys are quantum resistant. These keys and the signed transactions are larger because of this reason.</li>
+                                        <li>Gas fee is fixed at 1000 coins for 21000 units of gas, which the amount of gas it takes for sending coins to another account.</li>
+                                    </ul>
                                 </div>
                                 <div class="steps-panel">
+                                    <h3>Method 1</h3>
                                     <ol class="ordered-list">
                                         <li>
                                             <div>
-                                                <p>Connecting to mainnet is the first step. This involves running the blockchain node on a server. There are two ways to do this:</p>
+                                                <p>It is recommended that you run a Full Node, following the steps listed in the below document, to ensure subsequent steps using the Relay proceed smoothly.</p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win1" role="button" aria-expanded="false" aria-controls="win1">Method 1</a>
-                                                <div class="multi-collapse collapse" id="win1">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#bwin1" role="button" aria-expanded="false" aria-controls="bwin1">Connecting</a>
+                                                <div class="multi-collapse collapse" id="bwin1">
                                                     <div class="card card-body toggle_body" style="padding:15px;">
-                                                        <p>
-                                                            This method of connecting to mainnet involves downloading all blocks starting from the genesis block till the latest block. Note that this method can take order of weeks to complete.
-                                                        </p>
-                                                        Follow steps in: <a href="/connecting-to-mainnet.html">Connecting to mainnet</a>.
-                                                    </div>
-                                                </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac1" role="button" aria-expanded="false" aria-controls="mac1">Method 2</a>
-                                                <div class="multi-collapse collapse" id="mac1">
-                                                    <div class="card card-body toggle_body" style="padding:15px;">
-                                                        <p>
-                                                            This method of connecting to mainnet involves using a pre-generated snapshot file that contain all the blocks and transactions. This method is considerably faster than the previous method, but can still take order of hours to days to complete.
-                                                        </p>
-                                                        Follow steps in: <a href="/connecting-to-mainnet-snapshot.html">Connecting to mainnet using a pre-created snapshot</a>.
+                                                        Follow steps in: <a href="/connecting-to-mainnet.html">Connecting to mainnet</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -326,7 +322,6 @@
                                                     The relay is a REST API service layer that runs in front of the blockchain node and exposes a limited set of important APIs that clients can then call. 
                                                     The first step is to read the <a href="https://github.com/quantumcoinproject/quantum-coin-go/blob/dogep/relay/README.md">documentation of the relay.</a>
                                                 </p>
-
                                             </div>
                                         </li>
                                         <li>
@@ -337,14 +332,14 @@
                                                 </p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win2" role="button" aria-expanded="false" aria-controls="win2">Windows</a>
-                                                <div class="multi-collapse collapse" id="win2">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#bwin2" role="button" aria-expanded="false" aria-controls="bwin2">Windows</a>
+                                                <div class="multi-collapse collapse" id="bwin2">
                                                     <div class="card card-body toggle_body" style="padding:15px;">
                                                         <pre class="language-html"><code class="language-html" data-lang="html">relay-config-windows.json</code></pre>
                                                     </div>
                                                 </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#mac2" role="button" aria-expanded="false" aria-controls="mac2">Mac</a>
-                                                <div class="multi-collapse collapse" id="mac2">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#bmac2" role="button" aria-expanded="false" aria-controls="bmac2">Mac</a>
+                                                <div class="multi-collapse collapse" id="bmac2">
                                                     <div class="card card-body toggle_body" style="padding:15px;">
                                                         <pre class="language-html"><code class="language-html" data-lang="html">relay-config-linux.json</code></pre>
                                                     </div>
@@ -382,8 +377,8 @@
                                                 </p>
                                             </div>
                                             <div class="toggle_shortcode" style="padding-bottom:0px;">
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#win4" role="button" aria-expanded="false" aria-controls="win4">Initialization Code</a>
-                                                <div class="multi-collapse collapse" id="win4" style="">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#bwin4" role="button" aria-expanded="false" aria-controls="bwin4">Initialization Code</a>
+                                                <div class="multi-collapse collapse" id="bwin4" style="">
                                                     <div class="card card-body toggle_body">
                                                         The first and second parameters to the qcsdk.Config should map to the ports used in the relay config in the step for starting the relay. 
                                                         <pre class="language-html"><code class="language-html" data-lang="html">var clientConfigVal = new qcsdk.Config("http://127.0.0.1:9090", "http://127.0.0.1:9091", 123123, "", "");</code></pre>
@@ -392,6 +387,19 @@
 
                                             </div>
                                         </li>
+                                    </ol>
+                                </div>
+
+                                <div class="steps-panel">
+                                    <h3>Method 2</h3>
+                                    <ol class="ordered-list">
+                                        <li>
+                                            <div>
+                                                <p>You can use familiar JSON RPC APIs similar to Ethereum: <a href="https://apidoc.quantumcoin.org/api-documentation/">JSON RPC API Documentation</a>. Note that like mentioned earlier,
+                                                the wallet account keys use post quantum cryptography, hence the signatures are larger and key types are different compared to Ethereum.</p>
+                                            </div>
+                                        </li>
+
                                     </ol>
                                 </div>
                                 <!-- Content End -->
