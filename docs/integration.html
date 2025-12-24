@@ -408,6 +408,15 @@
                                                     <br/>
                                                     Note: The RPC node used in below examples does not actually exist. It is only for documentation purposes.
                                                 </p>
+                                                <p>
+                                                    To enable RPC node APIs in the node, add the following parameters to the connect command. You should update the parameter values according to your requirements.
+                                                    Do not leave this port open on the internet or on a untrusted network for security reasons.
+                                                    <pre class="language-html">
+                                                        <code class="language-html" data-lang="bash">
+                                                            --http --http.addr "0.0.0.0" --http.port 8545 --rpcvhosts "localhost,127.0.0.1,dummy.rpc.quantumcoinapi.com" --rpccorsdomain "https://dummy.rpc.quantumcoinapi.com,http://127.0.0.1,http://localhost"
+                                                        </code>
+                                                    </pre>
+                                                </p>
                                             </div>
                                         </li>
                                         <li>
