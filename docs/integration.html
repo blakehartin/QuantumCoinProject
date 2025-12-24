@@ -401,6 +401,86 @@
                                                 </p>
                                             </div>
                                         </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    You can run your own RPC node following instructions at: <a href="/connecting-to-mainnet.html">How to run a node? (connecting to mainnet)</a>. Please reach out in the project's Telegram/Discord if you would like to get an RPC node for your integration.
+                                                    <br/>
+                                                    Note: The RPC node used in below examples does not actually exist. It is only for documentation purposes.
+                                                </p>
+                                                <p>
+                                                    To enable RPC node APIs in the node, add the following parameters to the connect command. You should update the parameter values according to your requirements.
+                                                    Do not leave this port open on the internet or on a untrusted network for security reasons.
+                                                    <pre class="language-html">
+                                                        <code class="language-html" data-lang="bash">
+                                                            --http --http.addr "0.0.0.0" --http.port 8545 --rpcvhosts "localhost,127.0.0.1,dummy.rpc.quantumcoinapi.com" --rpccorsdomain "https://dummy.rpc.quantumcoinapi.com,http://127.0.0.1,http://localhost"
+                                                        </code>
+                                                    </pre>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Here are some examples using cURL and RPC node.
+                                                    You may
+                                                </p>
+                                            </div>
+                                            <div class="toggle_shortcode" style="padding-bottom:0px;">
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#example1" role="button" aria-expanded="false" aria-controls="example1">eth_blockNumber</a>
+                                                <div class="multi-collapse collapse" id="example1" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html">
+                                                            <code class="language-html" data-lang="bash">
+                                                                curl https://px.rpc.quantumcoinapi.com/ \
+                                                                  -X POST \
+                                                                  -H "Content-Type: application/json" \
+                                                                  --data '{"method":"eth_blockNumber","params":[],"id":1,"jsonrpc":"2.0"}'
+                                                            </code>
+                                                        </pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#example2" role="button" aria-expanded="false" aria-controls="example2">eth_call</a>
+                                                <div class="multi-collapse collapse" id="example2" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html">
+                                                            <code class="language-html" data-lang="bash">
+                                                                curl https://dummy.rpc.quantumcoinapi.com/ \
+                                                                  -X POST \
+                                                                  -H "Content-Type: application/json" \
+                                                                  --data '{"jsonrpc":"2.0","method":"eth_call","params":[{"to": "0xa8036870874fbed790ed4d3bbd41b2f390b9858ff021f2993e90c6d1cbb167c7", "data":"0x06fdde03"}, "latest"],"id":1}'
+                                                            </code>
+                                                        </pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#example3" role="button" aria-expanded="false" aria-controls="example3">eth_chainId</a>
+                                                <div class="multi-collapse collapse" id="example3" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html">
+                                                            <code class="language-html" data-lang="bash">
+                                                                curl https://dummy.rpc.quantumcoinapi.com/ \
+                                                                  -X POST \
+                                                                  -H "Content-Type: application/json" \
+                                                                  --data '{"jsonrpc":"2.0","method":"eth_chainId","params":[],"id":1}'
+                                                            </code>
+                                                        </pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#example4" role="button" aria-expanded="false" aria-controls="example4">eth_getBalance</a>
+                                                <div class="multi-collapse collapse" id="example4" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html">
+                                                            <code class="language-html" data-lang="bash">
+                                                                curl https://dummy.rpc.quantumcoinapi.com/ \
+                                                                  -X POST \
+                                                                  -H "Content-Type: application/json" \
+                                                                  --data '{"method":"eth_getBalance","params":["0x0000000000000000000000000000000000000000000000000000000000001000", "latest"],"id":1,"jsonrpc":"2.0"}'
+                                                            </code>
+                                                        </pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
                                     </ol>
                                 </div>
                                 <!-- Content End -->
