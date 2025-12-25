@@ -494,8 +494,18 @@
                                                         </pre>
                                                     </div>
                                                 </div>
-                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#example5" role="button" aria-expanded="false" aria-controls="example5">eth_sendRawTransaction</a>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#example5" role="button" aria-expanded="false" aria-controls="example5">eth_getTransactionCount (nonce)</a>
                                                 <div class="multi-collapse collapse" id="example5" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html">
+                                                            <code class="language-html" data-lang="bash">
+                                                                curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_getTransactionCount","params":["0x0000000000000000000000000000000000000000000000000000000000001000", "latest"],"id":1}' https://px.rpc.quantumcoinapi.com/
+                                                            </code>
+                                                        </pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#example6" role="button" aria-expanded="false" aria-controls="example6">eth_sendRawTransaction</a>
+                                                <div class="multi-collapse collapse" id="example6" style="">
                                                     <div class="card card-body toggle_body">
                                                         <pre class="language-html">
                                                             <code class="language-html" data-lang="bash">
