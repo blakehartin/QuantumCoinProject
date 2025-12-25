@@ -296,6 +296,7 @@
                                 <div style="margin-bottom:15px;">
                                     <p>Important points to remember:</p>
                                     <ul>
+                                        <li>QuantumCoin addresses are 32 bytes long (66 characters in hex including 0x).</li>
                                         <li>The wallet account keys are quantum resistant. These keys and the signed transactions are larger because of this reason.</li>
                                         <li>Gas fee is fixed at 1000 coins for 21000 units of gas, which the amount of gas it takes for sending coins to another account.</li>
                                     </ul>
@@ -422,6 +423,20 @@
                                         <li>
                                             <div>
                                                 <p>
+                                                    Example for creating a wallet: <a href="https://github.com/quantumcoinproject/quantum-coin-js-sdk/blob/main/example/example-wallet.js">Creating a wallet</a>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
+                                                    Example for signing a transaction and sending it via RPC node: <a href="https://github.com/quantumcoinproject/quantum-coin-js-sdk/blob/main/example/example-rpc-send.js">Sending a transaction</a>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <p>
                                                     Here are some examples using cURL and RPC node.
                                                     You may
                                                 </p>
@@ -432,7 +447,7 @@
                                                     <div class="card card-body toggle_body">
                                                         <pre class="language-html">
                                                             <code class="language-html" data-lang="bash">
-                                                                curl https://px.rpc.quantumcoinapi.com/ \
+                                                                curl https://dummy.rpc.quantumcoinapi.com/ \
                                                                   -X POST \
                                                                   -H "Content-Type: application/json" \
                                                                   --data '{"method":"eth_blockNumber","params":[],"id":1,"jsonrpc":"2.0"}'
@@ -475,6 +490,16 @@
                                                                   -X POST \
                                                                   -H "Content-Type: application/json" \
                                                                   --data '{"method":"eth_getBalance","params":["0x0000000000000000000000000000000000000000000000000000000000001000", "latest"],"id":1,"jsonrpc":"2.0"}'
+                                                            </code>
+                                                        </pre>
+                                                    </div>
+                                                </div>
+                                                <a class="toggle_btn mt-1 collapsed" data-toggle="collapse" href="#example5" role="button" aria-expanded="false" aria-controls="example5">eth_sendRawTransaction</a>
+                                                <div class="multi-collapse collapse" id="example5" style="">
+                                                    <div class="card card-body toggle_body">
+                                                        <pre class="language-html">
+                                                            <code class="language-html" data-lang="bash">
+                                                                curl -H "Content-Type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"eth_sendRawTransaction","params":["YOUR_SIGNED_HEX_TRANSACTION"],"id":1}' https://dummy.rpc.quantumcoinapi.com/
                                                             </code>
                                                         </pre>
                                                     </div>
