@@ -28,7 +28,39 @@
     <link rel="stylesheet" href="https://static.quantumcoin.org/assets/mcustomscrollbar/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="https://static.quantumcoin.org/css/style.css">
     <link rel="stylesheet" href="https://static.quantumcoin.org/css/responsive.css">
-    <title>Quantum Coin Quantum Resistance Whitepaper</title>
+    <title>Quantum Coin - NIST Standardized Post-Quantum Cryptography Implementation (FIPS 203, 204, 205)</title>
+    <meta name="description" content="Quantum Coin implements finalized NIST standardized post-quantum cryptography: ML-DSA (FIPS 204), SLH-DSA (FIPS 205), and ML-KEM (FIPS 203) in hybrid mode with Ed25519 (FIPS 186-5). Full protection against Shor's algorithm and quantum computer attacks.">
+    <meta name="keywords" content="quantum resistance, post-quantum cryptography, NIST PQC standards, ML-DSA, FIPS 204, SLH-DSA, FIPS 205, ML-KEM, FIPS 203, Shor algorithm, hybrid cryptography, CRYSTALS-Dilithium, SPHINCS+, CRYSTALS-Kyber, FIPS 186-5, Ed25519">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Quantum Coin NIST Standardized Post-Quantum Cryptography Implementation (FIPS 203, 204, 205)",
+        "description": "Technical documentation of Quantum Coin's implementation of finalized NIST standardized post-quantum cryptographic algorithms in hybrid mode for quantum-resistant blockchain security.",
+        "author": {
+            "@type": "Organization",
+            "name": "Quantum Coin Project"
+        },
+        "about": [
+            {
+                "@type": "Thing",
+                "name": "ML-DSA (FIPS 204)",
+                "description": "Module-Lattice-Based Digital Signature Algorithm, finalized NIST standardized post-quantum signature scheme"
+            },
+            {
+                "@type": "Thing",
+                "name": "SLH-DSA (FIPS 205)",
+                "description": "Stateless Hash-Based Digital Signature Algorithm, finalized NIST standardized post-quantum signature scheme"
+            },
+            {
+                "@type": "Thing",
+                "name": "ML-KEM (FIPS 203)",
+                "description": "Module-Lattice-Based Key-Encapsulation Mechanism, finalized NIST standardized post-quantum key exchange"
+            }
+        ],
+        "keywords": "NIST PQC, post-quantum cryptography, ML-DSA, SLH-DSA, ML-KEM, FIPS 203, FIPS 204, FIPS 205, hybrid cryptography, quantum resistance"
+    }
+    </script>
     <link rel="stylesheet" href="https://static.quantumcoin.org/scss/_header.scss">
     <link rel="stylesheet" href="https://static.quantumcoin.org/scss/_doclist.scss">
 </head>
@@ -284,28 +316,146 @@
                             <article class="documentation_body" id="documentation" style="padding-top:100px;">
                                 <!-- Content Start -->
                                 <div class="shortcode_title">
-                                    <h1>Quantum Resistance</h1>
+                                    <h1>Quantum Resistance - NIST Standardized Post-Quantum Cryptography</h1>
                                 </div>
                                 <p>
-                                    Using Shor’s algorithm on Quantum Computers, it is possible to break cryptography schemes that current blockchains use.
-                                    Blockchains such as Bitcoin, Ethereum, Dogecoin are vulnerable to quantum computers in various ways because they use elliptic curve cryptography that can be broken using quantum computers.
+                                    Quantum Coin uses NIST standardized post-quantum cryptography in hybrid mode. <strong>Quantum Coin implements the finalized NIST standardized post-quantum cryptography (PQC) in hybrid mode</strong>, providing defense-in-depth protection against both quantum and classical cryptographic attacks.
+                                </p>
+                                <h4>TL;DR — At a Glance</h4>
+                                <p>
+                                    For readers who want the essentials: Quantum Coin combines NIST-standardized post-quantum algorithms with classical ones so that your funds and node traffic stay protected even if one layer is ever weakened. The table below summarizes what is used where.
+                                </p>
+                                <div class="table-responsive" style="margin-bottom:20px;">
+                                    <table class="table table-bordered" style="max-width:100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>Component</th>
+                                                <th>PQC Algorithm</th>
+                                                <th>NIST Standard</th>
+                                                <th>Classical Algorithm</th>
+                                                <th>Hybrid</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Signatures</td>
+                                                <td>ML-DSA-44/87, SLH-DSA-SHAKE-256f/s</td>
+                                                <td>FIPS 204, FIPS 205</td>
+                                                <td>ed25519</td>
+                                                <td>Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Key Establishment</td>
+                                                <td>ML-KEM-768</td>
+                                                <td>FIPS 203</td>
+                                                <td>X25519</td>
+                                                <td>Yes</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p>
+                                    All signature operations use hybrid constructions: an attacker would need to break both the post-quantum and the classical algorithm to forge a signature. See <a href="https://csrc.nist.gov/projects/post-quantum-cryptography/faqs" rel="noopener">NIST PQC FAQs</a> for context on hybrid PQC.
+                                </p>
+                                <h4>The Quantum Threat</h4>
+                                <p>
+                                    Using Shor’s algorithm on large-scale Quantum Computers, it is possible to break the asymmetric cryptography schemes that current blockchains rely upon.
+                                    Blockchains such as Bitcoin, Ethereum, and Dogecoin are critically vulnerable to quantum attacks because they use elliptic curve cryptography (ECDSA/secp256k1) that can be factored in polynomial time by a quantum computer.
                                 </p>
                                 <p>
-                                    Account security will be broken if the underlying cryptography schemes are vulnerable. This means that funds can be withdrawn maliciously and double spend transactions made possible if account security is compromised.
+                                    Account security will be compromised if the underlying cryptography is not quantum-resistant. This means that private keys could be derived from public keys, allowing malicious actors to withdraw funds and perform double-spend attacks.
+                                </p>
+                                <h4>NIST Post-Quantum Cryptography (PQC) Standards</h4>
+                                <p>
+                                    Post-quantum cryptography (PQC) refers to cryptographic algorithms—usually public-key algorithms—that are thought to be secure against an attack by a quantum computer.
+                                    The National Institute of Standards and Technology (NIST) has finalized the primary standards for PQC, which Quantum Coin has fully implemented:
+                                </p>
+                                <ul>
+                                    <li><strong>FIPS 203: ML-KEM</strong> (Module-Lattice-Based Key-Encapsulation Mechanism; standardized from Kyber) — Finalized standard for secure key exchange. <a href="https://csrc.nist.gov/pubs/fips/203/final" rel="noopener">NIST FIPS 203</a>.</li>
+                                    <li><strong>FIPS 204: ML-DSA</strong> (Module-Lattice-Based Digital Signature Algorithm; standardized from Dilithium) — Finalized standard for digital signatures. <a href="https://csrc.nist.gov/pubs/fips/204/final" rel="noopener">NIST FIPS 204</a>.</li>
+                                    <li><strong>FIPS 205: SLH-DSA</strong> (Stateless Hash-Based Digital Signature Algorithm; standardized from SPHINCS+) — Finalized standard for robust hash-based signatures. <a href="https://csrc.nist.gov/pubs/fips/205/final" rel="noopener">NIST FIPS 205</a>.</li>
+                                </ul>
+                                <p>
+                                    These NIST standards (FIPS 203, 204, 205) are the result of a multi-year global competition and are designed for high security and broad interoperability.
+                                </p>
+                                <h4>Hybrid Cryptography Implementation Strategy</h4>
+                                <p>
+                                    Quantum Coin employs these NIST standardized algorithms in a <strong>hybrid construction</strong> to secure both user accounts and inter-node P2P communication.
+                                    The hybrid approach combines post-quantum algorithms with classical ones (such as Ed25519 and X25519) so that the system remains secure as long as <em>at least one</em> of the component algorithms remains unbroken. Hybrid mode also provides a hedge if any single primitive is later weakened — you stay protected by the other layers.
+                                    This follows the migration guidelines established by NIST and global cybersecurity agencies (such as ANSSI and BSI). For more on why hybrid PQC is recommended, see <a href="https://csrc.nist.gov/projects/post-quantum-cryptography/faqs" rel="noopener">NIST PQC FAQs</a>.
+                                </p>
+                                <h4>Digital Signatures</h4>
+                                <p>
+                                    For digital signatures and account security, Quantum Coin uses a hybrid multi-signature construction combining:
+                                </p>
+                                <ul>
+                                    <li><strong>ML-DSA (FIPS 204)</strong> — Module-lattice-based post-quantum signature.</li>
+                                    <li><strong>SLH-DSA (FIPS 205)</strong> — Stateless hash-based post-quantum signature (security based on hash functions; an extra layer even if lattice assumptions were ever weakened).</li>
+                                    <li><strong>Ed25519 (FIPS 186-5)</strong> — Classical EdDSA signature for proven classical security.</li>
+                                </ul>
+                                <p>
+                                    Verification requires <strong>all component signatures required by the chosen mode to be valid</strong>. In practice this means an attacker must break both the post-quantum and the classical algorithm to forge a signature. The implementation supports two families: legacy naming (Dilithium + ed25519 + SPHINCS+) and FIPS-aligned naming (ML-DSA + ed25519 + SLH-DSA).
                                 </p>
                                 <p>
-                                    Quantum Resistant cryptography also known as “post quantum cryptography” refers to cryptography algorithms that are resistant to quantum compute-based algorithms.
-                                    NIST which is a standards body is conducting a program to identify post quantum cryptography algorithms.
-                                    The finalized candidates from this program will be selected for standardization. Standardization means what software and hardware vendors from around the world will adopt these algorithms in their products, such as operating systems, graphics cards and IOT devices.
+                                    <strong>Compact vs full mode (what this means for you):</strong> Most operations use <strong>compact mode</strong> (ML-DSA + ed25519) for smaller on-chain size and faster verification. <strong>Full mode</strong> adds SLH-DSA for defense-in-depth — for example, the proposal message of every 4,096th block is signed in full mode to maintain a strong security baseline while keeping average block size manageable.
                                 </p>
+                                <div class="table-responsive" style="margin-bottom:20px;">
+                                    <table class="table table-bordered" style="max-width:100%;">
+                                        <thead>
+                                            <tr>
+                                                <th>Scheme</th>
+                                                <th>ML-DSA Variant</th>
+                                                <th>SLH-DSA Variant</th>
+                                                <th>Classical</th>
+                                                <th>NIST Security Level</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Scheme 1</td>
+                                                <td>ML-DSA-44</td>
+                                                <td>SLH-DSA-SHAKE-256f</td>
+                                                <td>ed25519</td>
+                                                <td>Level 1 / Level 5</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Scheme 2</td>
+                                                <td>ML-DSA-87</td>
+                                                <td>SLH-DSA-SHAKE-256s</td>
+                                                <td>ed25519</td>
+                                                <td>Level 5 / Level 5</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <h4>Key Encapsulation for Node Communication</h4>
                                 <p>
-                                    Quantum Coin will use these post quantum algorithms to secure accounts as well as inter-node communication. In addition, management, and reporting APIs of the blockchain will also use post-quantum TLS.
+                                    For secure P2P node communication, Quantum Coin uses a PQC-capable key establishment protocol. The KEM (key encapsulation mechanism) selection is <strong>time-gated</strong> so the network can upgrade to the strongest hybrid without breaking existing nodes:
                                 </p>
+                                <ul>
+                                    <li><strong>Before the switch time:</strong> Kyber512 (PQC KEM) is used to establish the session.</li>
+                                    <li><strong>After the switch time:</strong> Hybrid <strong>X25519 + ML-KEM-768</strong> (FIPS 203) is used — combining classical ECDH with NIST-standardized post-quantum key encapsulation.</li>
+                                </ul>
                                 <p>
-                                    <a href="https://github.com/QuantumCoinProject/hybrid-pqc">Hybrid PQC</a> Dilithium + ed25519 (EdDSA) + SPHINCS+, is used to secure accounts in Mainnet. Dilithium (ML-DSA) and SPHINCS+ (SLH-DSA) is a NIST standardized post quantum cryptography algorithm while EdDSA (ed25519) is a part of NIST FIPS 186-5 standard.
-                                    Inter-node communication is secured using Kyber. Quantum Coin is the first if not one of the first to secure both accounts and inter-node communications using quantum resistant cryptography.
-                                    The inter-node communication uses a hybrid model, in which the final client and server encryption keys are derived similar to TLS as detailed in RFC 8446. Kyber (ML-KEM) is used for key exchange and the key material thus derived is used as input to HMAC HKDF functions (RFC 5869).
-                                    However unlike TLS, instead of trusting the certificate, the key of the other node is instead trusted. The private key corresponds to the Hybrid classical + post-quantum key-pair used to secure the account using digital signatures.
+                                    The default mainnet configuration sets this switch to <strong>1 February 2026 00:00:00 UTC</strong> (see <code>defaults/config.go</code> in the node repository). Session keys are derived using <strong>HKDF (RFC 5869)</strong>, and the handshake follows <strong>RFC 8446 (TLS 1.3)</strong>-style architecture. Node identity is verified via the node’s hybrid PQC key pair rather than a certificate.
+                                </p>
+                                <h4>Open Source Verification</h4>
+                                <p>
+                                    The complete implementation is open source and available for public audit in the Quantum Coin Go node repository at <a href="https://github.com/quantumcoinproject/quantum-coin-go">github.com/quantumcoinproject/quantum-coin-go</a> (branch <code>dogep</code>). Quantum Coin uses a fork of <a href="https://github.com/cloudflare/circl" rel="noopener">Cloudflare’s CIRCL library</a> for PQC and hybrid primitives (dependency <code>github.com/quantumcoinproject/circl</code>).
+                                </p>
+                                <p><strong>Where to look in the code:</strong></p>
+                                <ul>
+                                    <li>Cryptography implementation: <strong><a href="https://github.com/quantumcoinproject/quantum-coin-go/tree/dogep/crypto">./crypto</a></strong> — FIPS 203, 204, and 205 implementations; CIRCL hybrid signature bindings under <code>./crypto/*</code>.</li>
+                                    <li>Post-quantum P2P handshake: <strong><a href="https://github.com/quantumcoinproject/quantum-coin-go/tree/dogep/p2p/rlpx">./p2p/rlpx</a></strong> — Client and server handshake logic; hybrid KEM selection.</li>
+                                    <li>KEM selection and session logic: <strong><a href="https://github.com/quantumcoinproject/quantum-coin-go/blob/dogep/crypto/keyestablishmentalgorithm/kem.go">./crypto/keyestablishmentalgorithm/kem.go</a></strong> — Kyber512 / X25519+ML-KEM-768.</li>
+                                    <li>Protocol-level switches (signature algorithm block, KEM switch time): <strong><a href="https://github.com/quantumcoinproject/quantum-coin-go/blob/dogep/defaults/config.go">./defaults/config.go</a></strong>.</li>
+                                    <li>Hybrid signature algorithm IDs and verification: <code>./crypto/crypto.go</code>, <code>./crypto/cryptobase/cryptobase.go</code>.</li>
+                                </ul>
+                                <p><strong>Quick verification (for reviewers and developers):</strong> From the <code>quantum-coin-go</code> repository root, run:</p>
+                                <pre style="background:#f5f5f5;padding:12px;border-radius:6px;overflow-x:auto;"><code>go test ./crypto/...
+go test ./p2p/rlpx</code></pre>
+                                <p>
+                                    These tests exercise the PQC and hybrid components. For a concise evidence table mapping components to file paths, see the <a href="https://github.com/quantumcoinproject/quantum-coin-go/blob/dogep/README.md">quantum-coin-go README</a>.
                                 </p>
                                 <div class="link">
                                     <p>Read more in the <a href="https://quantumcoin.org/whitepapers/Quantum-Coin-Blockchain-Quantum-Resistance-Whitepaper.pdf">Quantum Resistance Whitepaper</a>.</p>
