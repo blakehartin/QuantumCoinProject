@@ -28,7 +28,9 @@
     <link rel="stylesheet" href="https://static.quantumcoin.org/assets/mcustomscrollbar/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="https://static.quantumcoin.org/css/style.css">
     <link rel="stylesheet" href="https://static.quantumcoin.org/css/responsive.css">
-    <title>Quantum Coin Whitepapers</title>
+    <title>Quantum Coin Whitepapers - NIST Standardized Post-Quantum Cryptography</title>
+    <meta name="description" content="Technical whitepapers for Quantum Coin, detailing NIST standardized post-quantum cryptography (FIPS 203, 204, 205), pBFT consensus, and blockchain allocation.">
+    <meta name="keywords" content="Quantum Coin whitepapers, post-quantum cryptography, NIST PQC, ML-DSA, SLH-DSA, ML-KEM, FIPS 203, FIPS 204, FIPS 205, blockchain security, consensus, data availability">
     <link rel="stylesheet" href="https://static.quantumcoin.org/scss/_header.scss">
     <link rel="stylesheet" href="https://static.quantumcoin.org/scss/_doclist.scss">
 </head>
@@ -289,6 +291,7 @@
                                 <p>
                                     The underlying technology behind Quantum Coin is spread across various areas, including Distributed Computing, Blockchains, Cryptography and more.
                                     Every major building-block of the Quantum Coin platform has one or more associated whitepapers, that detail the technology used.
+                                    Quantum Coin implements NIST standardized post-quantum cryptography (FIPS 203, 204, 205) in hybrid mode; see the <a href="/quantum-resistance.html">Quantum Resistance</a> documentation and whitepaper.
                                 </p>
                                 <h4>Quantum Coin Vision</h4>
                                 <p>
@@ -297,11 +300,17 @@
                                 <div class="link" style="margin-bottom:20px;">
                                     <p>Read more in the <a href="https://quantumcoin.org/whitepapers/Quantum-Coin-Vision-Paper-latest.pdf">Quantum Coin Vision Paper</a>.</p>
                                 </div>
-                                <h4>Quantum Resistance</h4>
+                                <h4>Quantum Resistance - NIST Standardized Post-Quantum Cryptography</h4>
                                 <p>
-                                    This whitepaper goes over quantum resistance in the Quantum Coin blockchain. This important paper explains the reasons why quantum computers are a threat to blockchains.
-                                    Quantum Computers can break the cryptographic security of blockchains by using Shor's and Grover's algorithm.
-                                    This whitepaper details how the Quantum Coin blockchain will provide security from such quantum computer threats.
+                                    This whitepaper goes over the quantum-resistant architecture of Quantum Coin. It provides a technical analysis of why quantum computers pose a catastrophic threat to classical blockchains and how Quantum Coin mitigates this risk by adopting the **finalized NIST standardized post-quantum cryptography (PQC) standards**:
+                                </p>
+                                <ul>
+                                    <li><strong>ML-DSA (FIPS 204)</strong> - Module-Lattice-Based Digital Signature Algorithm.</li>
+                                    <li><strong>SLH-DSA (FIPS 205)</strong> - Stateless Hash-Based Digital Signature Algorithm.</li>
+                                    <li><strong>ML-KEM (FIPS 203)</strong> - Module-Lattice-Based Key-Encapsulation Mechanism.</li>
+                                </ul>
+                                <p>
+                                    These algorithms are implemented in a **hybrid construction with Ed25519 (FIPS 186-5)**, following the defense-in-depth recommendations of NIST and leading cybersecurity agencies.
                                 </p>
                                 <div class="link" style="margin-bottom:20px;">
                                     <p>Read more in the <a href="https://quantumcoin.org/whitepapers/Quantum-Coin-Blockchain-Quantum-Resistance-Whitepaper.pdf">Quantum Resistance Whitepaper</a>.</p>
